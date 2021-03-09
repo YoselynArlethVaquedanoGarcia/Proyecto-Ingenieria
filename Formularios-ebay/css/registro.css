@@ -1,0 +1,190 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+.usuario{
+    text-align: right;
+    color: black;
+    font-size: 1rem;
+}
+.inicia{
+    width: auto;
+    font-size: 1rem;
+    line-height: 24px;
+}
+.centro{
+    height: 66px;
+    width: auto;
+    display: block;
+
+}
+body{
+    border:solid 2px;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    height: 640px;
+    border-color: rgba(128, 128, 128, 0.527)
+}
+
+
+/* esta es una funcion que marcará el ancho de los labels y inputs */
+.left_inputs{
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+
+}
+
+.buttons{
+  width: 300px;
+  height: 45px;
+  font-family: "Market Sans", Arial, sans-serif;
+  border-radius: 0px;
+  border: #4267b2;
+  background-color:#4267b2;
+  font-size: 1.125rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: block;
+  min-width:200px; 
+
+}
+.buttons:hover{
+  background: rgb(12, 15, 185);
+  
+}
+.fondo{
+  border:solid 2px;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  height: 690px;
+  border-color: rgba(128, 128, 128, 0.527)
+  width:auto;
+}
+.height-divider{
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content:center;
+  align-items: center;
+  width: 1px;
+  height: 100%; 
+  border-top-width: 200px;
+
+}
+.height-divider::after{
+  content: "0 bien";
+  display: block;
+  background: #fff;
+  font-size: 12px;
+}
+.rower{
+  display: flex;
+  flex-flow: row nowrap;
+  height: 450px;
+  padding: 4rem 0;
+  border-top-width: 200px;
+}
+.button:hover{
+  background-color: grey;
+  border-color: grey;
+}
+.button{
+  background-color: grey;
+ border-color: grey;
+ font-family: "Market Sans", Arial, sans-serif;
+ width:360px; 
+ height: 45px;
+ font-size: 1.125rem;
+ color:rgb(255, 255, 255);
+
+}
+.button2{
+  font-size: 1.2rem;
+  border-radius: 0px;
+  border: thin solid rgb(117, 117, 117);
+  background-color: #fff;
+  color: rgb(44, 44, 44);
+  padding: 0 16px;
+  padding-right: 30px;
+  line-height: inherit;
+  padding-left: 3px;
+  width: 300px;
+  height: 45px;
+  font-family: "Market Sans", Arial, sans-serif;
+  text-align: center;
+  display:block;
+  float: left;
+
+  
+}
+.google{
+  position: relative;
+  width: 0px;
+}
+.button2:hover{
+  background: rgba(236, 236, 236, 0.932);
+}
+.footer{
+  font-size: 11px;
+  border-top-width: 100px;
+}
+.container{
+  position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+  
+
+}
+.norton {
+  background: url(https://ir.ebaystatic.com/rs/v/f5uxsy10bmz05dtrtrqybl5qquv.png) no-repeat 0 0;
+  border: 0;
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+  font-size: 0;
+  height: 40px;
+  width: 80px;
+  position: relative;
+
+}
+.texto_izq{
+  width : 120px;
+    padding: 8px;
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+     box-sizing: border-box;
+     border-top-width: 0px;
+     border-left-width: 0px;
+     border-right-width: 0px;
+     border-bottom-width: 1px solid  black;
+}
+.texto_der{
+  width : 160px;
+    padding: 8px;
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+     box-sizing: border-box;
+     border-top-width: 0px;
+     border-left-width: 0px;
+     border-right-width: 0px;
+     border-bottom-width: 1px solid  black;
+
+}
+.lo{
+    top: 40px;
+  width : 380px;
+    margin: 0;
+    padding: 8px;
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+     box-sizing: border-box;
+     border-top-width: 0px;
+     border-left-width: 0px;
+     border-right-width: 0px;
+     border-bottom-width: 1px solid  black;
+
+}

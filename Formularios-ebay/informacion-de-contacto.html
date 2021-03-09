@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Proporcionar Informacion de tu contacto </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/InformacionC.css" type="text/css" media="screen" >
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body style="background-color:rgba(250, 250, 250, 0.884)" style="font-family:Arial, Helvetica, sans-serif">
+    <center>
+    <header>
+        <img id="logo-ebay" class="logo-ebay" src="img/logo-ebay.png" alt="Logo" >
+    </header>
+    <div>
+                <form class="fondo" class="col-md-12 col-sm-6 col-xs-12">
+                    <label>¿Adónde entregamos tu pedido?</label><br><br>
+                    <select id="pais" class="lo">
+                        <option value="">Honduras</option>
+                        <option value="2">Costa Rica</option>
+                        <option value="3">El Salvador</option>
+                        <option value="4">Panama</option>
+                        <option value="5">Guatemala</option>
+                        <option value="6">Ecuador</option>
+                        <option value="7">Argentina</option>
+                        <option value="8">Chile</option>
+                        <option value="9">Francia</option>
+                        <option value="10">España</option>
+                        <option value="11">Colombia</option>
+                        <option value="12">Estado Unidos</option>
+                        <option value="13">Mexico</option>
+                        <option value="14">Alemania</option>
+                        <option value="15">Japon</option>
+                    </select>
+                    <br><br>
+                    <input value="xxxx" id="direccion" class="lo" type="text"  name="Ingresar direccion" placeholder="direccion">
+                    <br><br>
+                    <input value="" id="adicional" class="lo" type="text" name="Infomacion adicional (Opcional)" placeholder="Infomacion adicional (Opcional)"><br>
+                    <br>
+                    <input value="" id="ciudad" class="lo" type="text" name="ciudad" placeholder="Ciudad"><br>
+                    <br>
+                    <input value="" id="estado" class="texto_izq" type="text" name="Estado o provincia o region" placeholder="Estado o provincia o region">
+                    <input value="" id="codigo" class="texto_der" type="text" name="Codigo postal" placeholder="Codigo postal"><br><br>
+
+                    <input value="" id="email" class="lo" type="email" name="email" placeholder="email"><br><br>
+
+                    <input value="" id="celular" class="lo" type="text" name="Numero de celular" placeholder="Numero de celular"><br>
+                    <br>
+                    <br>                         
+                    <button class="btn btn-primary tamaño" id="btn-continuar" type="button" data-toggle="modal" data-target="#exampleModal" >Continuar</button>
+         
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmacion del pedido</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        Pedido realizado con exito!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador2.js"></script>
+</html>

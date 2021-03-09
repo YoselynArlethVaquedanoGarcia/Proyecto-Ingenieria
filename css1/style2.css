@@ -1,0 +1,82 @@
+#row-carrousel{
+    background: rgb(147, 201, 255);
+}
+#tamaño{
+    width: 150px;
+}
+#tamaño-a{
+   padding-left: 40px;
+}
+.titulo{
+    margin-left: 15px;
+}
+.div-ti{
+    padding: 40px;
+    height: 170px;
+}
+.div-ti1{
+    padding-bottom: 15px;
+}
+.div-ti2{
+    padding-bottom: 15px;
+    color: blue;
+    font-size: 16px;
+}
+.btn-primary{
+    background:#C2F2EF;
+    color: blue;
+}
+.div-ti4 a{
+    font-size: 18px;
+    color: blue;
+    padding-left: 20px;
+    font-weight: bold;
+}
+.descripcion{
+    padding-bottom: 30px;
+}
+.ver{
+    font-weight: bold;
+    padding-left: 20px;
+    cursor: pointer;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+#ver a:hover{
+    font-style: underline;
+    text-decoration: underline;
+}
+.ver-esto{
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+ span a:hover{
+    text-decoration: underline;
+}
+#row{
+    padding-top: 20px;
+}
+#id-row{
+    padding-bottom: 10px;
+}
+.anuncio{
+    margin-top: 30px;
+}
+
+#b1{
+    margin-left: 120px;
+}
+#contenido2{
+    margin-left: -40px;
+    padding-top: 12px;
+    color: #155C86;
+    font-size: 14px;
+    white-space: nowrap;
+}
+#contenido3{
+    float: right;
+    padding-top: 22px;
+}

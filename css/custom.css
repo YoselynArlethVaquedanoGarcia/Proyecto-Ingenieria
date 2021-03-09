@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height:auto;
+    background:white;
+    color:black;
+    display: flex;
+}
+#btn-menu{
+    display: none;
+}
+header label{
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+}
+.menu{
+    display: flex;
+    height: 35px;
+}
+.ulp{
+    justify-content: flex-end;
+    display: flex;
+    margin-top:-20px;
+}
+.menu ul{
+    background:  white; 
+    display: flex;
+    list-style: none;
+    width: 1024px;
+    padding-inline-start: 30px;
+    border-bottom-color: red;
+}
+.menu ul ul{
+    display: none;
+}
+.menu a{
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    text-decoration: none;
+}
+.menu a:hover{
+    color: blue;
+}
+/*.menu a span{
+    margin-left: 10px;
+}*/
+.menu ul li:hover ul{
+    display: block;
+    position: absolute;
+    background:  yellow;
+    text-align: left;  
+    float: right;
+    cursor: pointer;
+}
+.menu ul a {
+    display: flex;
+    width: auto;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-top: 15px;
+}
+#ul2{
+    display: contents;
+  
+}
+}.header-links{
+    margin-right: 15px;
+    font-size: 18px;
+    
+  }
+  .header-links li {
+    margin-right: 15px;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+/*responsive*/
+@media (max-width:768){
+    header label{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translate(-100%);
+        transition: all 0.3s;
+    }
+    .menu ul{
+        display: block;
+    }
+    .menu ul li:hover ul{
+        display: none;
+    }
+    .menu a span{
+        position: absolute;
+        right: 5px;
+    }
+    #btn-menu:checked ~ .menu {
+        transform: translateX(0%);
+      }
+      
+   
+}
+
+@media (max-width:768px){
+    header label {
+        display: block;
+    }
+    .menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100);
+        transition: all 0.3s;
+    }
+    .menu ul{
+        display: block;
+    }
+    .menu ul li:hover ul{
+        display: none;
+        position: static;
+    }
+    .menu a span{
+        position: absolute;
+        right: 5px;
+    }
+    .menu ul ul{
+        background: rgba(24, 63, 96, 0.9);
+        width: 100%;
+    
+    }
+    .menu ul ul a{
+        padding: 15px 30px;
+
+    }
+}
+

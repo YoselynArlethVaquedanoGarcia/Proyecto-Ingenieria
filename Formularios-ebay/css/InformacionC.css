@@ -1,0 +1,80 @@
+.fondo{
+	border:  solid 1px #ccc;
+	border-radius: 3px;
+	position: relative;
+	top: 50px;
+	width: 410px;
+	height: 560px;
+	background-color: white;
+}
+.logo-ebay{
+    top: 30px;
+		width: 100px
+	
+}
+.textos{
+	border:  solid 1px #ccc;
+	border-radius: 3px;
+	padding: 8px;
+	width: 370px;
+
+}
+.lo{
+  top: 40px;
+	width : 380px;
+  	margin: 0;
+  	padding: 4px;
+  	-webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+     box-sizing: border-box;
+}
+
+.texto_izq{
+	width : 200px;
+  	padding: 4px;
+  	-webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+    -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+     box-sizing: border-box;
+}
+.texto_der{
+	width : 160px;
+  	padding: 4px;
+  	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+span[id^="solo"]{
+	position: absolute;
+	right: 20px;
+}
+/*.button{
+	font-size: 20px;
+	color: white;
+	top: 0px;
+	width : 380px;
+	background-color: rgb(64, 134, 240);
+  	margin: 0;
+  	padding: 4px;
+  	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+.button:hover{
+	background-color: rgb(0, 0, 248);
+}*/
+.btn{
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	padding: 5px;
+	font-size: 1em;
+	border-radius: 0px;
+	transition: color .5s;
+}
+.btn-primary{
+	color: #fff;
+	background-color: #007bff;
+	border-color:#007bff;
+	width: 380px;
+}

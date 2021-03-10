@@ -19,9 +19,12 @@
               <div class="card-body">
                 <h4 class="card-title text-center">Registro</h4>
                 <form class="form-signin">
+
                   <div class="form-label-group">
                     <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required autofocus>
                     <label for="nombre">Nombre</label>
+                    <div class="valid-feedback">¡Dato completado!</div>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
                   
                   <div class="form-label-group">
@@ -80,7 +83,7 @@
                 </div>
                  <br>
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrar</button>
-                  <a class="d-block text-center mt-2 small" href="login.html">Iniciar Sesion</a>
+                  <a class="d-block text-center mt-2 small" href="login.php">Iniciar Sesion</a>
                   <hr class="my-4">
                  
                   
@@ -90,5 +93,9 @@
           </div>
         </div>
       </div>
+    <script src="jquery/jquery-3.3.1.min.js"></script>	 	
+    <script src="popper/popper.min.js"></script>	 	 	
+    <script src="bootstrap4/js/bootstrap.min.js"></script>   	
+    <script src="codigo.js"></script> 
 </body>
 </html>

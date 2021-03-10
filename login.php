@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="css1/bootstrap.min.css">
     <link rel="stylesheet" href="style1.css">
+    
 </head>
 <body>
     <div class="container-fluid">
@@ -18,15 +19,21 @@
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h3 class="login-heading mb-4">!Bienvenido a BestWay!</h3>
-                    <form>
+
+                    <form action="index.php" method="POST"   class="needs-validation" novalidate>
+
                       <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus >
                         <label for="inputEmail">Correo Electronico</label>
+                        <div class="valid-feedback">¡Dato Correcto!</div>
+                        <div class="invalid-feedback">!Dato incorrecto!</div>
                       </div>
       
                       <div class="form-label-group">
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <label for="inputPassword">Contraseña</label>
+                        <div class="valid-feedback">¡Campo completado!</div>
+                        <div class="invalid-feedback">!Complete el campo!</div>   
                       </div>
       
                       <div class="custom-control custom-checkbox mb-3">
@@ -44,5 +51,9 @@
           </div>
         </div>
       </div>
+      <script src="jquery/jquery-3.3.1.min.js"></script>	 	
+    <script src="popper/popper.min.js"></script>	 	 	
+    <script src="bootstrap4/js/bootstrap.min.js"></script>   	
+    <script src="codigo.js"></script> 
 </body>
 </html>

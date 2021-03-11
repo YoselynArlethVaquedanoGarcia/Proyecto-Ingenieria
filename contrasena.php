@@ -18,7 +18,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Recuperar Contraseña</h4>
-                <form class="form-signin">
+                <form class="needs-validation" novalidate>
                
                 
                   <div class="form-label-group">
@@ -37,9 +37,9 @@
                   </div>
 
                  <br>
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Confirmar Contraseña</button>
+                  <button class="btn btn-lg btn-primary btn-block " type="submit">Confirmar Contraseña</button>
                   <br>
-                  <a class="d-block text-center mt-2 small" href="login.html">Iniciar Sesion</a>
+                  <a class="d-block text-center mt-2 small" href="login.php">Iniciar Sesion</a>
                   <hr class="my-4">
                  
                   
@@ -48,6 +48,9 @@
             </div>
           </div>
         </div>
-     
+        <script src="jquery/jquery-3.3.1.min.js"></script>	 	
+        <script src="popper/popper.min.js"></script>	 	 	
+        <script src="bootstrap4/js/bootstrap.min.js"></script>   	
+        <script src="codigo.js"></script> 
 </body>
 </html>

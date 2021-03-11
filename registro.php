@@ -18,7 +18,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Registro</h4>
-                <form class="form-signin">
+                <form class="needs-validation" novalidate>
 
                   <div class="form-label-group">
                     <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required autofocus>
@@ -30,11 +30,15 @@
                   <div class="form-label-group">
                     <input type="tel" id="tel" class="form-control" placeholder="telefono" required>
                     <label for="tel">Telefono</label>
+                    <div class="valid-feedback">¡Dato completado!</div>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
 
                   <div class="form-label-group">
                     <input type="text" id="dir" class="form-control" placeholder="direccion" required>
                     <label for="dir">Dirección</label>
+                    <div class="valid-feedback">¡Dato completado!</div>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
 
                   
@@ -51,6 +55,8 @@
                     <label class="form-check-label" for="genero2">
                       Femenino
                     </label>
+                   
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
                   <br>
                   
@@ -63,16 +69,22 @@
                   <div class="form-label-group">
                     <input type="email" id="email" class="form-control" placeholder="email" required>
                     <label for="email">Correo Electronico</label>
+                    <div class="valid-feedback">¡Dato Correcto!</div>
+                    <div class="invalid-feedback">!Dato incorrecto!</div>
                   </div>
                   
                   <div class="form-label-group">
                     <input type="password" id="password"class="form-control"placeholder="Contraseña" required>
                     <label for="password">Contraseña</label>
+                    <div class="valid-feedback">¡Dato completado!</div>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
                   
                   <div class="form-label-group">
                     <input type="password" id="conpass" class="form-control" placeholder="Contraseña" required>
                     <label for="conpass">Confirmar Contraseña</label>
+                    <div class="valid-feedback">¡Dato completado!</div>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
 
                   <div class="form-check">
@@ -80,9 +92,11 @@
                   <label class="form-check-label" for="invalidCheck2">
                     He leído y acepto los términos y condiciones
                   </label>
+                  <div class="valid-feedback">¡Casilla Marcada!</div>
+                    <div class="invalid-feedback">!Marque la casilla!</div>
                 </div>
                  <br>
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrar</button>
+                  <button class="btn btn-lg btn-primary btn-block " type="submit">Registrar</button>
                   <a class="d-block text-center mt-2 small" href="login.php">Iniciar Sesion</a>
                   <hr class="my-4">
                  

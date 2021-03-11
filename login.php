@@ -20,7 +20,7 @@
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h3 class="login-heading mb-4">!Bienvenido a BestWay!</h3>
 
-                    <form action="index.php" method="POST"   class="needs-validation" novalidate>
+                    <form    class="needs-validation" novalidate>
 
                       <div class="form-label-group">
                         <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus >

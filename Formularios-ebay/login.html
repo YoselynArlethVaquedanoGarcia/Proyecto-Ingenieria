@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inicia sesion o registratre /eBay </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/iniciar_sesion.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style type="text/css">
+       @media (max-width: 600px) {
+          .ocultar {
+            display: none;
+          }
+          .aparecer{
+            display: block;
+          }
+        }
+        @media(min-width:600px){
+          .aparecer{
+            display: none;
+          }
+        }
+        .tamaño{
+          width: 100%;
+        }
+</style> 
+<style type="text/css">
+   img[id^="Logo"]{
+         position: relative;
+         left: 12px;
+         top:12px;
+         width: 83px;
+         height: 33px;
+        }
+</style>
+
+</head>
+<body id="header" style="background-color:rgb(255, 255, 255)">
+    <header>
+        <img id="Logo" src="img/logo-ebay.png">
+    </header>
+    <div class="fondo">
+        <div class="container">
+            <div class="row">
+              <div class="col-12 tex-center">
+                <h1><center><b>Hola</b></center></h1>
+                <div class="aparecer" >
+                    <label>Puedes utilizar tu correo electronico o nombre de usuario o bien, continuar con tu cuenta en red social.</label>
+                </div>
+                <p class="form-grop ocultar"><center>Inicia sesion en ebay o <a href="">crea una cuenta</a></center></p>
+              </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-6 col-sm-12 col-xs-12 col-12" style="padding:10px;">
+                    <form>
+                        <label class="form-grop ocultar" for="nombre"  style="color:rgba(128, 128, 128, 0.801);background-color:rgba(128, 128, 128, 0)">Correo electronico o nombre de usuario</label>
+                        <br>
+                        <input value="" id="email" class="form-group" class="form-control" class="left_inputs" type="text" onkeyup="validarCorreo(this);"><br>
+                        <label  class="form-group ocultar" style="color:rgba(128, 128, 128, 0.801);background-color:rgba(128, 128, 128, 0)">Contraseña</label>
+                        <br>
+                        <input value="" id="password" class="form-group ocultar" type="password" name="password" class="left_inputs" style="margin:auto;"><br>
+                        <br>                     
+                        <button class="btn btn-primary" id="btn-login" type="button">Continuar</button>
+                    </form>
+                    <br>
+                    <div class="form-group ocultar">
+                        <a tabindex="0" title="Enviarme una contraseña temporal por mensaje de texto" class="left_msj" text-line="center">Enviarme una contraseña temporal por mensaje de texto</a>
+                    <br>
+                    <div class="ocultar">
+                        <a id="infowfyp" href="#" title="Restablece tu contraseña" class="left_msj">Restablece tu contraseña</a> 
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 col-12" style="padding:10px; border-left: 1px solid rgba(48, 48, 48, 0.555)" >
+                    <div>
+                        <button class="buttons"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="button2"> <img id="google" src="img/google.png">Inicia sesión con Google</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class= "form-check" > <input class= "form-check-input" type= "checkbox" value= "" id= "defaultCheck1" > 
+                <label style="font-size:15px; font-family:Arial, Helvetica, sans-serif"> No cerrar Sesion</label>
+                <br>
+                <label style="font-size:15px;">¿Estás usando un dispositivo público o compartido?</label><br>
+                <label style="font-size:15px;"> la marca de la casilla para proteger tu cuenta. <a href="" >Más información</a></label>
+            </div> 
+            <p id="notificacion"></p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <center>
+            <label class="footer">Copyright © 1995-2019 eBay Inc. Todos los derechos reservados. <a href="">Condiciones de uso</a>, Aviso de privacidad, cookies y AdChoice</label></center>
+        <br>
+        <br>
+        <i class="norton">Norton Secured - powered by Verisign</i></center>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/controlador3.js"></script>
+</body>
+</html>
+
+
+

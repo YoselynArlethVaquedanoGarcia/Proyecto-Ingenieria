@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicia sesion o registratre /eBay </title>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+            img[id^="Logo"]{
+             position: relative;
+             left:10px;
+             top:30px;
+             width: 84px;
+             height: 38px;
+            }
+    </style> 
+    
+    <style type="text/css">
+        @media (max-width: 600px) {
+          .ocultar {
+            display: none;
+          }
+        .tamaño{
+          width: 100%;
+        }
+        }
+
+    </style>
+</head>
+<body style="background-color:rgb(255, 255, 255)">
+        <img id="Logo" src="img/logo-ebay.png">
+        <div class="usuario">
+            <span>¿Ya eres un usuario?
+                <span class="inicia"><a href="" style="color:#006efc ;">Inicia sesion</a></span>
+            </span>
+        </div>
+            <div class="container">
+              <div class="row" class="rower">
+                <div class="col-12 tex-center">
+                  <h1><center><b>Abrir una Cuenta</b></center></h1>
+                  <p class="form-grop ocultar"><center>¿Tienes un negocio?<a href=""> Crea una cuenta comercial</a></center></p>
+                </div>
+              </div>
+            </div>
+		<div class="container">
+          <div class="rower" >
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <input value="sergio" id="nombre" type="text" class="texto_izq"name="Nombre" placeholder="Nombre"  style="background-color:rgba(128, 128, 128, 0)">
+                <input value="Ramos" id="apellido" type="text" class="texto_der"name="Apellido" placeholder="Apellido" style="background-color:rgba(128, 128, 128, 0)">
+                <br>
+                <input value="@fefef" id="email" type="email" name="Correo electronico" class="lo" placeholder="Correo electronico" onkeyup="validarCorreo(this);" style="background-color:rgba(128, 128, 128, 0)">
+                <br><br>
+                <input value="asd.456" id="password" type="password" name="password" class="lo" placeholder="contraseña" style="background-color:rgba(128, 128, 128, 0)">
+                <br><br>
+                <br>
+                <span style="font-size: 15px;">Al crear una cuenta, aceptas nuestras <br> <a href="" >Condiciones de Uso</a> y admites haber leído nuestro <a href="">Aviso de<br> Privacidad</a>.</span>
+                <br>
+                 <button id="btn-guardar" class="button " type="button" value="">Crear Cuenta</button>
+
+                
+          </div>
+          <div class="height-divider ocultar"></div>
+          <div class="col-md-6 col-sm-12 col-xs-12 ocultar">
+                <div>
+                    <button class="buttons"><i class="fab fa-facebook-square"></i> Iniciar sesión con Facebook</button>
+                    <br>
+                    <button class="button2"> <img id="google" src="img/google.png">Inicia sesión con Google</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <br>	
+  <footer class="footer">
+      <center>
+      	<label class="footer">Copyright © 1995-2019 eBay Inc. Todos los derechos reservados. <a href="">Condiciones de uso</a>, Aviso de privacidad, cookies y AdChoice</label></center>
+      <br>
+      <br>
+      <i class="norton">Norton Secured - powered by Verisign</i></center>
+  </footer>
+    <script src="js/jquery-3.3.1.slim.min"></script>
+    <script src="js/popper.min"></script>    
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/controlador.js"></script>  
+</body>
+</html>

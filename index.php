@@ -7,7 +7,10 @@
     <title>BestWay</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css1/bootstrap.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+=======
+>>>>>>> 239826b55a49cc19184209ab86ea69c5269fdee9
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -35,6 +38,9 @@
           </div>
         </div>
       </nav>
+<<<<<<< HEAD
       <script src="js/validar.js"></script>
+=======
+>>>>>>> 239826b55a49cc19184209ab86ea69c5269fdee9
 </body>
 </html>

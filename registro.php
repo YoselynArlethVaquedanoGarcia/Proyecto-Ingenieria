@@ -70,7 +70,6 @@
                   <div class="form-label-group">
                     <input type="email" id="email" class="form-control" placeholder="email" required>
                     <label for="email">Correo Electronico</label>
-
                     <div class="valid-feedback">¡Dato Correcto!</div>
                     <div class="invalid-feedback">!Dato incorrecto!</div>
                   </div>

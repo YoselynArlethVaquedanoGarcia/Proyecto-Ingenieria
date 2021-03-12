@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="style1.css">
     
 </head>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 239826b55a49cc19184209ab86ea69c5269fdee9
 <body>
     <div class="container-fluid">
         <div class="row no-gutter">

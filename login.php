@@ -19,7 +19,7 @@
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h3 class="login-heading mb-4">!Bienvenido a BestWay!</h3>
-
+                    <form    class="needs-validation" novalidate>
                       <div class="form-label-group">
                         <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus >
                         <label for="inputEmail">Correo Electronico</label>
@@ -52,6 +52,7 @@
       <script src="jquery/jquery-3.3.1.min.js"></script>	 	
     <script src="popper/popper.min.js"></script>	 	 	
     <script src="bootstrap4/js/bootstrap.min.js"></script>   	
-    <script src="codigo.js"></script> 
+    <script src="codigo.js"></script>
+    <script src="js/validar.js"></script> 
 </body>
 </html>

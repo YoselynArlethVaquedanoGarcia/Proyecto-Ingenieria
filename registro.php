@@ -12,7 +12,7 @@
 <body>
 
 
-  <form method="post" id=" formulario" class="needs-validation " novalidate> 
+  <form method="POST" id=" formulario" class="needs-validation " novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
@@ -22,7 +22,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Registro</h4>
-                <form class="needs-validation" novalidate>
+                <form  method="post" class="needs-validation" novalidate>
 
                   <div class="form-label-group" id=" divNombre" >
                     <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required autofocus >
@@ -39,7 +39,7 @@
                   </div>
 
                   <div class="form-label-group">
-                    <input type="text" id="dir" class="form-control" placeholder="direccion" required onkeyup="validarDire(this)">
+                    <input type="text" id="dir" class="form-control" placeholder="direccion" required>
                     <label for="dir">Dirección</label>
                     <div class="valid-feedback">¡Direccion contiene letras y numeros.!</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>
@@ -71,7 +71,7 @@
                   <hr>
 
                   <div class="form-label-group">
-                    <input type="email" id="email" class="form-control" placeholder="email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="email" required>
                     <label for="email">Correo Electronico</label>
 
                     <div class="valid-feedback">¡Dato Correcto!</div>
@@ -91,9 +91,7 @@
                     
                     
                   </div>
-                  <div>
-                    <a href="terminos.html">Terminos y condiciones</a>
-                  </div>
+
                   <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required >
                   <label class="form-check-label" for="invalidCheck2">He leído y acepto los  

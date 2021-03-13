@@ -87,7 +87,9 @@
                     <div class="valid-feedback" id ="passwordCompleto" >¡Dato completado!</div>
                     <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
-
+                  <div>
+                    <a href="terminos.html">Terminos y condiciones</a>
+                  </div>
                   <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required >
                   <label class="form-check-label" for="invalidCheck2">

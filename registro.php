@@ -39,7 +39,7 @@
                   </div>
 
                   <div class="form-label-group">
-                    <input type="text" id="dir" class="form-control" placeholder="direccion" required>
+                    <input type="text" id="dir" class="form-control" placeholder="direccion" required onkeyup="validarDire(this)">
                     <label for="dir">Dirección</label>
                     <div class="valid-feedback">¡Direccion contiene letras y numeros.!</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>
@@ -91,7 +91,9 @@
                     
                     
                   </div>
-
+                  <div>
+                    <a href="terminos.html">Terminos y condiciones</a>
+                  </div>
                   <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required >
                   <label class="form-check-label" for="invalidCheck2">He leído y acepto los  

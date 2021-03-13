@@ -7,8 +7,15 @@
     <title>BestWay</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
+<?php 
+  include("conexion.php");
+  $con = conectar();
+  //echo"La conexion se realizo exitosamente ";
+  
+  ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
           
@@ -34,5 +41,6 @@
           </div>
         </div>
       </nav>
+      <script src="js/validar.js"></script>
 </body>
 </html>

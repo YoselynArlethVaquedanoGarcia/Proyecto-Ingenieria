@@ -20,8 +20,6 @@
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h3 class="login-heading mb-4">!Bienvenido a BestWay!</h3>
 
-                    <form    class="needs-validation" novalidate>
-
                       <div class="form-label-group">
                         <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus >
                         <label for="inputEmail">Correo Electronico</label>
@@ -42,7 +40,7 @@
                       </div>
                       <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Iniciar Sesion</button>
                       <div class="text-center">
-                        <a class="small" href="contrasena.html">¿Olvidaste tu Contraseña?</a></div>
+                        <a class="small" href="contrasena.php">¿Olvidaste tu Contraseña?</a></div>
                     </form>
                 </div>
                 </div>

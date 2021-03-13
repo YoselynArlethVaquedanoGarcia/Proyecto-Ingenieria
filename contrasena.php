@@ -7,6 +7,7 @@
     <title>Contrasena</title>
     <link rel="stylesheet" href="css1/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
     <div class="container">
@@ -29,15 +30,19 @@
                   <div class="form-label-group">
                     <input type="password" id="password"class="form-control"placeholder="Contraseña" required>
                     <label for="password">Nueva Contraseña</label>
+                    <div class="valid-feedback">¡Contraseña valida!</div>
+                    <div class="invalid-feedback">!contraseña invalida, al menos 4 digitos !</div>
                   </div>
                   
                   <div class="form-label-group">
                     <input type="password" id="conpass" class="form-control" placeholder="Contraseña" required>
                     <label for="conpass">Confirmar Nueva Contraseña</label>
+                    <div class="valid-feedback" id ="passwordCompleto" >¡Contraseña Valida!</div>
+                    <div class="invalid-feedback">!Contraseña invalida, no concuerda !</div>
                   </div>
 
                  <br>
-                  <button class="btn btn-lg btn-primary btn-block " type="submit">Confirmar Contraseña</button>
+                  <button class="btn btn-lg btn-primary btn-block " type="submit" onclick="cambiarContraseña()" >Confirmar Contraseña</button>
                   <br>
                   <a class="d-block text-center mt-2 small" href="login.php">Iniciar Sesion</a>
                   <hr class="my-4">
@@ -52,5 +57,7 @@
         <script src="popper/popper.min.js"></script>	 	 	
         <script src="bootstrap4/js/bootstrap.min.js"></script>   	
         <script src="codigo.js"></script> 
+
+    <script src="js/validar.js"></script>
 </body>
 </html>

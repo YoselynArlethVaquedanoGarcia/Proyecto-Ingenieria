@@ -12,7 +12,7 @@
 <body>
 
 
-  <form method="POST" id=" formulario" class="needs-validation " novalidate> 
+  <form method="post" id=" formulario" class="needs-validation " novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
@@ -25,21 +25,21 @@
                 <form  method="post" class="needs-validation" novalidate>
 
                   <div class="form-label-group" id=" divNombre" >
-                    <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required autofocus >
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Completo" required autofocus >
                     <label for="nombre">Nombre</label>
                     <div  class="valid-feedback">!Dato completo !</div>
                     <div class="invalid-feedback">¡Dato incompleto !</div>
                   </div>
 
                   <div class="form-label-group">
-                    <input type="tel" id="tel" class="form-control" placeholder="telefono" required >
+                    <input type="tel" id="tel" class="form-control" placeholder="telefono" name="telefono" required >
                     <label for="tel">Telefono</label>
                     <div class="valid-feedback">! El telefonico Contiene 8 digitos !</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>
                   </div>
 
                   <div class="form-label-group">
-                    <input type="text" id="dir" class="form-control" placeholder="direccion" required>
+                    <input type="text" id="dir" class="form-control" placeholder="direccion" name="direccion" required>
                     <label for="dir">Dirección</label>
                     <div class="valid-feedback">¡Direccion contiene letras y numeros.!</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>
@@ -101,27 +101,26 @@
                     <div class="invalid-feedback">!Marque la casilla!</div>
                 </div>
                  <br>
-                  <button class="btn btn-lg btn-primary btn-block " type="submit"  onclick="iniciarSeccion()">Registrar</button>
+                  <button class="btn btn-lg btn-primary btn-block " type="submit" name="submit" onclick="iniciarSeccion()">Registrar</button>
                   <a class="d-block text-center mt-2 small" href="login.php">Iniciar Sesion</a>
                   <hr class="my-4">             
-   </form>
+          </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+ 
       <?php
-			//if (isset($_POST['send'])){
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
-        
-        require 'PHPMailer/Exception.php';
-        require 'PHPMailer/PHPMailer.php';
-        require 'PHPMailer/SMTP.php';
-        //Instantiation and passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-        
+      use PHPMailer\PHPMailer\PHPMailer;
+      use PHPMailer\PHPMailer\Exception;
+      require 'PHPMailer/Exception.php';
+      require 'PHPMailer/PHPMailer.php';
+      require 'PHPMailer/SMTP.php';
+       //Instantiation and passing `true` enables exceptions
+       $mail = new PHPMailer(true); 
+
+			if (isset($_POST['submit'])){
         try {
             //Server settings
             $mail->SMTPDebug = 0;                      //Enable verbose debug output
@@ -134,7 +133,7 @@
             $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
             $mail->setFrom('correopruebasoporte46@gmail.com', 'Best Way Shop');
-            $mail->addAddress($_POST['email'], '');     //Add a recipient
+            $mail->addAddress($_POST["email"], '');     //Add a recipient
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Best Way Shop';
@@ -144,12 +143,13 @@
         } catch (Exception $e) {
             //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-    
+      }
 		?>
     <script src="jquery/jquery-3.3.1.min.js"></script>	 	
     <script src="popper/popper.min.js"></script>	 	 	
     <script src="bootstrap4/js/bootstrap.min.js"></script>   	
     <script src="codigo.js"></script> 
     <script src="js/validar.js"></script>
+  
 </body>
 </html>

@@ -12,7 +12,7 @@
 <body>
 
 
-  <form method="post" id=" formulario" class="needs-validation " novalidate> 
+  <form method="post" action="almacenar.php"    id=" formulario" class="needs-validation " novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
@@ -45,51 +45,43 @@
                     <div class="invalid-feedback">!Dato incompleto !</div>
                   </div>
 
-                  
-                    <label for="dir">Género: </label>
                  
+                  <label for="dir">Género: </label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="genero1">
+                    <input class="form-check-input" type="radio" name="genero" id="genero1">
                     <label class="form-check-label" for="genero1">
                       Masculino
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="genero2" >
+                    <input class="form-check-input" type="radio" name="genero" id="genero2" >
                     <label class="form-check-label" for="genero2">
                       Femenino
                     </label>
-                   
                     <div class="invalid-feedback">!Complete el Dato!</div>
                   </div>
                   <br>
-                  
                     <label for="imagen">Imagen</label>
                     <input type="file" id="imagen">
-                  
-                  
                   <hr>
 
                   <div class="form-label-group">
                     <input type="email" id="email" name="email" class="form-control" placeholder="email" required>
                     <label for="email">Correo Electronico</label>
-
                     <div class="valid-feedback">¡Dato Correcto!</div>
                     <div class="invalid-feedback">!Dato incorrecto!</div>
                   </div>
                   
                   <div class="form-label-group">
-                    <input type="password" id="password"class="form-control"placeholder="Contraseña" required >
+                    <input type="password" id="password" name="password" class="form-control"placeholder="Contraseña" required >
                     <label for="password">Contraseña</label>
                     <div class="valid-feedback">¡Contraseña valida!</div>
                     <div class="invalid-feedback">!Contraseña invalida, debe tener al menos 4 digitos !</div>
                   </div>
                   
                   <div class="form-label-group">
-                    <input type="password" id="conpass" class="form-control" placeholder="Contraseña" required  >
+                    <input type="password" id="conpass" name="conpass" class="form-control" placeholder="Contraseña" required  >
                     <label for="conpass">Confirmar Contraseña</label>
-                    
-                    
                   </div>
 
                   <div class="form-check">
@@ -137,7 +129,7 @@
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Best Way Shop';
-            $mail->Body    = '<b>Bienvenido!</b> Gracias por registrarte';
+            $mail->Body    = '<b>Bienvenido a Best Way!</b><br><br>Best Way la mejor manera de comprar y vender.<br><br> Gracias por registrarte' ; 
             $mail->send();
             //echo 'Message has been sent';
         } catch (Exception $e) {

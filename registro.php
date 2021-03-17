@@ -12,7 +12,7 @@
 <body>
 
 
-  <form method="post" action="almacenar.php"    id=" formulario" class="needs-validation " novalidate> 
+  <form method="post" action="conexion.php"    id=" formulario" class="needs-validation "  novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
@@ -48,13 +48,13 @@
                  
                   <label for="dir">Género: </label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="genero" id="genero1">
+                    <input class="form-check-input" type="radio" name="genero" id="genero1" value="masculino">
                     <label class="form-check-label" for="genero1">
                       Masculino
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="genero" id="genero2" >
+                    <input class="form-check-input" type="radio" name="genero" id="genero2" value="femenino">
                     <label class="form-check-label" for="genero2">
                       Femenino
                     </label>
@@ -62,7 +62,7 @@
                   </div>
                   <br>
                     <label for="imagen">Imagen</label>
-                    <input type="file" id="imagen">
+                    <input type="file" id="imagen" name="imagen">
                   <hr>
 
                   <div class="form-label-group">

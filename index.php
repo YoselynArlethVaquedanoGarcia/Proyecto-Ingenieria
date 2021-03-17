@@ -10,12 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
-<?php 
-  include("conexion.php");
-  $con = conectar();
-  //echo"La conexion se realizo exitosamente ";
-  
-  ?>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
           

@@ -22,7 +22,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Registro</h4>
-                <form  method="post" class="needs-validation" novalidate>
+                <form  method="post" action="conexion.php" class="needs-validation" novalidate>
 
                   <div class="form-label-group" id=" divNombre" >
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Completo" required autofocus >

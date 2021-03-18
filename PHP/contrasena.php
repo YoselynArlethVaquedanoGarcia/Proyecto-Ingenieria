@@ -19,7 +19,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Recuperar Contraseña</h4>
-                <form  method="post" action="cambiarContrasena.php" class="needs-validation" novalidate>
+                <form  method="post" action="PHP/cambiarContrasena.php" class="needs-validation" novalidate>
                
                 
                   <div class="form-label-group">

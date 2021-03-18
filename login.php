@@ -55,5 +55,6 @@
     <script src="bootstrap4/js/bootstrap.min.js"></script>   	
     <script src="codigo.js"></script>
     <script src="js/validar.js"></script> 
+    <script src="validar_usuario.php"></script>
 </body>
 </html>

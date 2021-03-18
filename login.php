@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css1/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="style1.css">
     
 </head>
 <body>
@@ -41,7 +41,7 @@
                       </div>
                       <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Iniciar Sesion</button>
                       <div class="text-center">
-                        <a class="small" href="PHP/contrasena.php">¿Olvidaste tu Contraseña?</a></div>
+                        <a class="small" href="contrasena.php">¿Olvidaste tu Contraseña?</a></div>
                     </form>
                 </div>
                 </div>

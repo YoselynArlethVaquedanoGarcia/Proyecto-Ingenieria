@@ -34,7 +34,6 @@ $id = rand();
         //Ejecutar Consulta
         $resultado= mysqli_query($conexion,$sql);
 
-
     mysqli_close($conexion);
 
     header("Location: login.php"); 

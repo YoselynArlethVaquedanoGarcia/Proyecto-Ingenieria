@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrasena</title>
-    <link rel="stylesheet" href="css1/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="../css1/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
     <div class="container">
@@ -53,11 +53,11 @@
             </div>
           </div>
         </div>
-        <script src="jquery/jquery-3.3.1.min.js"></script>	 	
-        <script src="popper/popper.min.js"></script>	 	 	
-        <script src="bootstrap4/js/bootstrap.min.js"></script>   	
-        <script src="codigo.js"></script> 
+        <script src="../jquery/jquery-3.3.1.min.js"></script>	 	
+        <script src="../popper/popper.min.js"></script>	 	 	
+        <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
+        <script src="../codigo.js"></script> 
 
-    <script src="js/validar.js"></script>
+    <script src="../js/validar.js"></script>
 </body>
 </html>

@@ -8,9 +8,9 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestWay</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css1/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css1/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
 
@@ -44,18 +44,48 @@ session_start();
             }
             ?></h6>
             </div>
-            
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="salir.php">Cerrar Sesión</a>
+                <a class="nav-link" href="../config/salir.php">Cerrar Sesión   
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div>
-          <a href="updateUser.php">editar usuario</a>
-      </div>
-      <script src="js/validar.js"></script>
+    <?php 
+    $corr=$_SESSION['correo'];
+        //include 'validar_usuario.php';
+        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+
+        //$sql="SELECT Correo, Nombre, telefono,direccion,imagen FROM usuario where Correo='$corr'";
+        $sql="SELECT * from usuario";
+        $response= mysqli_query($conexion,$sql);
+        //$row = mysql_fetch_array($response);
+    ?>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>correo</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+                while ($fila = mysqli_fetch_assoc($response)) {
+                    echo $fila["idUsuario"];
+                    echo $fila["Correo"];
+                    echo $fila["Nombre"];
+                    echo $fila["Telefono"];
+                }
+            ?>
+
+            </tbody>
+        </table>
+    </div>
+
+
+      <script src="../js/validar.js"></script>
 </body>
 </html>

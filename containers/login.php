@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css1/bootstrap.min.css">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="../css1/bootstrap.min.css">
+    <link rel="stylesheet" href="../style1.css">
     
 </head>
 <body>
@@ -20,7 +20,7 @@
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <h3 class="login-heading mb-4">!Bienvenido a BestWay!</h3>
 
-                    <form method="post" action="validar_usuario.php"  class="needs-validation" novalidate>
+                    <form method="post" action="../config/validar_usuario.php"  class="needs-validation" novalidate>
                       <div class="form-label-group">
                         <input type="email" id="inputEmail"  class="form-control" placeholder="Email address" name="correo" required autofocus >
                         <label for="inputEmail">Correo Electronico</label>
@@ -41,7 +41,7 @@
                       </div>
                       <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Iniciar Sesion</button>
                       <div class="text-center">
-                        <a class="small" href="contrasena.php">¿Olvidaste tu Contraseña?</a></div>
+                        <a class="small" href="../containers/contrasena.php">¿Olvidaste tu Contraseña?</a></div>
                     </form>
                 </div>
                 </div>
@@ -50,11 +50,11 @@
           </div>
         </div>
       </div>
-      <script src="jquery/jquery-3.3.1.min.js"></script>	 	
-    <script src="popper/popper.min.js"></script>	 	 	
-    <script src="bootstrap4/js/bootstrap.min.js"></script>   	
-    <script src="codigo.js"></script>
-    <script src="js/validar.js"></script> 
-    <script src="validar_usuario.php"></script>
+      <script src="../jquery/jquery-3.3.1.min.js"></script>	 	
+    <script src="../popper/popper.min.js"></script>	 	 	
+    <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
+    <script src="../codigo.js"></script>
+    <script src="../js/validar.js"></script> 
+    <script src="../validar_usuario.php"></script>
 </body>
 </html>

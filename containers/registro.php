@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="css1/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="../css1/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
    
 </head>
 <body>
 
 
-  <form method="post" action="conexion.php"  id=" formulario" class="needs-validation "  novalidate> 
+  <form method="post" action="../config/conexion.php"  id=" formulario" class="needs-validation "  novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
@@ -23,7 +23,7 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Registro</h4>
-                <form  method="post" action="conexion.php" class="needs-validation" novalidate>
+                <form  method="post" action="../config/conexion.php" class="needs-validation" novalidate>
 
                   <div class="form-label-group" id=" divNombre" >
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre Completo" required autofocus >
@@ -107,9 +107,9 @@
       <?php
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-      require 'PHPMailer/Exception.php';
-      require 'PHPMailer/PHPMailer.php';
-      require 'PHPMailer/SMTP.php';
+      require '../PHPMailer/Exception.php';
+      require '../PHPMailer/PHPMailer.php';
+      require '../PHPMailer/SMTP.php';
        //Instantiation and passing `true` enables exceptions
        $mail = new PHPMailer(true); 
 
@@ -138,11 +138,11 @@
         }
       }
 		?>
-    <script src="jquery/jquery-3.3.1.min.js"></script>	 	
-    <script src="popper/popper.min.js"></script>	 	 	
-    <script src="bootstrap4/js/bootstrap.min.js"></script>   	
-    <script src="codigo.js"></script> 
-    <script src="js/validar.js"></script>
+    <script src="../jquery/jquery-3.3.1.min.js"></script>	 	
+    <script src="../popper/popper.min.js"></script>	 	 	
+    <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
+    <script src="../codigo.js"></script> 
+    <script src="../js/validar.js"></script>
   
 </body>
 </html>

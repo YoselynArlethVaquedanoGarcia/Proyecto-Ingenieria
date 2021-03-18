@@ -19,23 +19,23 @@
               </div>
               <div class="card-body">
                 <h4 class="card-title text-center">Recuperar Contraseña</h4>
-                <form class="needs-validation" novalidate>
+                <form  method="post" action="cambiarContrasena.php" class="needs-validation" novalidate>
                
                 
                   <div class="form-label-group">
-                    <input type="email" id="email" class="form-control" placeholder="email" required>
+                    <input type="email" id="email"  name ="CorreoContra" class="form-control" placeholder="email" required>
                     <label for="email">Correo Electronico</label>
                   </div>
                   
                   <div class="form-label-group">
-                    <input type="password" id="password"class="form-control"placeholder="Contraseña" required>
+                    <input type="password" id="password" name ="ContraNueva" class="form-control"placeholder="Contraseña" required>
                     <label for="password">Nueva Contraseña</label>
                     <div class="valid-feedback">¡Contraseña valida!</div>
                     <div class="invalid-feedback">!contraseña invalida, al menos 4 digitos !</div>
                   </div>
                   
                   <div class="form-label-group">
-                    <input type="password" id="conpass" class="form-control" placeholder="Contraseña" required>
+                    <input type="password" id="conpass" name ="confirmar" class="form-control" placeholder="Contraseña" required>
                     <label for="conpass">Confirmar Nueva Contraseña</label>
                     <div class="valid-feedback" id ="passwordCompleto" >¡Contraseña Valida!</div>
                     <div class="invalid-feedback">!Contraseña invalida, no concuerda !</div>

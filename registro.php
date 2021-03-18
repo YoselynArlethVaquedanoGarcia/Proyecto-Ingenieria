@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css1/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+   
 </head>
 <body>
 
 
-  <form method="post" action="conexion.php"    id=" formulario" class="needs-validation "  novalidate> 
+  <form method="post" action="conexion.php"  id=" formulario" class="needs-validation "  novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">

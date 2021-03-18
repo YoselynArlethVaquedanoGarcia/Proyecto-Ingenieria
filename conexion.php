@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $database = "proyecto";
-$username = "Chris";
-$password = "zxcv";
+$username = "Yoselyn";
+$password = "Yoselyn123";
 
 $conexion= mysqli_connect($servername,$username,$password, $database);
 
@@ -33,7 +33,6 @@ $id = rand();
         $sql = "INSERT INTO usuario(idUsuario, Nombre, Correo, Telefono, Direccion, Genero,Contraseña,Imagen) VALUES ('$id', '$nombre', '$email', '$telefono','$direccion','$genero','$contraseña','$imagen')";
         //Ejecutar Consulta
         $resultado= mysqli_query($conexion,$sql);
-
 
     mysqli_close($conexion);
 

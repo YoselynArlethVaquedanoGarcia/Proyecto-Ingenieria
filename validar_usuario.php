@@ -3,7 +3,7 @@
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
-$conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+$conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
 
 $consulta="SELECT Correo,Contraseña,Nombre FROM usuario where Correo='$correo' and Contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);

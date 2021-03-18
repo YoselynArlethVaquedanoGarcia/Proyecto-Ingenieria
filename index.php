@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +34,21 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+            <div class="divVar">
+            <h6 class="varh6">
+            <?php 
+            if(isset($_SESSION['correo'])){
+              echo '<p class="variable">Hola <span> </span>'.$_SESSION['correo']."</p>";
+            }
+            ?></h6>
+            </div>
+            
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="salir.php">Cerrar Sesión   
+                </a>
               </li>
             </ul>
           </div>

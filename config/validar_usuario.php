@@ -5,7 +5,7 @@ $contraseña = $_POST['contraseña'];
 
 $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
 
-$consulta="SELECT Correo,Contraseña,Nombre FROM usuario where Correo='$correo' and Contraseña='$contraseña'";
+$consulta="SELECT Correo,Contraseña,idUsuario FROM usuario where Correo='$correo' and Contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
 $filas=mysqli_num_rows($resultado);

@@ -133,3 +133,7 @@
 .varh6 :hover{
   color: rgb(231, 231, 231);
 }
+.info{
+  border-bottom: solid 2px gray !important;
+  margin-left: 20px !important;
+}

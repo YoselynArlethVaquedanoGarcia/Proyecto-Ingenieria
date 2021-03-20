@@ -18,7 +18,7 @@ session_start();
         //include 'validar_usuario.php';
         $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
         //$sql="SELECT Correo, Nombre, telefono,direccion,imagen FROM usuario where Correo='$corr'";
-        $sql="SELECT idUsuario, Correo,Nombre,Telefono,Direccion FROM `usuario` WHERE Correo='$corr'";
+        $sql="SELECT idUsuario, Correo,Nombre,Telefono,Direccion,Imagen FROM `usuario` WHERE Correo='$corr'";
         $response= mysqli_query($conexion,$sql);
         while ($fila = mysqli_fetch_assoc($response)) {
            $id=$fila["idUsuario"];
@@ -26,6 +26,7 @@ session_start();
            $nombre= $fila["Nombre"];
            $telefono= $fila["Telefono"];
            $direccion=$fila["Direccion"];
+           $imagen=$fila["Imagen"];
          }
     ?>
 

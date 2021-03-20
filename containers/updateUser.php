@@ -1,49 +1,66 @@
 <?php 
 include('../layout/navbar.php')
-?>  
+?> 
   <div class="container">
     <div class="row">
-    <div class="col-lg-6">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">correo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>  
-                <td>ID</td>
-                 <td><?php echo $id?></td>
-                </tr>
-                  <tr>
-                    <td>Correo</td>
-                    <td><?php echo $email?></td>
-                  </tr>
-                  <tr>
-                    <td>Nombre</td>
-                    <td><?php echo $nombre?></td>
-                  </tr>
-                  <tr>
-                    <td>Telefono</td>
-                    <td><?php echo $telefono?></td>
-                  </tr>
-                  <tr>
-                    <td>Dirección</td>
-                    <td><?php echo $direccion?>
-                  </td>
-                </tr>
-            </tbody>
-        </table>
+      <div class="col-lg-6"><br>
+      <h2>MY BESTWAY</h2><br>
+      <h4 style="border-bottom: solid 2px gray;"><?php echo $nombre ?></h4><br>
+      <h6 style="border-bottom: solid 2px gray; margin-left: 20px;">Información de Contacto</h6>
+      <div>
+        <p style="border-bottom: solid 2px gray; margin-left: 20px;"> Correo electronico: <?php echo $email ?> </p> 
+        <p style="border-bottom: solid 2px gray; margin-left: 20px;"> Telefono: <?php echo $telefono ?> </p> 
+        <p style="border-bottom: solid 2px gray; margin-left: 20px;"> Dirección: <?php echo $direccion ?> </p> 
       </div>
-      <div class="col-lg-6" >
-          nuevo div <?php echo $id ?>
+      
+      
+      </div>
+      <div class="col-lg-6" ><br>
+          Editar  <?php $id ?>
+          <form method="post" action="updateUser.php" class="needs-validation" novalidate>
+            <input type="hidden" name="idp" id="" value="<?php echo $id ?>">
+            
+            <label for="">Correo</label>
+            <input type="text" class="form-control" name="txtemail" id="txtemail" value="<?php echo $email ?>">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" name="txtnombre" id="txtnombre" value="<?php echo $nombre ?>">
+            <div >
+              <label for="tel">Telefono</label>
+              <input type="number" id="tel" class="form-control" value="<?php echo $telefono ?>" placeholder="telefono" name="txttelefono" required >
+              <div class="valid-feedback">! El telefonico Contiene 8 digitos !</div>
+              <div class="invalid-feedback">!Dato incompleto !</div>
+            </div>
+            <div >
+              <label for="dir">Dirección</label>
+              <input type="text" id="dir" class="form-control" value="<?php echo $direccion ?>" placeholder="direccion" name="txtdireccion" required>
+              <div class="valid-feedback">¡Direccion contiene letras y numeros.!</div>
+              <div class="invalid-feedback">!Dato incompleto !</div>
+            </div><br>
+            
+            <input class="btn btn-primary" type="submit" name="" id="" value="Actualizar">
+          </form>
           <?php 
-            if(isset($_SESSION['idUsuario'])){
-              echo '<p class="variable">Hola <span> </span>'.$_SESSION['idUusuario']."</p>";
+          error_reporting(0);
+          $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+            $idp=$_POST['idp'];
+            $em=$_POST['txtemail'];
+            $user=$_POST['txtnombre'];
+            $tel=$_POST['txttelefono'];
+            $dir=$_POST['txtdireccion'];
+            //UPDATE usuario SET nombre='Cristiano' WHERE idUsuario='742246112';
+            if($em!=null||$user!=null||$tel!=null||$dir!=null){
+              $sql2="UPDATE usuario SET Correo='$em', Nombre='$user', Telefono='$tel', Direccion='$dir' where idUsuario='$idp' ";
+              mysqli_query($conexion, $sql2);
+              if($user=1){
+                header("location: updateUser.php");
+              }
             }
-            ?>
+            
+          ?>
+         
       </div>
     </div>
     </div>
+     <script src="../codigo.js"></script> 
+    <script src="../js/validar.js"></script>
   

@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(!isset($_SESSION['correo'])){
+  error_reporting(0);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

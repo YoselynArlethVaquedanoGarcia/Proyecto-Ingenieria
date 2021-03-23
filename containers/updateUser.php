@@ -41,7 +41,7 @@ include('../layout/navbar.php')
           </form>
           <?php 
           error_reporting(0);
-          $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+          $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
             $idp=$_POST['idp'];
             $em=$_POST['txtemail'];
             $user=$_POST['txtnombre'];

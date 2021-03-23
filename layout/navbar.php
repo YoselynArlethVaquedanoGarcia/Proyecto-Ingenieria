@@ -14,9 +14,11 @@ session_start();
 </head>
 <body>
 <?php 
+  
     $corr=$_SESSION['correo'];
+    if(!empty($corr)){
         //include 'validar_usuario.php';
-        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
         //$sql="SELECT Correo, Nombre, telefono,direccion,imagen FROM usuario where Correo='$corr'";
         $sql="SELECT idUsuario, Correo,Nombre,Telefono,Direccion,Imagen FROM `usuario` WHERE Correo='$corr'";
         $response= mysqli_query($conexion,$sql);
@@ -28,6 +30,8 @@ session_start();
            $direccion=$fila["Direccion"];
            $imagen=$fila["Imagen"];
          }
+
+        }
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">

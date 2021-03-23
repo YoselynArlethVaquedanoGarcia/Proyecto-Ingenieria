@@ -65,10 +65,12 @@ if(!isset($_SESSION['correo'])){
               
             <?php 
             if(isset($_SESSION['correo'])){
-              echo '<p class="variable">Hola <span> </span>'.$nombre."</p>";
+              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
             }
             ?></h6>
+            
             </div>
+            <a href="../containers/updateUser.php" style="text-decoration:none">&nbsp; Editar Usuario</a>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="../config/salir.php">Cerrar Sesión   

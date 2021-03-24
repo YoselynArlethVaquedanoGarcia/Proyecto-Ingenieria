@@ -34,7 +34,7 @@ if(!isset($_SESSION['correo'])){
          }
     ?>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top menu">
         <div class="container">
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@ if(!isset($_SESSION['correo'])){
             </div>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="../config/salir.php">Cerrar Sesión   
+                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
                 </a>
               </li>
             </ul>

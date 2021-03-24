@@ -22,7 +22,7 @@ if(!isset($_SESSION['correo'])){
     $corr=$_SESSION['correo'];
     if(!empty($corr)){
         //include 'validar_usuario.php';
-        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
         //$sql="SELECT Correo, Nombre, telefono,direccion,imagen FROM usuario where Correo='$corr'";
         $sql="SELECT idUsuario, Correo,Nombre,Telefono,Direccion,Imagen FROM `usuario` WHERE Correo='$corr'";
         $response= mysqli_query($conexion,$sql);

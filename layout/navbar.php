@@ -18,9 +18,11 @@ if(!isset($_SESSION['correo'])){
 </head>
 <body>
 <?php 
+  
     $corr=$_SESSION['correo'];
+    if(!empty($corr)){
         //include 'validar_usuario.php';
-        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
         //$sql="SELECT Correo, Nombre, telefono,direccion,imagen FROM usuario where Correo='$corr'";
         $sql="SELECT idUsuario, Correo,Nombre,Telefono,Direccion,Imagen FROM `usuario` WHERE Correo='$corr'";
         $response= mysqli_query($conexion,$sql);
@@ -32,6 +34,8 @@ if(!isset($_SESSION['correo'])){
            $direccion=$fila["Direccion"];
            $imagen=$fila["Imagen"];
          }
+
+        }
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top menu">
@@ -61,10 +65,12 @@ if(!isset($_SESSION['correo'])){
               
             <?php 
             if(isset($_SESSION['correo'])){
-              echo '<p class="variable">Hola <span> </span>'.$nombre."</p>";
+              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
             }
             ?></h6>
+            
             </div>
+            <a href="../containers/updateUser.php" style="text-decoration:none">&nbsp; Editar Usuario</a>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>

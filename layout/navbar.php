@@ -70,7 +70,7 @@ if(!isset($_SESSION['correo'])){
             ?></h6>
             
             </div>
-            <a href="../containers/updateUser.php" style="text-decoration:none">&nbsp; Editar Usuario</a>
+            <a href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>

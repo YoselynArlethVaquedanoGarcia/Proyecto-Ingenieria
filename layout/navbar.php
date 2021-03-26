@@ -63,7 +63,6 @@ if(!isset($_SESSION['correo'])){
             </ul>
 
             <div class="divVar">
-            
             <div class="dropdown show">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?php 
@@ -72,19 +71,15 @@ if(!isset($_SESSION['correo'])){
             }
             ?>
           </a>
-
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
-            
+          <a class="dropdown-item"  style="text-decoration:none ; color:gray"><?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php" style="text-decoration:none ; color:gray">Cerrar Sesión'; }?>  </a>
           </div>
         </div>
-           
-            
             </div>
-            
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
+                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">'; }  ?>
                 </a>
               </li>
             </ul>

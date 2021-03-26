@@ -15,6 +15,7 @@ if(!isset($_SESSION['correo'])){
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css1/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <?php 
@@ -60,6 +61,7 @@ if(!isset($_SESSION['correo'])){
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
+
             <div class="divVar">
             <h6 class="varh6">
               
@@ -81,5 +83,16 @@ if(!isset($_SESSION['correo'])){
         </div>
       </nav>
       <script src="../js/validar.js"></script>
+ 
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <div class="input-group">
+      <div class="input-group-prepend"> 
+        <span class="input-group-text" id="basic-addon1"><i></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </form>
+</nav>
     </body>
 </html>

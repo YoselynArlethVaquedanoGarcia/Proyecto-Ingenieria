@@ -36,5 +36,5 @@ $id = rand();
 
     mysqli_close($conexion);
 
-    header("Location: login.php"); 
+    header("Location: ../containers/login.php"); 
 ?>

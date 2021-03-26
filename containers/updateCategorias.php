@@ -1,7 +1,8 @@
 <?php 
 include('../layout/navbar.php')
 ?> 
-  <div class="container">
+
+<div class="container">
     <div class="row">
       <div class="col-lg-6"><br>
       <h2>MY BESTWAY</h2><br>

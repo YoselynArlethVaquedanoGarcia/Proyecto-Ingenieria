@@ -93,15 +93,23 @@
 
                    <label for="dir">Estado del Producto: </label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod1" value="Nuevo">
+                    <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod1" value="1">
                     <label class="form-check-label" for="Estado_Prod1">
                       Nuevo
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod2" value="Usado">
+                    <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod2" value="2">
                     <label class="form-check-label" for="Estado_Prod2">
                       Usado
+                    </label>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
+                    <div class="invalid-feedback">!Dato incompleto !</div>
+                  </div>
+                  <div class="form-check">
+                  <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod3" value="3">
+                    <label class="form-check-label" for="Estado_Prod23">
+                     No Aplica
                     </label>
                     <div class="invalid-feedback">!Complete el Dato!</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>
@@ -117,11 +125,11 @@
 
                         <?php
                         $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idCategoria,nombreCategoria FROM categoria";
+                        $consultaCon="SELECT idCategoria,Tipocategoria FROM categoria";
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
 
                           while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idCategoria].'">'.$valores[nombreCategoria].'</option>';
+                            echo '<option value="'.$valores[idCategoria].'">'.$valores[Tipocategoria].'</option>';
                       }
                 ?>
                     </select>

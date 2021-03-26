@@ -129,6 +129,7 @@
   display: inline;
   margin-left: auto;
   margin-bottom: -16px;
+
 }
 .varh6 :hover{
   color: rgb(231, 231, 231);
@@ -164,3 +165,13 @@
   border-radius:0;
 }
 
+.btn-check:active+.btn-secondary, .btn-check:checked+.btn-secondary, .btn-secondary.active, .btn-secondary:active, .show>.btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color:#212529;
+  border-color: #51585e;
+height: 75px;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

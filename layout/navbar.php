@@ -63,16 +63,25 @@ if(!isset($_SESSION['correo'])){
             </ul>
 
             <div class="divVar">
-            <h6 class="varh6">
-              
-            <?php 
+            
+            <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php 
             if(isset($_SESSION['correo'])){
-              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
+              echo '<p class="variable"><span> </span>'.$nombre. "</p>";
             }
-            ?></h6>
+            ?>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
+            
+          </div>
+        </div>
+           
             
             </div>
-            <a href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
+            
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
@@ -83,16 +92,7 @@ if(!isset($_SESSION['correo'])){
         </div>
       </nav>
       <script src="../js/validar.js"></script>
- 
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <div class="input-group">
-      <div class="input-group-prepend"> 
-        <span class="input-group-text" id="basic-addon1"><i></i></span>
-      </div>
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-  </form>
-</nav>
+   
+
     </body>
 </html>

@@ -2,6 +2,7 @@
 include('../layout/navbar.php')
 ?>
 <head>
+                     
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,40 +11,18 @@ include('../layout/navbar.php')
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="../js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+    
   </head>
-  <div class="container contenedor">
-    <div class="row">    
-        <div class="col-xs-8 col-xs-offset-2">
-		    <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    
-                    <select class="form-select mg" aria-label="Default select example" name="categoria" id="categoria" required>
-                    <option value="0">Categoria</option>
-
-                        <?php
-                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idCategoria,Tipocategoria FROM categoria";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idCategoria].'">'.$valores[Tipocategoria].'</option>';
-                      }
-                    ?>
-                    </select>
-                   
-                 </div>
-                 
-                <input  type="hidden" name="search_param" value="all" id="search_param">
-                
-                <input type="text" class="  search-query form-control" placeholder="Search" />
-                 
-                  <button  type="button">
-                   Buscar
-                  </button>
-            </div>
-        </div>
-	</div>
-</div>
 <header>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 <div class="carousel-inner" role="listbox">
@@ -126,11 +105,11 @@ include('../layout/navbar.php')
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><script/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-         
+
+ 
 <?php if (isset($_SESSION['correo'])):?> 
  <div class="container">
     <div class="row">
@@ -151,12 +130,13 @@ include('../layout/navbar.php')
 <h6 style="border-bottom: solid 2px gray; margin-left: 20px;">Información de Contacto</h6>
 <?php endif;?>
 
+<section class="customer-logos slider">
 <div class="container">
     <div class="row">
         <div class="row">
             <div class="col-md-9">
                 <h3>
-                    Carousel Product Cart Slider</h3>
+                   Electrónica</h3>
             </div>
             <div class="col-md-3">
                 <!-- Controls -->
@@ -175,27 +155,37 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=877553375";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                                
+                                echo ' <img src="../imagenes/tv.jpg" class="img-responsive" alt="a" />';
+                                
+                    ?>
+                                   
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+                                        <?php
+                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=877553375";
+                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                        }
+                       
+                    ?>
+                               
+                     </div> 
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -205,24 +195,35 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=608629547";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                                
+                                echo ' <img src="../imagenes/samsungA31.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product Example</h5>
-                                            <h5 class="price-text-color">
-                                                $249.99</h5>
+                                    
+                                        <?php
+                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                    $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=608629547";
+                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';}
+                                        ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
                                         </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                        <br>
+                                        <br>
+                                        <div class="separator clear-left">
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -232,27 +233,36 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=877553375";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                                echo ' <img src="../imagenes/LaptopDell.jpg" class="img-responsive" alt="a" />';
+                                
+                    ?>
+                          
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Next Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $149.99</h5>
+                                        <?php
+                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                    $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1531951138";
+                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                        }
+                        ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+                                       
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                        
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -262,27 +272,31 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1842202489";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/impresoraHP.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1842202489";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -296,27 +310,33 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1209257036";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/audifonos.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product with Variants</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1209257036";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                        
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -326,24 +346,33 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=2092270687";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/Tablet.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Grouped Product</h5>
-                                            <h5 class="price-text-color">
-                                                $249.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=2092270687";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -353,15 +382,26 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1028673900";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/smartwatch.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product with Variants</h5>
-                                            <h5 class="price-text-color">
-                                                $149.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1028673900";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                             <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
@@ -370,10 +410,8 @@ include('../layout/navbar.php')
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -383,27 +421,33 @@ include('../layout/navbar.php')
                         <div class="col-sm-3">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1745896938";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                                echo ' <img src="../imagenes/parlante.jpg" class="img-responsive" alt="a" />';
+                                
+                    ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product with Variants</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1745896938";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -419,7 +463,7 @@ include('../layout/navbar.php')
         <div class="row">
             <div class="col-md-9">
                 <h3>
-                    Carousel Product Cart Slider</h3>
+                    Vehículos</h3>
             </div>
             <div class="col-md-3">
                 <!-- Controls -->
@@ -438,27 +482,35 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=917699416";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/audiA4.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=917699416";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -468,24 +520,34 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=2059976625";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/hondaCity.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product Example</h5>
-                                            <h5 class="price-text-color">
-                                                $249.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=2059976625";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -495,27 +557,36 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=399774425";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/suzukiCiaz.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
+                                <br>
+                                <br>
+                           
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Next Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $149.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=399774425";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+                                      
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -529,21 +600,30 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=2084625924";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/T-Cross.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
+                                <br>
+                                <br>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product with Variants</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=2084625924";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+                                      
                                     </div>
                                     <div class="separator clear-left">
                                         <p class="btn-add">
@@ -619,3 +699,4 @@ include('../layout/navbar.php')
         </div>
     </div>
 </div>
+</section>

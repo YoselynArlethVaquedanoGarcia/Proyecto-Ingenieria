@@ -116,8 +116,7 @@
                   </div>
                   <br>
 
-                   
-
+                  
                   <div class="form-group">
 
                   <select class="form-select" aria-label="Default select example" name="categoria" id="categoria" required>
@@ -131,7 +130,7 @@
                           while ($valores = mysqli_fetch_array($resultadoCon)) {
                             echo '<option value="'.$valores[idCategoria].'">'.$valores[Tipocategoria].'</option>';
                       }
-                ?>
+                    ?>
                     </select>
                     <div class="valid-feedback">¡Dato Completo!</div>
                      <div class="invalid-feedback">!Dato incompleto !</div>

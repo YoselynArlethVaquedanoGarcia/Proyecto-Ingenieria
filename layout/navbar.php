@@ -61,7 +61,7 @@ if(!isset($_SESSION['correo'])){
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
-
+  
             <div class="divVar">
             <div class="dropdown show">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,6 +86,7 @@ if(!isset($_SESSION['correo'])){
           </div>
         </div>
       </nav>
+     
       <script src="../js/validar.js"></script>
    
 

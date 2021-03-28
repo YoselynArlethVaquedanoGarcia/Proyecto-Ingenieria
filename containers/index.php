@@ -566,7 +566,8 @@ include('../layout/navbar.php')
                                 </div>
                                 <br>
                                 <br>
-                           
+                                <br>
+                                
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
@@ -609,6 +610,7 @@ include('../layout/navbar.php')
                                 </div>
                                 <br>
                                 <br>
+                            
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
@@ -626,10 +628,8 @@ include('../layout/navbar.php')
                                       
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -639,24 +639,37 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=542183993";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/glc.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Grouped Product</h5>
-                                            <h5 class="price-text-color">
-                                                $249.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=542183993";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
                                         <div class="rating hidden-sm col-md-6">
                                         </div>
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                       
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>
@@ -666,27 +679,33 @@ include('../layout/navbar.php')
                         <div class="col-sm-4">
                             <div class="col-item">
                                 <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                <?php
+                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1127614873";
+                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                echo ' <img src="../imagenes/edge.jpg" class="img-responsive" alt="a" />';
+                                ?>
                                 </div>
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">
-                                            <h5>
-                                                Product with Variants</h5>
-                                            <h5 class="price-text-color">
-                                                $149.99</h5>
+                                        <?php
+                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                        $consultaCon="SELECT Nombre_Prod,Precio  FROM producto where IdProducto=1127614873";
+                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+                                   
+                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
+                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
+                                        }
+                                            ?>
                                         </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
+                                     
                                     </div>
                                     <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                    
                                         <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">Mas detalles</a></p>
                                     </div>
                                     <div class="clearfix">
                                     </div>

@@ -25,7 +25,7 @@
   		<thead>
   			<th>IdCategoria</th>
   			<th>Tipocategoria</th>
-  			<th> <a href="agregarCategoria.php"> <button type="button" class="btn btn-info">Nuevo</button> </a> </th>
+  			<th> <a href="../config/agregarCategoria.php"> <button type="button" class="btn btn-info">Agregar</button> </a> </th>
   		</thead>
   		
   		
@@ -42,7 +42,7 @@
           echo "<td>"; echo $valores['idCategoria']; echo "</td>";
           echo "<td>"; echo $valores['Tipocategoria']; echo "</td>";
           echo "<td>  <a href='../config/modificarCategoria.php?idCategoria=".$valores['idCategoria']."'> <button type='button' class='btn btn-success'>Modificar</button> </a> </td>";
-          echo "<td> <a href='eliminar_prod.php?idCategoria=".$valores['idCategoria']."''><button type='button' class='btn btn-danger'>Eliminar</button></a> </td>";
+          echo "<td> <a href='../config/eliminarCategoria.php?idCategoria=".$valores['idCategoria']."''><button type='button' class='btn btn-danger'>Eliminar</button></a> </td>";
         echo "</tr>";
       }
 

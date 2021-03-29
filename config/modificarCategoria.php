@@ -26,8 +26,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modificar Categoria</title>
 <link rel="stylesheet" href="../css1/bootstrap.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
 <body>
 <div class="container">
@@ -54,10 +54,7 @@
 
                  <br>
                   <button class="btn btn-lg btn-primary btn-block " type="submit" >Guardar</button>
-                  <br>
-                  <a class="d-block text-center mt-2 small" href="../containers/RegistroCategorias.php">Seguir Modificando</a>
-                  <hr class="my-4">
-                 
+                  
                   
                 </form>
               </div>

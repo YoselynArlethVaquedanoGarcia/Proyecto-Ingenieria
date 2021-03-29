@@ -1,5 +1,8 @@
 
-
+<?php 
+include('../layout/navbar.php')
+?>
+<head>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,51 +14,6 @@
    
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top menu">
-        <div class="container">
-          
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.php">BestWay   
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.php">Iniciar Sesion</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="registro.php">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-            </ul>
-
-            <div class="divVar">
-            <h6 class="varh6">
-              
-            <?php 
-            if(isset($_SESSION['correo'])){
-              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
-            }
-            ?></h6>
-            
-            </div>
-            <a href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
   <form method="post" action="../config/conexion1.php"  id="formulario" class="needs-validation "  novalidate> 
     <div class="container">
         <div class="row">

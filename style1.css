@@ -2,12 +2,16 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: 0.75rem;
   }
-  
+ 
   .login,
   .image {
     min-height: 100vh;
   }
   
+  body {
+  background: Lightsalmon;
+  background: linear-gradient(to right, Lightseagreen,Mediumturquoise);
+}
   .bg-image {
     background-image: url('imagenes/logo.png');
     background-size: cover;

@@ -567,7 +567,6 @@ include('../layout/navbar.php')
                                 <br>
                                 <br>
                                 <br>
-                                
                                 <div class="info">
                                     <div class="row">
                                         <div class="price col-md-6">

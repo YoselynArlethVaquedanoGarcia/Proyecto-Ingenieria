@@ -111,8 +111,18 @@ include('../layout/navbar.php')
                      <div class="invalid-feedback">!Dato incompleto !</div>
                  </div>
                   <br>
-                   <label for="imagen_Prod">Imagen</label>
-                    <input type="file" id="imagen_Prod" name="imagen_Prod" >
+                   <label for="imagen_Prod">Imagen 1:</label>
+                    <input type="file" id="imagen_Prod" name="imagen_Prod" ><br>
+                    <br>
+                    <label for="imagen_Prod">Imagen 2:</label>
+                    <input type="file" id="imagen_Prod1" name="imagen_Prod" ><br>
+                    <br>
+                    <label for="imagen_Prod">Imagen3:</label>
+                    <input type="file" id="imagen_Prod2" name="imagen_Prod" ><br>
+                    <br>
+                    <label for="imagen_Prod">Imagen4:</label>
+                    <input type="file" id="imagen_Prod2" name="imagen_Prod" >
+                   
                   <hr>
 
 

@@ -48,14 +48,14 @@ if(!isset($_SESSION['correo'])){
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">BestWay   
+                <a class="nav-link" href="../containers/index.php">BestWay   
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.php">Iniciar Sesion</a>
+                <a class="nav-link" href="../containers/login.php">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="registro.php">Registrarse</a>
+                <a class="nav-link" href="../containers/registro.php">Registrarse</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>

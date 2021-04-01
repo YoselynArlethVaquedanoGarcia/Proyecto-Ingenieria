@@ -1,6 +1,12 @@
-<header class="site-navbar" role="banner">
+<style>
+  a{
+    color:white;
+  }
+</style>
+
+<header class="site-navbar" role="banner" >
 <div class="site-navbar-top">
-        <div class="container">
+        <div class="container" >
           <div class="row align-items-center">
 
             <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
@@ -36,12 +42,12 @@
         </div>
       </div> 
 
-      <nav class="site-navigation  " role="navigation">
-        <div class="container">
-        <div class="row align-items-center">
+      <nav class="site-navigation " role="navigation">
+        <div class="container" >
+        <div class="row align-items-center" >
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li>
-              <a href="index.php">Home</a>
+              <a href="index.php"  >Home</a>
             
             </li>
             <li>

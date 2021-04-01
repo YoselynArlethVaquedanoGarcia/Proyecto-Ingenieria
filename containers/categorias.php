@@ -19,11 +19,13 @@
 
     <link rel="stylesheet" href="../css/style3.css">
     
-    <style>
-    h1,a { color:  mediumturquoise; }
-  </style>
+   <style>
+     .h1{
+       color:black;
+     }
+   </style>
   </head>
-  <body>
+  <body style="Background-color:  mediumturquoise">
   
   <div class="site-wrap">
     <?php include("../layout/header.php"); ?> 
@@ -62,7 +64,7 @@
                 </div>
               </div>
             </div>
-            <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Productos</h1>
+            <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:black">Productos</h1>
 
 <hr class="mt-2 mb-5">
 
@@ -115,17 +117,27 @@
           <div class="col-md-3 order-1 mb-5 mb-md-0">
             <div class="border p-4 rounded mb-4">
               <h3 class="mb-3 h6 text-uppercase text-black d-block"><span>Categorias</span> </h3>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Elija una categoria</option>
-                <?php
+              <ul class="list-unstyled mb-0">
+              <?php
                         $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                         $consultaCon="SELECT idCategoria,Tipocategoria FROM categoria";
+                        
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idCategoria].'">'.$valores[Tipocategoria].'</option>';
+                          while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
+                            ?>
+                            <li class="mb-1"><a href="#" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <?php 
+                             $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                             $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];
+                             $resultadoCon1=mysqli_query($conexion,$consultaCon1);
+                             $resultados= mysqli_fetch_row($resultadoCon1);
+                              echo $resultados[0];
+                            
                       }
                     ?>
+               
+              </ul>
+               
             </select>
             </div>
 

@@ -147,8 +147,7 @@ include('../layout/navbar.php')
                                 
                                 echo ' <img src="../imagenes/tv.jpg" class="img-responsive" alt="a" />';
                                 
-                    ?>
-                                   
+                    ?>   
                                 </div>
                                 <div class="info">
                                     <div class="row">

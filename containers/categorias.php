@@ -19,6 +19,9 @@
 
     <link rel="stylesheet" href="../css/style3.css">
     
+    <style>
+    h1,a { color:  mediumturquoise; }
+  </style>
   </head>
   <body>
   
@@ -59,30 +62,35 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-5">
-           
-                    <?php
+            <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Productos</h1>
+
+<hr class="mt-2 mb-5">
+
+    <div class="row text-center text-lg-left">
+  <?php
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                      $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto ";
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
                      
-                     while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
-                      echo '<div class="col-sm-3">';
-                      echo '<div class="col-item">';
-                      echo '<div class="photo">';
-                      echo ' <img src="../imagenes/'.$resultado['imagen_Prod'].'" alt="Image placeholder" class="img-responsive"  />';
-                      echo '</div>';
-                      echo '<div class="block-4-text p-4">';
-                      echo '<h3><a href="shop-single.php">Tank Top</a></h3>';
-                      echo '<p class="mb-0">Finding perfect t-shirt</p>';
-                      echo '<p class="text-primary font-weight-bold">$50</p>';
+                    while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
+                      echo '<div class="col-lg-3 col-md-4 col-6">';
+                      echo ' <a href="#" class="d-block mb-4 h-100">';
+                      echo '<img class="img-fluid img-thumbnail" src="../imagenes/'.$resultado["imagen_Prod"].'" alt="" style="width:300px;height:250px;">';
+                      echo '</a>';
+                      echo '<div class="card-body" style="height:200px; >';
+                      echo '<h4  class="card-text" >'.$resultado["Nombre_Prod"].'</h4>';
+                      echo '<h5  class="card-text">';
+                      echo '<p class="text-primary font-weight-bold">L'.$resultado["Precio"].'.00</p>';
+                      echo '</h5>';
+                      echo "<a href='../config/detalles.php?idProducto=".$resultado['idProducto']."' class='hidden-sm'>Mas detalles</a>";
                       echo ' </div>';
                       echo ' </div>';
-                      echo '</div>';
-                     }
-                    
-
+                      
+                    }
                     ?>
+           
+                   
+                   
                  
                         
                         </div>
@@ -181,7 +189,7 @@
         
       </div>
     </div>
-    <?php include("./layouts/header.php"); ?> 
+    <?php include("./layouts/foo.php"); ?> 
 
     
   </div>

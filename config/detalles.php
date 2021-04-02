@@ -68,6 +68,7 @@ include('../layout/navbar.php')
       <div class="form-group">
     <label for="exampleFormControlTextarea1">Comentario:</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
   </div>
 <?php endif;?>
 <?php if (!isset($_SESSION['correo'])):?> 

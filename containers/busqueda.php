@@ -1,3 +1,9 @@
+<?php   
+    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+    if(!isset($_GET['texto'])){
+        header("Location: ../containers/categorias.php"); 
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,7 +44,7 @@
 
             <div class="row">
               <div class="col-md-12 mb-5">
-                <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
+                <div class="float-md-left mb-4"><h1 class="text-black h5">Buscando resultados para <?php echo $_GET['texto']; ?></h1></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,24 +72,17 @@
             </div>
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:black">Productos</h1>
 
-<hr class="mt-2 mb-5">
-
-    <div class="row text-center text-lg-left">
-  <?php
+        <hr class="mt-2 mb-5">
+        <div class="row text-center text-lg-left">
+    <?php
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $limite=10;//productos por pagina
-                     $totalQuery=$conexion->query("SELECT count(*) FROM producto ");
-                     $totalProductos=mysqli_fetch_row($totalQuery);
-                     $totalBotones=round($totalProductos[0]/$limite);
-                     if(isset($_GET['limite'])){
-                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
-                     }else{
-                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$limite);
-                     }
-                    
-                     
-                     
-                    while ($resultado=mysqli_fetch_array($resultados,MYSQLI_ASSOC)){
+                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Nombre_Prod like '%".$_GET['texto']."%' or  Descripcion like '%".$_GET['texto']."%' order by idProducto DESC ";
+                     $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                     if(mysqli_num_rows($resultadoCon)>0){
+
+                   
+                    while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
                     <div class="col-lg-3 col-md-4 col-6">
                     <a href="#" class="d-block mb-4 h-100">
@@ -91,15 +90,16 @@
                     </a>
                     <div class="card-body" style="height:200px"; >
                     <h4  class="card-text" ><?php echo $resultado["Nombre_Prod"]; ?></h4>
-                    <h5  class="card-text">
+                    <h5  class="card-text">;
                     <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
                     </h5>
-                    <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
+                    <a href=../config/detalles.php?idProducto="<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
-                      
-                   
-                  <?php   } ?>
+                  <?php   }   }else{
+                      echo '<h2>Sin resultados</h2>';
+                  }?>
+                    
            
                    
                    
@@ -111,25 +111,13 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    
-                  <?php
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])>0){
-                    echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']-10).'">&lt;</a></li>';
-                    }
-                  }
-                  for($k=0;$k<$totalBotones;$k++){
-                    echo '<li><a href="../containers/categorias.php?limite='.($k*10).'">'.($k+1).'</a></li>';
-                  }
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])+10 < $totalBotones*10){
-                      echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']+10).'">&gt;</a></li>';
-                    }
-                  }else{
-                    echo '<li><a href="../containers/categorias.php?limite=10">&gt;</a></li>';
-                  }
-                  ?>
-                    
+                    <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
                   </ul>
                 </div>
               </div>

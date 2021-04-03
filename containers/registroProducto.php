@@ -2,6 +2,7 @@
 <?php 
 include('../layout/navbar.php')
 ?>
+
 <head>
 <head>
     <meta charset="UTF-8">
@@ -115,17 +116,16 @@ include('../layout/navbar.php')
                     <input type="file" id="imagen_Prod" name="imagen_Prod" ><br>
                     <br>
                     <label for="imagen_Prod">Imagen 2:</label>
-                    <input type="file" id="imagen_Prod1" name="imagen_Prod" ><br>
+                    <input type="file" id="imagen_Prod1" name="imagen_Prod1" ><br>
                     <br>
                     <label for="imagen_Prod">Imagen3:</label>
-                    <input type="file" id="imagen_Prod2" name="imagen_Prod" ><br>
+                    <input type="file" id="imagen_Prod2" name="imagen_Prod2" ><br>
                     <br>
                     <label for="imagen_Prod">Imagen4:</label>
-                    <input type="file" id="imagen_Prod2" name="imagen_Prod" >
+                    <input type="file" id="imagen_Prod3" name="imagen_Prod3" >
                    
                   <hr>
-
-
+                  
                  <br>
                   <button class="btn btn-lg btn-primary btn-block " type="submit" name="submit" >Guardar</button>
                              

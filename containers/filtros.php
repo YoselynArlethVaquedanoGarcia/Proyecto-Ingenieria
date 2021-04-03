@@ -1,3 +1,9 @@
+<?php   
+    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+    if(!isset($_GET['texto'])){
+        header("Location: ../containers/categorias.php"); 
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../css/bootstrap1.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/magnific-popup.css">
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
@@ -69,29 +75,43 @@
 
 <hr class="mt-2 mb-5">
 
-<div class="row mb-5">
-
-
+    <div class="row text-center text-lg-left">
   <?php
-                     $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $limite=10;//productos por pagina
-                     $totalQuery=$conexion->query("SELECT count(*) FROM producto ");
-                     $totalProductos=mysqli_fetch_row($totalQuery);
-                     $totalBotones=round($totalProductos[0]/$limite);
-                     if(isset($_GET['limite'])){
-                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
-                     }else{
-                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$limite);
-                     }
-                    
+
+            $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+          
+        
+           
+           
+            switch ($_GET['texto']) {
+                case "pasc":
+                    $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                    FROM producto ORDER BY Precio ASC  ";
+                    break;
+                case "pdesc":
+                    $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                    FROM producto ORDER BY Precio DESC  ";
+                    break;
+                case "nasc":
+                    $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                    FROM producto ORDER BY Nombre_Prod ASC  ";
+                    break;
+
+                case "ndesc":
+                        $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                        FROM producto ORDER BY Nombre_Prod DESC  ";
+                        break;
+            }
                      
+                   
+                     $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                     if(mysqli_num_rows($resultadoCon)>0){
+                   
                      
-                    while ($resultado=mysqli_fetch_array($resultados,MYSQLI_ASSOC)){
+                    while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
-                    
-                    <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                    <div class="block-4 text-center border">
-                    
+                    <div class="col-lg-3 col-md-4 col-6">
                     <a href="#" class="d-block mb-4 h-100">
                     <img class="img-fluid img-thumbnail" src="../imagenes/<?php echo $resultado["imagen_Prod"]; ?>" alt="" style="width:300px;height:250px;">
                     </a>
@@ -103,37 +123,27 @@
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
-                    </div> 
-                   
-                  <?php   } ?>
+                      
+                    <?php  }   } ?>
            
-        </div>
-    
-        
+                   
+                   
+                 
+                        
+                        </div>
+                    
             <div class="row" data-aos="fade-up">
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
                     
-                  <?php
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])>0){
-                    echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']-10).'">&lt;</a></li>';
-                    }
-                  }
-                  for($k=0;$k<$totalBotones;$k++){
-                    echo '<li><a href="../containers/categorias.php?limite='.($k*10).'">'.($k+1).'</a></li>';
-                  }
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])+10 < $totalBotones*10){
-                      echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']+10
-                      ).'">&gt;</a></li>';
-                    }
-                  }else{
-                    echo '<li><a href="../containers/categorias.php?limite=10">&gt;</a></li>';
-                  }
-                  ?>
-                    
+                  <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
                   </ul>
                 </div>
               </div>
@@ -152,6 +162,7 @@
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
                             <li class="mb-1"><a href="../busqueda.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];

@@ -15,7 +15,6 @@ if(!isset($_SESSION['correo'])){
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css1/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <?php 
@@ -48,47 +47,39 @@ if(!isset($_SESSION['correo'])){
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="../containers/index.php">BestWay   
+                <a class="nav-link" href="index.php">BestWay   
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../containers/login.php">Iniciar Sesion</a>
+                <a class="nav-link" href="login.php">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../containers/registro.php">Registrarse</a>
+                <a class="nav-link" href="registro.php">Registrarse</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
-  
             <div class="divVar">
-            <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php 
+            <h6 class="varh6">
+              
+            <?php 
             if(isset($_SESSION['correo'])){
-              echo '<p class="variable"><span> </span>'.$nombre. "</p>";
+              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
             }
-            ?>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Editar Usuario</a>
-          <a class="dropdown-item"  style="text-decoration:none ; color:gray"><?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php" style="text-decoration:none ; color:gray">Cerrar Sesión'; }?>  </a>
-          </div>
-        </div>
+            ?></h6>
+            
             </div>
+            <a href="../containers/updateUser.php" style="text-decoration:none">&nbsp; Editar Usuario</a>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">'; }  ?>
+                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-     
       <script src="../js/validar.js"></script>
-   
-
     </body>
 </html>

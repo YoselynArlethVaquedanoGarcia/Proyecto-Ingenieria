@@ -22,9 +22,10 @@ $id = rand();
     $imagen1= $_POST['imagen_Prod1'];
     $imagen2= $_POST['imagen_Prod2'];
     $imagen3= $_POST['imagen_Prod3'];
+    $id= $_POST['idUsuario'];
 
         //Consulta para Insertar
-        $sql = "INSERT INTO producto(idProducto, Nombre_Prod, Precio, Descripcion,imagen_Prod,Estado_idEstado,Categoria_idCategoria,Departamento_idDepartamento,imagen_Prod1,imagen_Prod2,imagen_Prod3) VALUES ('$id', '$nombre', '$precio', '$descripcion','$imagen','$estado','$categoria','$departamento','$imagen1','$imagen2','$imagen3')";
+        $sql = "INSERT INTO producto(idProducto, Nombre_Prod, Precio, Descripcion,imagen_Prod,Estado_idEstado,Categoria_idCategoria,Departamento_idDepartamento,imagen_Prod1,imagen_Prod2,imagen_Prod3,idUsuario) VALUES ('$id', '$nombre', '$precio', '$descripcion','$imagen','$estado','$categoria','$departamento','$imagen1','$imagen2','$imagen3','$id')";
         //Ejecutar Consulta
         $resultado= mysqli_query($conexion,$sql);
 

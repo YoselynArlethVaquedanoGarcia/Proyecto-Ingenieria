@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap1.min.css">
     <link rel="stylesheet" href="../css/magnific-popup.css">
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
@@ -84,18 +84,22 @@
                    
                     while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
-                    <div class="col-lg-3 col-md-4 col-6">
+                     <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="block-4 text-center border">
+                    
                     <a href="#" class="d-block mb-4 h-100">
                     <img class="img-fluid img-thumbnail" src="../imagenes/<?php echo $resultado["imagen_Prod"]; ?>" alt="" style="width:300px;height:250px;">
                     </a>
                     <div class="card-body" style="height:200px"; >
                     <h4  class="card-text" ><?php echo $resultado["Nombre_Prod"]; ?></h4>
-                    <h5  class="card-text">;
+                    <h5  class="card-text">
                     <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
                     </h5>
-                    <a href=../config/detalles.php?idProducto="<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
+                    <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
+                    </div> 
+                   
                   <?php   }   }else{
                       echo '<h2>Sin resultados</h2>';
                   }?>
@@ -211,7 +215,7 @@
         
       </div>
     </div>
-    <?php include("./layouts/foo.php"); ?> 
+  
 
     
   </div>
@@ -220,7 +224,7 @@
   <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/jquery-ui.js"></script>
   <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap1.min.js"></script>
   <script src="../js/owl.carousel.min.js"></script>
   <script src="../js/jquery.magnific-popup.min.js"></script>
   <script src="../js/aos.js"></script>

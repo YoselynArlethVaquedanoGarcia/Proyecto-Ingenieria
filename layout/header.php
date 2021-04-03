@@ -1,8 +1,4 @@
-<style>
-  a{
-    color:white;
-  }
-</style>
+
 
 <header class="site-navbar" role="banner" >
 <div class="site-navbar-top">
@@ -42,22 +38,22 @@
         </div>
       </div> 
 
-      <nav class="site-navigation " role="navigation">
+      <nav class="site-navigation " role="navigation"  style="background-color:black ">
         <div class="container" >
         <div class="row align-items-center" >
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li>
-              <a href="index.php"  >Home</a>
+              <a href="index.php" style="color:white" >Home</a>
             
             </li>
             <li>
-              <a href="about.php">About</a>
+              <a href="about.php" style="color:white" >About</a>
             
             </li>
           
-            <li><a href="#">Catálogo</a></li>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="contact.php">Contacto</a></li>
+            <li><a href="#" style="color:white" >Catálogo</a></li>
+            <li><a href="#" style="color:white" >New Arrivals</a></li>
+            <li><a href="contact.php" style="color:white" >Contacto</a></li>
           </ul>
         </div>
        </div>

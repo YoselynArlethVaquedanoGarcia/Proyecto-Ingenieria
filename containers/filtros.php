@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="../fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap1.min.css">
     <link rel="stylesheet" href="../css/magnific-popup.css">
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
@@ -48,7 +48,7 @@
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Latest
+                      Mas Recientes
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                       <a class="dropdown-item" href="#">Inmuebles</a>
@@ -57,15 +57,14 @@
                     </div>
                   </div>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
+                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Filtrar</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                       <a class="dropdown-item" href="../containers/filtros.php?texto=pasc">Precio ascendente</a>
                       <a class="dropdown-item" href="../containers/filtros.php?texto=pdesc">Precio descendente</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=desc">Nombre, Z-A</a>
+                     
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Price, low to high</a>
-                      <a class="dropdown-item" href="#">Price, high to low</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre Producto, A-Z</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?texto=desc">Nombre Producto, Z-A</a>
                     </div>
                   </div>
                 </div>
@@ -73,15 +72,13 @@
             </div>
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:black">Productos</h1>
 
-<hr class="mt-2 mb-5">
+          <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">
   <?php
 
             $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
           
-        
-           
            
             switch ($_GET['texto']) {
                 case "pasc":
@@ -111,7 +108,9 @@
                      
                     while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
-                    <div class="col-lg-3 col-md-4 col-6">
+                    <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="block-4 text-center border">
+                    
                     <a href="#" class="d-block mb-4 h-100">
                     <img class="img-fluid img-thumbnail" src="../imagenes/<?php echo $resultado["imagen_Prod"]; ?>" alt="" style="width:300px;height:250px;">
                     </a>
@@ -123,6 +122,8 @@
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
+                    </div> 
+                   
                       
                     <?php  }   } ?>
            
@@ -247,7 +248,7 @@
   <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/jquery-ui.js"></script>
   <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap1.min.js"></script>
   <script src="../js/owl.carousel.min.js"></script>
   <script src="../js/jquery.magnific-popup.min.js"></script>
   <script src="../js/aos.js"></script>

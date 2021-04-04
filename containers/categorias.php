@@ -180,6 +180,7 @@
                 <form action="../containers/filtroFecha.php" method="post">
                   <input type="date" id="date" name="date" class="mr-2 mt-1"> 
                 </label>
+                <button>Buscar</button>
                 </form>
                 
               </div>
@@ -238,7 +239,7 @@
         
       </div>
     </div>
-    <?php include("./layouts/foo.php"); ?> 
+   
 
     
   </div>

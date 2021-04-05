@@ -1,12 +1,15 @@
-<?php
- $fecha= $_POST['date'];
- 
-?>
+<?php   
+    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+    $categoria =$_GET['texto'];
+    if(!isset($categoria)){
+        header("Location: ../containers/hola.php"); 
+    }
 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BestWay</title>
+    <title>Tienda</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,8 +43,8 @@
 
         <div class="row mb-5">
           <div class="col-md-9 order-2">
-            
-            <div class="row">
+
+          <div class="row">
               <div class="col-md-12 mb-5">
                 <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
                 <div class="d-flex">
@@ -72,31 +75,23 @@
             
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:black">Productos</h1>
 
-<hr class="mt-2 mb-5">
-
-<div class="row mb-5">
-
-
-  <?php
-                     $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-
-                     
+        <hr class="mt-2 mb-5">
+        <div class="row text-center text-lg-left">
+    <?php
                    
-
-                     
-                     $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Fecha_Registro like '%".$fecha."%' order by idProducto  ";
-                    
-                     $resultadoCon=mysqli_query($conexion,$consultaCon);
+                   $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                   $sql="SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p
+                   inner join categoria c on c.idCategoria = p.Categoria_idCategoria
+                   where  p.Nombre_Prod like '%".$categoria."%' or p.Descripcion like '%".$categoria."%' or c.Tipocategoria='$categoria'  
+                   order by p.idProducto DESC";
+                     $resultadoCon=mysqli_query($conexion,$sql);
 
                      if(mysqli_num_rows($resultadoCon)>0){
 
                    
                     while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
-                    
-                    
-                    <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                     <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                     <div class="block-4 text-center border">
                     
                     <a href="#" class="d-block mb-4 h-100">
@@ -112,27 +107,28 @@
                     </div>
                     </div> 
                    
-                  
                   <?php   }   }else{
                       echo '<h2>Sin resultados</h2>';
                   }?>
+                    
            
-        </div>
-    
-        
+                   
+                   
+                 
+                        
+                        </div>
+                    
             <div class="row" data-aos="fade-up">
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                  <li><a href="#">&lt;</a></li>
+                    <li><a href="#">&lt;</a></li>
                     <li class="active"><span>1</span></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
                     <li><a href="#">&gt;</a></li>
-          
-                 
                   </ul>
                 </div>
               </div>
@@ -150,7 +146,7 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../busqueda.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];
@@ -172,18 +168,16 @@
                 <div id="slider-range" class="border-primary"></div>
                 <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
               </div>
-
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Fecha</h3>
                 <label for="s_sm" class="d-flex">
                 <form action="../containers/filtroFecha.php" method="post">
                   <input type="date" id="date" name="date" class="mr-2 mt-1"> 
-                </label><br>
+                </label>
                 <button class="btn btn-info">Buscar</button>
                 </form>
                 
               </div>
-
             </div>
           </div>
         </div>
@@ -238,7 +232,7 @@
         
       </div>
     </div>
-   
+  
 
     
   </div>

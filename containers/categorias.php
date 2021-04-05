@@ -151,7 +151,7 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../busqueda.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];
@@ -172,6 +172,7 @@
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Precio</h3>
                 <div id="slider-range" class="border-primary"></div>
                 <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+          
               </div>
 
               <div class="mb-4">
@@ -180,7 +181,7 @@
                 <form action="../containers/filtroFecha.php" method="post">
                   <input type="date" id="date" name="date" class="mr-2 mt-1"> 
                 </label>
-                <button>Buscar</button>
+                <button class="btn btn-info">Buscar</button>
                 </form>
                 
               </div>

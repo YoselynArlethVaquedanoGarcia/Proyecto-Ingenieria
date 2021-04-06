@@ -149,8 +149,9 @@
                               echo $resultados[0];
                             
                       }
+                      echo  '</a>';
                     ?>
-               
+               </li>
               </ul>
                
             </select>

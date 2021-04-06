@@ -155,8 +155,9 @@
                               echo $resultados[0];
                             
                       }
+                      echo  '</a>';
                     ?>
-               
+               </li>
               </ul>
                
             </select>
@@ -165,16 +166,20 @@
             <div class="border p-4 rounded mb-4">
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Precio</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+                <form action="../containers/filtroPrecio.php" method="POST">
+                <input type="text"  class="form-control" placeholder="L. Mín" style="height: 30px; width:79px" name="minimo"  id="minimo">
+                <span class="input-group-text" style="height: 25px; padding: 3px;width:15px">-</span>
+                <input type="text" class="form-control" placeholder="L. Máx" style="height: 30px;width:79px" name="maximo" id="maximo"><br>
+                <button class="btn btn-info">Filtrar</button>
+                </form>
               </div>
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Fecha</h3>
                 <label for="s_sm" class="d-flex">
                 <form action="../containers/filtroFecha.php" method="post">
                   <input type="date" id="date" name="date" class="mr-2 mt-1"> 
-                </label>
-                <button class="btn btn-info">Buscar</button>
+                </label><br>
+                <button class="btn btn-info">Filtrar</button>
                 </form>
                 
               </div>

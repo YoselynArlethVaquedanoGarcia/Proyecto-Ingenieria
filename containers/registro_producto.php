@@ -25,13 +25,13 @@
                 <h4 class="card-title text-center">Registro de Producto</h4>
                 <form  method="post" action="../config/registro_producto.php" class="needs-validation" novalidate>
 
-                  <div class="form-label-group" >
-                    <input type="text" id="nombreProd" name="nombreProd" class="form-control" placeholder="Nombre Producto" required autofocus >
-                    <label for="nombre_Prod">Nombre Producto</label>
-                    <div  class="valid-feedback">!Dato completo !</div>
-                    <div class="invalid-feedback">¡Dato incompleto !</div>
+                <div class="form-label-group">
+                    <input type="texto" id="nombreProd" name="nombreProd" class="form-control" placeholder="Precio"  required >
+                    <label for="nombreProd">Nombre de Producto</label>
+                    <div class="valid-feedback">!Dato completo !</div>
+                    <div class="invalid-feedback">!Dato incompleto !</div>
                   </div>
-
+                  
                   <div class="form-label-group">
                     <input type="texto" id="Precio" name="Precio" class="form-control" placeholder="Precio"  required >
                     <label for="Precio">Precio</label>
@@ -71,13 +71,13 @@
                     <option value="0">Categoria</option>
 
                         <?php
-                        $conexion=mysqli_connect("localhost","wendydb","my123","proyecto");
-                        $consultaCon="SELECT idCategoria,nombreCategoria FROM categoria";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idCategoria].'">'.$valores[nombreCategoria].'</option>';
-                      }
+                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                              $consultaCon="SELECT idCategoria,Tipocategoria FROM categoria";
+                              $resultadoCon=mysqli_query($conexion,$consultaCon);
+      
+                                while ($valores = mysqli_fetch_array($resultadoCon)) {
+                                  echo '<option value="'.$valores[idCategoria].'">'.$valores[Tipocategoria].'</option>';
+                            }
                 ?>
                     </select>
                     <div class="valid-feedback">¡Dato Completo!</div>
@@ -89,13 +89,13 @@
                     <option value="0">Departamento</option>
 
                         <?php
-                        $conexion=mysqli_connect("localhost","wendydb","my123","proyecto");
-                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
-                      }
+                         $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                         $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
+                         $resultadoCon=mysqli_query($conexion,$consultaCon);
+ 
+                           while ($valores = mysqli_fetch_array($resultadoCon)) {
+                             echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
+                       }
                 ?>
                     </select>
                     <div class="valid-feedback">¡Dato Completo!</div>

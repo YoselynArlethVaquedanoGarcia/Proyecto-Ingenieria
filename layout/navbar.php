@@ -63,26 +63,40 @@ if(!isset($_SESSION['correo'])){
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
+       
             <div class="divVar">
-            <h6 class="varh6">
-              
-            <?php 
+            <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php 
             if(isset($_SESSION['correo'])){
-              echo '<p class="variable">Hola <span> </span>'.$nombre. "</p>";
+              echo '<p class="variable"><span> </span>'.$nombre. "</p>";
             }
-            ?></h6>
-            
+            ?>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="../containers/updateUser.php" style="text-decoration:none ; color:gray">&nbsp; Contacto</a>
+          <a class="dropdown-item"  style="text-decoration:none ; color:gray">
+            <?php if(isset($_SESSION['correo'])){ 
+                  echo '<a class="nav-link" href="../containers/updateUser.php" style="text-decoration:none ; color:gray">Editar Usuario'; 
+                  echo '<a class="nav-link" href="../containers/registroProducto.php" style="text-decoration:none ; color:gray">Registro Producto'; 
+                  echo '<a class="nav-link" href="../containers/mi_Productos.php" style="text-decoration:none ; color:gray">Mis Productos'; 
+                  echo '<a class="nav-link" href="../config/salir.php" style="text-decoration:none ; color:gray">Cerrar Sesión'; 
+                  
+                }?>  </a>
+          </div>
+        </div>
             </div>
-            <a href="../containers/updateUser.php" style="text-decoration:none">&nbsp; Editar Usuario</a>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">Cerrar Sesión'; }  ?>
+                <?php if(isset($_SESSION['correo'])){ echo '<a class="nav-link" href="../config/salir.php">'; }  ?>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+              
+          
       
       <script src="../js/validar.js"></script>
     </body>

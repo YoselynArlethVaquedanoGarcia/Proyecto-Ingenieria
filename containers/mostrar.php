@@ -2,7 +2,7 @@
 $id= $_GET["id"];
 
 
-$conexion=mysqli_connect("localhost"," Yoselyn"," Yoselyn123","proyecto");
+$conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
 
 $consulta="SELECT Usuario_idUsuario FROM usuario_has_producto where Producto_idProducto='$id' ";
 $resultado=mysqli_query($conexion,$consulta);
@@ -17,7 +17,7 @@ if(mysqli_num_rows($resultado)>0){
      header("location:mi_Productos.php"); 
 
 }else{
-    header("location:index.php");
+   header("location:index.php");
 
 }
 

@@ -48,10 +48,10 @@ $id_pro = rand();
     $imagen2= $_POST['imagen_Prod2'];
     $imagen3= $_POST['imagen_Prod3'];
     $fecha=date("Y")."-".date("m")."-".date("d");
-
+    $municipio= $_POST['municipio'];
         //Consulta para Insertar
-        $sql = "INSERT INTO producto(idProducto, Nombre_Prod, Precio, Descripcion,imagen_Prod,Estado_idEstado,Categoria_idCategoria,Departamento_idDepartamento,imagen_Prod1,imagen_Prod2,imagen_Prod3,idUsuario,Fecha_Registro) 
-            VALUES ('$id_pro', '$nombre', '$precio', '$descripcion','$imagen','$estado','$categoria','$departamento','$imagen1','$imagen2','$imagen3','$id_se','$fecha')";
+        $sql = "INSERT INTO producto(idProducto, Nombre_Prod, Precio, Descripcion,imagen_Prod,Estado_idEstado,Categoria_idCategoria,Departamento_idDepartamento,imagen_Prod1,imagen_Prod2,imagen_Prod3,idUsuario,Fecha_Registro,Municipio_idMunicipio) 
+            VALUES ('$id_pro', '$nombre', '$precio', '$descripcion','$imagen','$estado','$categoria','$departamento','$imagen1','$imagen2','$imagen3','$id_se','$fecha','$municipio')";
           $sql2="INSERT INTO usuario_has_producto (Usuario_idUsuario, Producto_idProducto, Mostrar) 
                             VALUES ('$id_se', '$id_pro', 1);";
         //Ejecutar Consulta

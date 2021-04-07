@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+ $departamento= $_POST['departamento'];
+ $municipio= $_POST['municipio'];
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>BestWay</title>
@@ -73,21 +77,18 @@
 
 
   <?php
+                     
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $limite=10;//productos por pagina
-                     $totalQuery=$conexion->query("SELECT count(*) FROM producto ");
-                     $totalProductos=mysqli_fetch_row($totalQuery);
-                     $totalBotones=round($totalProductos[0]/$limite);
-                     if(isset($_GET['limite'])){
-                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
-                     }else{
-                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$limite);
-                     }
+                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ";
                     
-                     
-                     
-                    while ($resultado=mysqli_fetch_array($resultados,MYSQLI_ASSOC)){
+                     $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                     if(mysqli_num_rows($resultadoCon)>0){
+
+                   
+                    while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
                     ?>
+                    
                     
                     <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                     <div class="block-4 text-center border">
@@ -105,7 +106,10 @@
                     </div>
                     </div> 
                    
-                  <?php   } ?>
+                  
+                  <?php   }   }else{
+                      echo '<h2>Sin resultados</h2>';
+                  }?>
            
         </div>
     
@@ -114,26 +118,15 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    
-                  <?php
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])>0){
-                    echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']-10).'">&lt;</a></li>';
-                    }
-                  }
-                  for($k=0;$k<$totalBotones;$k++){
-                    echo '<li><a href="../containers/categorias.php?limite='.($k*10).'">'.($k+1).'</a></li>';
-                  }
-                  if(isset($_GET['limite'])){
-                    if(isset($_GET['limite'])+10 < $totalBotones*10){
-                      echo '<li><a href="../containers/categorias.php?limite='.($_GET['limite']+10
-                      ).'">&gt;</a></li>';
-                    }
-                  }else{
-                    echo '<li><a href="../containers/categorias.php?limite=10">&gt;</a></li>';
-                  }
-                  ?>
-                    
+                  <li><a href="#">&lt;</a></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&gt;</a></li>
+          
+                 
                   </ul>
                 </div>
               </div>
@@ -151,27 +144,28 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroFecha.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];
                              $resultadoCon1=mysqli_query($conexion,$consultaCon1);
                              $resultados= mysqli_fetch_row($resultadoCon1);
                               echo $resultados[0];
-                            
+                              
                       }
-
+                     echo  '</a>';
                     ?>
-                    </a>
+                  
                </li>
               </ul>
-          
+               
+            </select>
             </div>
-            
+
             <div class="border p-4 rounded mb-4">
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Precio</h3>
-               <form action="../containers/filtroPrecio.php" method="POST">
+                <form action="../containers/filtroPrecio.php" method="POST">
                 <input type="text"  class="form-control" placeholder="L. Mín" style="height: 30px; width:79px" name="minimo"  id="minimo">
                 <span class="input-group-text" style="height: 25px; padding: 3px;width:15px">-</span>
                 <input type="text" class="form-control" placeholder="L. Máx" style="height: 30px;width:79px" name="maximo" id="maximo"><br>
@@ -183,39 +177,16 @@
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Fecha</h3>
                 <label for="s_sm" class="d-flex">
                 <form action="../containers/filtroFecha.php" method="post">
-                  <input type="date" id="date" name="date" class="mr-2 mt-1"> 
-                </label><br>
+                  <input type="date" id="date" name="date" class="mr-2 mt-1"> <br>
+                </label>
                 <button class="btn btn-info">Filtrar</button>
                 </form>
                 
               </div>
 
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
-                <label for="s_sm" class="d-flex">
-                <form action="../containers/filtroDepartamento.php" method="post">
-                <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
-                    <option value="0">Departamento</option>
-
-                        <?php
-                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
-                      }
-                ?>
-                </select>
-              
-              <div id="select2lista"></div>
-              <button class="btn btn-info">Filtrar</button>
-                </form>
-              </div>
             </div>
           </div>
         </div>
-  
 
         <div class="row">
           <div class="col-md-12">
@@ -285,26 +256,3 @@
     
   </body>
 </html>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#departamento').val(1);
-		recargarLista();
-
-		$('#departamento').change(function(){
-			recargarLista();
-		});
-	})
-</script>
-<script type="text/javascript">
-	function recargarLista(){
-		$.ajax({
-			type:"POST",
-			url:"../config/datos.php",
-			data:"departamento=" + $('#departamento').val(),
-			success:function(r){
-				$('#select2lista').html(r);
-			}
-		});
-	}
-</script>

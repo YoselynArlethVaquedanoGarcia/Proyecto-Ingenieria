@@ -107,7 +107,8 @@ include('../layout/navbar.php')
                             echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
                       }
                 ?>
-                    </select>
+                    </select><br>
+                    <div id="select2lista"></div>
                     <div class="valid-feedback">¡Dato Completo!</div>
                      <div class="invalid-feedback">!Dato incompleto !</div>
                  </div>
@@ -148,3 +149,27 @@ include('../layout/navbar.php')
     
 </body>
 </html>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#departamento').val(1);
+		recargarLista();
+
+		$('#departamento').change(function(){
+			recargarLista();
+		});
+	})
+</script>
+<script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"../config/datos.php",
+			data:"departamento=" + $('#departamento').val(),
+			success:function(r){
+				$('#select2lista').html(r);
+			}
+		});
+	}
+</script>

@@ -40,6 +40,7 @@ include('../layout/navbar.php')
 <link rel="stylesheet" href="../css1/bootstrap.min.css">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -73,7 +74,12 @@ include('../layout/navbar.php')
       <li>Nombre:<?php echo $consulta[7]; ?>  </li>
         <li> Correo electronico:<?php echo $consulta[8];?></li>
         <li>Telefono:<?php echo $consulta[9]; ?></li>
-        
+        <li>Calificación:<i class="fa fa-star fa-1x" data-index="0"></i>
+        <i class="fa fa-star fa-1x" data-index="1"></i>
+        <i class="fa fa-star fa-1x" data-index="2"></i>
+        <i class="fa fa-star fa-1x" data-index="3"></i>
+        <i class="fa fa-star fa-1x" data-index="4"></i></li>
+       
       </ul></p>
       <div class="form-group">
     <label for="exampleFormControlTextarea1">Comentario:</label>

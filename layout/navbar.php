@@ -57,6 +57,9 @@ if(!isset($_SESSION['correo'])){
                 <a class="nav-link" href="registro.php">Registrarse</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="../containers/categorias.php">Productos</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
@@ -80,6 +83,7 @@ if(!isset($_SESSION['correo'])){
           </div>
         </div>
       </nav>
+      
       <script src="../js/validar.js"></script>
     </body>
 </html>

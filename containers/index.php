@@ -1,6 +1,7 @@
 
 <?php 
-include('../layout/navbar.php')
+include('../layout/navbar.php');
+
 ?> 
 
 <html >        
@@ -1326,5 +1327,5 @@ include('../layout/navbar.php')
     <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
     <script src="../codigo.js"></script>
     <script src="../js/validar.js"></script> 
-    <script src="../config/validar_usuario.php"></script>
+    <script src="../validar_usuario.php"></script>
 </html>

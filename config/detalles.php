@@ -36,7 +36,7 @@ include('../layout/navbar.php')
 
 <?php
 
-$conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+  $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
  $calificacion=$_POST['rating'];
   $id=$consulta[10];
   $comentario=$_POST['comentario'];

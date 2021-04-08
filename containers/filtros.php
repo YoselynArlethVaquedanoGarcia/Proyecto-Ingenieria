@@ -47,13 +47,12 @@
                 <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
-                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mas Recientes
+                  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Inmuebles</a>
-                      <a class="dropdown-item" href="#">Hogar</a>
-                      <a class="dropdown-item" href="#">Electrónica</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -64,7 +63,7 @@
                      
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre Producto, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=desc">Nombre Producto, Z-A</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?texto=ndesc">Nombre Producto, Z-A</a>
                     </div>
                   </div>
                 </div>
@@ -162,7 +161,7 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../busqueda.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
 
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");

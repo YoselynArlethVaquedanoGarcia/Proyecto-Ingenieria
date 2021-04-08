@@ -84,7 +84,7 @@
                         case "asc":
                             $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
                             producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
-                            producto.Precio,producto.Descripcion,calificaciones.idUsuario
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
                             FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
                             GROUP BY idUsuario
                             HAVING  avg(Calificacion)> 0
@@ -93,7 +93,7 @@
                         case "desc":
                             $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
                             producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
-                            producto.Precio,producto.Descripcion,calificaciones.idUsuario
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
                             FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
                             GROUP BY idUsuario
                             HAVING  avg(Calificacion)> 0
@@ -124,6 +124,7 @@
                     <h5  class="card-text">
                     <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
                     </h5>
+                    <p class="text-primary font-weight-bold">Calificacion:<?php echo round($resultado["avg(Calificacion)"],2); ?>%</p>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>

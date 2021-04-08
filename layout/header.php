@@ -51,7 +51,7 @@
             
             </li>
           
-            <li><a href="#" style="color:white" >Catálogo</a></li>
+            <li><a href="../containers/categorias.php" style="color:white" >Catálogo</a></li>
             <li><a href="#" style="color:white" >New Arrivals</a></li>
             <li><a href="contact.php" style="color:white" >Contacto</a></li>
           </ul>

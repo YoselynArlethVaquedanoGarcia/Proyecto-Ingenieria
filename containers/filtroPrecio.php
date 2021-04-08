@@ -45,13 +45,12 @@
                 <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
-                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mas Recientes
+                  <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Inmuebles</a>
-                      <a class="dropdown-item" href="#">Hogar</a>
-                      <a class="dropdown-item" href="#">Electrónica</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">

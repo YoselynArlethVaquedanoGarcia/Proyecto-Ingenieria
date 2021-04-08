@@ -42,12 +42,11 @@
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mas Recientes
+                     Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Inmuebles</a>
-                      <a class="dropdown-item" href="#">Hogar</a>
-                      <a class="dropdown-item" href="#">Electrónica</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -151,7 +150,7 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroCategoria.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex" style="color:white"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];

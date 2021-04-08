@@ -1,6 +1,8 @@
-<?php
- $maximo= $_POST['maximo'];
- $minimo= $_POST['minimo'];
+<?php   
+    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+    if(!isset($_GET['texto'])){
+        header("Location: ../containers/categorias.php"); 
+    }
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -46,12 +48,11 @@
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mas Recientes
+                   Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Inmuebles</a>
-                      <a class="dropdown-item" href="#">Hogar</a>
-                      <a class="dropdown-item" href="#">Electrónica</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -79,7 +80,29 @@
   <?php
                      
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Precio<=$maximo and Precio>=$minimo order by idProducto  ";
+                     switch ($_GET['texto']) {
+                        case "asc":
+                            $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                            producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                            GROUP BY idUsuario
+                            HAVING  avg(Calificacion)> 0
+                            ORDER BY avg(Calificacion) ASC; ";
+                            break;
+                        case "desc":
+                            $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                            producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                            GROUP BY idUsuario
+                            HAVING  avg(Calificacion)> 0
+                            ORDER BY avg(Calificacion) DESC; ";
+                           
+                           break;
+                    }
+                            
+                 
                     
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
 

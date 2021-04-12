@@ -1,9 +1,8 @@
 <?php   
     $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
     $categoria =$_GET['texto'];
-    if(!isset($categoria)){
-        header("Location: ../containers/hola.php"); 
-    }
+
+ 
 
  ?>
 <!DOCTYPE html>
@@ -40,13 +39,14 @@
 
     <div class="site-section">
       <div class="container">
-
+      
         <div class="row mb-5">
           <div class="col-md-9 order-2">
-
+        
           <div class="row">
+          
               <div class="col-md-12 mb-5">
-                <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
+                <div class="float-md-left mb-4"><h2 class="text-black h5"><?php echo $categoria; ?></h2></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                   <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,16 +79,21 @@
     <?php
                    
                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                   $sql="SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p
-                   inner join categoria c on c.idCategoria = p.Categoria_idCategoria
-                   where  p.Nombre_Prod like '%".$categoria."%' or p.Descripcion like '%".$categoria."%' or c.Tipocategoria='$categoria'  
-                   order by p.idProducto DESC";
-                     $resultadoCon=mysqli_query($conexion,$sql);
-
-                     if(mysqli_num_rows($resultadoCon)>0){
-
-                   
-                    while ($resultado=mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)){
+                   $limite=6;//productos por pagina
+                     $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
+                     $productosCategoria=mysqli_fetch_row($totalQuery);
+                     $totalBotones=round($productosCategoria[0]/$limite);
+                      
+                     if(isset($_GET['limite'])){
+                      $sql=$conexion->query("SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='.$categoria.'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite);
+                      $sql1="SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='$categoria'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite;
+                     }else{
+                      $sql=$conexion->query("SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on p.Categoria_idCategoria=c.idCategoria  where c.Tipocategoria='$categoria' order by p.idProducto DESC limit ".$limite);
+                     }
+                    
+                    echo $sql1;
+                     if( mysqli_num_rows($sql)>0){
+                    while ($resultado=mysqli_fetch_array($sql,MYSQLI_ASSOC)){
                     ?>
                      <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                     <div class="block-4 text-center border">
@@ -106,14 +111,8 @@
                     </div>
                     </div> 
                    
-                  <?php   }   }else{
-                      echo '<h2>Sin resultados</h2>';
-                  }?>
-                    
-           
-                   
-                   
-                 
+                  <?php   }  }else{
+                      echo '<h2>Sin resultados</h2>'; } ?>
                         
                         </div>
                     
@@ -121,13 +120,29 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    <li><a href="#">&lt;</a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&gt;</a></li>
+                  <?php
+                  echo $_GET['limite'];
+                   $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                   $con="SELECT idCategoria,Tipocategoria FROM categoria";
+                   $res=mysqli_query($conexion,$con);
+                   $catg = mysqli_fetch_array($res,MYSQLI_ASSOC);
+                  if(isset($_GET['limite'])){
+                    if(isset($_GET['limite'])>0){
+                    echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($_GET['limite']-6).'">&lt;</a></li>';
+                    }
+                  }
+                  for($k=0;$k<$totalBotones;$k++){
+                    echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($k*6).'">'.($k+1).'</a></li>';
+                  }
+                  if(isset($_GET['limite'])){
+                    if(isset($_GET['limite'])+6 < $totalBotones*6){
+                      echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($_GET['limite']+6
+                      ).'">&gt;</a></li>';
+                    }
+                  }else{
+                    echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite=6">&gt;</a></li>';
+                  }
+                  ?>
                   </ul>
                 </div>
               </div>

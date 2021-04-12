@@ -79,11 +79,12 @@
                      $totalBotones=round($totalProductos[0]/$limite);
                      if(isset($_GET['limite'])){
                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
+                     
                      }else{
                        $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$limite);
+                      
                      }
-                    
-                     
+              
                      
                     while ($resultado=mysqli_fetch_array($resultados,MYSQLI_ASSOC)){
                     ?>

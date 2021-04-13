@@ -60,12 +60,19 @@
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Filtrar</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pasc">Precio ascendente</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pdesc">Precio descendente</a>
-                     
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=ndesc">Nombre, Z-A</a>
+                    <?php
+                  $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                  $cone="SELECT idCategoria,Tipocategoria FROM categoria";
+                  $resul=mysqli_query($conexion,$cone);
+                  $categ = mysqli_fetch_array($resul,MYSQLI_ASSOC);
+                  
+                    ?>
+                  <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pasc">Precio ascendente</a>
+                  <a class="dropdown-item" href="../containers/filtros.php?categoria='<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=nasc">Nombre, A-Z</a>
+                  <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=ndesc">Nombre, Z-A</a>
+                   
                     </div>
                   </div>
                 </div>
@@ -86,12 +93,13 @@
                       
                      if(isset($_GET['limite'])){
                       $sql=$conexion->query("SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='.$categoria.'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite);
-                      $sql1="SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='$categoria'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite;
+                     $hola= "SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='.$categoria.'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite;
+                      
                      }else{
                       $sql=$conexion->query("SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on p.Categoria_idCategoria=c.idCategoria  where c.Tipocategoria='$categoria' order by p.idProducto DESC limit ".$limite);
                      }
                     
-                    echo $sql1;
+                   
                      if( mysqli_num_rows($sql)>0){
                     while ($resultado=mysqli_fetch_array($sql,MYSQLI_ASSOC)){
                     ?>
@@ -121,7 +129,7 @@
                 <div class="site-block-27">
                   <ul>
                   <?php
-                  echo $_GET['limite'];
+                  
                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                    $con="SELECT idCategoria,Tipocategoria FROM categoria";
                    $res=mysqli_query($conexion,$con);

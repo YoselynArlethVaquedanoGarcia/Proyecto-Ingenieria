@@ -77,31 +77,87 @@
   <?php
 
             $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-          
-           
-            switch ($_GET['texto']) {
+           $categoria= $_GET['categoria'];
+           $limite=6;//productos por pagina
+           $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
+           $productosCategoria=mysqli_fetch_row($totalQuery);
+           $totalBotones=round($productosCategoria[0]/$limite);
+           if(isset($_GET['limite'])){
+            if($_GET['categoria']){
+              switch ($_GET['texto']) {
+                case "pasc":
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio ASC limit ".$_GET['limite'].",".$limite; 
+                    break;
+                case "pdesc":
+                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio DESC limit ".$_GET['limite'].",".$limite;
+                case "nasc":
+                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod ASC limit ".$_GET['limite'].",".$limite;
+                    break;
+  
+                case "ndesc":
+                        $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria
+                        where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod DESC limit ".$_GET['limite'].",".$limite;
+                        break;
+             }}else {
+              switch ($_GET['texto']) {
                 case "pasc":
                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
-                    FROM producto ORDER BY Precio ASC  ";
+                    FROM producto ORDER BY Precio ASC limit ".$_GET['limite'].",".$limite;
                     break;
                 case "pdesc":
                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
-                    FROM producto ORDER BY Precio DESC  ";
+                    FROM producto ORDER BY Precio DESC limit ".$_GET['limite'].",".$limite;
                     break;
                 case "nasc":
                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
-                    FROM producto ORDER BY Nombre_Prod ASC  ";
+                    FROM producto ORDER BY Nombre_Prod ASC limit ".$_GET['limite'].",".$limite;
                     break;
 
                 case "ndesc":
                         $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
-                        FROM producto ORDER BY Nombre_Prod DESC  ";
+                        FROM producto ORDER BY Nombre_Prod DESC limit ".$_GET['limite'].",".$limite;
                         break;
             }
-                     
-                   
-                     $resultadoCon=mysqli_query($conexion,$consultaCon);
+          }
+           }else{
+          if($_GET['categoria']){
+            switch ($_GET['texto']) {
+              case "pasc":
+                $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio ASC limit ".$limite; 
+                  break;
+              case "pdesc":
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio DESC limit ".$limite;
+                  break;
+              case "nasc":
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod ASC limit ".$limite;
+                  break;
 
+              case "ndesc":
+                      $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria
+                      where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod DESC limit ".$limite;
+                      break;
+           }}else {
+            switch ($_GET['texto']) {
+              case "pasc":
+                  $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                  FROM producto ORDER BY Precio ASC limit ".$limite;
+                  break;
+              case "pdesc":
+                  $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                  FROM producto ORDER BY Precio DESC limit ".$limite;
+                  break;
+              case "nasc":
+                  $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                  FROM producto ORDER BY Nombre_Prod ASC limit ".$limite;
+                  break;
+
+              case "ndesc":
+                      $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion
+                      FROM producto ORDER BY Nombre_Prod DESC limit ".$limite;
+                      break;
+          }
+        }
+               }         $resultadoCon=mysqli_query($conexion,$consultaCon);
                      if(mysqli_num_rows($resultadoCon)>0){
                    
                      
@@ -136,14 +192,29 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    
-                  <li><a href="#">&lt;</a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&gt;</a></li>
+                  <?php
+                  
+                  $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                  $con="SELECT idCategoria,Tipocategoria FROM categoria";
+                  $res=mysqli_query($conexion,$con);
+                  $catg = mysqli_fetch_array($res,MYSQLI_ASSOC);
+                 if(isset($_GET['limite'])){
+                   if(isset($_GET['limite'])>0){
+                   echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($_GET['limite']-6).'">&lt;</a></li>';
+                   }
+                 }
+                 for($k=0;$k<$totalBotones;$k++){
+                   echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($k*6).'">'.($k+1).'</a></li>';
+                 }
+                 if(isset($_GET['limite'])){
+                   if(isset($_GET['limite'])+6 < $totalBotones*6){
+                     echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite='.($_GET['limite']+6
+                     ).'">&gt;</a></li>';
+                   }
+                 }else{
+                   echo '<li><a href="../containers/filtroCategoria.php?texto='.$catg['Tipocategoria'].'&limite=6">&gt;</a></li>';
+                 }
+                 ?>
                   </ul>
                 </div>
               </div>
@@ -238,7 +309,7 @@
         
       </div>
     </div>
-    <?php include("./layouts/foo.php"); ?> 
+   
 
     
   </div>

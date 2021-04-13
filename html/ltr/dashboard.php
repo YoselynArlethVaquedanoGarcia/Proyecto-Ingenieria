@@ -221,7 +221,7 @@
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
                                             class="mdi mdi-emoticon"></i><span class="hide-menu"> 
-                                        </span></a></li>
+                                        </span>Dar de Baja</a></li>
                                 <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i
                                             class="mdi mdi-emoticon-cool"></i><span class="hide-menu">  </span></a></li>
                             </ul>

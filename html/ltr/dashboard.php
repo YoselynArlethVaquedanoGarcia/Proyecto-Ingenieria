@@ -235,15 +235,15 @@
                                 <li class="sidebar-item"><a href="galeria.php" class="sidebar-link"><i
                                             class="mdi mdi-view-dashboard"></i><span class="hide-menu"> 
                                         </span>Galeria</a></li>
-                                <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
-                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu"> 
-                                        </span></a></li>
+                                <li class="sidebar-item"><a href="../../config/periodoServicios.php" class="sidebar-link"><i
+                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu">
+                                        </span>Servicios</a></li>
                                 <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
                                             class="mdi mdi-calendar-check"></i><span class="hide-menu"> 
-                                        </span></a></li>
+                                        </span>Calendario</a></li>
                                 <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
                                             class="mdi mdi-bulletin-board"></i><span class="hide-menu"> 
-                                        </span></a></li>
+                                        </span>Productos</a></li>
                                
                             </ul>
                         </li>
@@ -268,7 +268,7 @@
         </aside>
     
         <div class="page-wrapper">
-            \
+            
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">

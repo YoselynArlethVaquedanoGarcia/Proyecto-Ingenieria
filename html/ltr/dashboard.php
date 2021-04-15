@@ -232,9 +232,9 @@
                                 href="javascript:void(0)" aria-expanded="false"><i
                                     class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Configuraciones </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index2.html" class="sidebar-link"><i
+                                <li class="sidebar-item"><a href="galeria.php" class="sidebar-link"><i
                                             class="mdi mdi-view-dashboard"></i><span class="hide-menu"> 
-                                        </span></a></li>
+                                        </span>Galeria</a></li>
                                 <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
                                             class="mdi mdi-multiplication-box"></i><span class="hide-menu"> 
                                         </span></a></li>

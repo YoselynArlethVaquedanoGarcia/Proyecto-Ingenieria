@@ -1,4 +1,3 @@
-DELETE FROM `denuncias` WHERE `denuncias`.`idDenuncia` = 1"
 <?php
 	
 	EliminarDenuncia($_GET['idDenuncia']);

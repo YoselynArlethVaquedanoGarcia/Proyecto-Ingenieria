@@ -213,7 +213,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="darDeBaja.php" aria-expanded="false"><i
+                                href="pages-buttons.html" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -388,80 +388,44 @@
                             <div class="card-body">
                                 <div class="d-md-flex align-items-center">
                                     <div>
-                                        <h4 class="card-title">Grafica</h4>
+                                        <h4 class="card-title">Denuncias</h4>
                                         <h5 class="card-subtitle">Resumen del último mes </h5>
                                     </div>
                                 </div>
-                                <div class="row">
-                                
-                                    <div class="col-lg-9">
-                                        <div class="flot-chart">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-user mb-1 font-16"></i>
-                                                    <?php
-                                                    $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
-                                                    $totalQuery=$conexion->query("SELECT count(*) FROM usuario");
-                                                    $totalUsuarios=mysqli_fetch_row($totalQuery);
-                                                    $totalQuery1=$conexion->query("SELECT count(*) FROM producto");
-                                                    $totalProductos=mysqli_fetch_row($totalQuery1);
-                                                    $totalQuery2=$conexion->query("SELECT count(*) FROM categoria");
-                                                    $totalCategorias=mysqli_fetch_row($totalQuery2);
-                                                    $totalQuery3=$conexion->query("SELECT count(*) FROM calificaciones");
-                                                    $calificaciones=mysqli_fetch_row($totalQuery3);
-                                                    $totalQuery4=$conexion->query("SELECT count(*) FROM proyecto.producto where Fecha_Registro BETWEEN '2021-04-01' and '2021-04-30' ");
-                                                    $nuevosProductos=mysqli_fetch_row($totalQuery4);
-                                                    $totalQuery5=$conexion->query("SELECT count(*) FROM departamento ");
-                                                    $nuevosDepartamentos=mysqli_fetch_row($totalQuery5);
-                                                    ?>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalUsuarios[0] ; ?></h5>
-                                                    <small class="font-light">Total de Usuarios</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-plus mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $calificaciones[0] ; ?></h5>
-                                                    <small class="font-light">Calificaciones</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-cart-plus mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalProductos[0] ; ?></h5>
-                                                    <small class="font-light">Total Productos</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-tag mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalCategorias[0] ; ?></h5>
-                                                    <small class="font-light">Total Categorias</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-table mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $nuevosProductos[0] ; ?></h5>
-                                                    <small class="font-light">Nuevos Productos</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-globe mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $nuevosDepartamentos[0] ; ?></h5>
-                                                    <small class="font-light">Total de Departamentos</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                                <div class="divtabla">
+        <table class="table .table-bordered tablahistorial">
+        <thead>
+        <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Descripción</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark Otto</td>
+      <td>99882256</td>
+      <td>mark@gmail.com</td>
+      <td><button type="button" class="btn btn-link">Editar</button><button type="button" class="btn btn-link">Eliminar</button></td>
+    </tr>
+    <?php
+    $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+    $consultaCon="SELECT denuncias.idUsuario, descripcion, nombre, correo FROM `denuncias` INNER JOIN usuario ON usuario.idUsuario=denuncias.idUsuario";
+    $resultadoCon=mysqli_query($conexion,$consultaCon);
+    while($data= mysqli_fetch_array($resultadoCon)){
+        echo '<tr>
+        <td>'.$data['nombre'].'</td>
+        <td>'.$data['correo'].'</td>
+        <td>'.$data['descripcion'].'</td>
+        <td><button type="button" class="btn btn-link">Desestimar</button><button type="button" class="btn btn-link">Eliminar</button></td>
+      </tr>';
+    }
+    ?>
+    
+            </tbody>
+        </table>
+    </div><br></br>
                             </div>
                         </div>
                     </div>

@@ -290,7 +290,7 @@
                                             <th><i class="icon_cogs"></i>Acción</th>
                                           </tr>
                                           <?php 
-                                            $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                            $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
                                             $consultaCon="SELECT idUsuario,Nombre,Correo,Telefono,Direccion,Genero  FROM usuario";
                                             $resultadoCon=mysqli_query($conexion,$consultaCon);
                     

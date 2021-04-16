@@ -213,7 +213,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-buttons.html" aria-expanded="false"><i
+                                href="darDeBaja.php" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -289,107 +289,13 @@
             <div class="container-fluid">
                 
                 <div class="row">
-                
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                                <h6 class="text-white">Graficas</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                                <h6 class="text-white">Anuncios</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Filtros</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                                <h6 class="text-white">Categorias</h6>
-                            </div>
-                        </div>
-                    </div>
-                 
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Formularios</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                                <h6 class="text-white">Denuncias</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                <h6 class="text-white">Elementos</h6>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                                <h6 class="text-white">Calendario</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                                <h6 class="text-white">Configuraciones</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                </div>
-                
-                <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-md-flex align-items-center">
                                     <div>
                                         <h4 class="card-title">Denuncias</h4>
-                                        <h5 class="card-subtitle">Resumen del último mes </h5>
+                                        <h5 class="card-subtitle">Ultimas denuncias </h5>
                                     </div>
                                 </div>
                                 <div class="divtabla">
@@ -403,25 +309,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Mark Otto</td>
-      <td>99882256</td>
-      <td>mark@gmail.com</td>
-      <td><button type="button" class="btn btn-link">Editar</button><button type="button" class="btn btn-link">Eliminar</button></td>
-    </tr>
+    
     <?php
     $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
-    $consultaCon="SELECT denuncias.idUsuario, descripcion, nombre, correo FROM `denuncias` INNER JOIN usuario ON usuario.idUsuario=denuncias.idUsuario";
+    $consultaCon="SELECT idDenuncia ,denuncias.idUsuario, usuario.idUsuario, descripcion, nombre, correo FROM `denuncias` INNER JOIN usuario ON usuario.idUsuario=denuncias.idUsuario";
     $resultadoCon=mysqli_query($conexion,$consultaCon);
     while($data= mysqli_fetch_array($resultadoCon)){
-        echo '<tr>
-        <td>'.$data['nombre'].'</td>
-        <td>'.$data['correo'].'</td>
-        <td>'.$data['descripcion'].'</td>
-        <td><button type="button" class="btn btn-link">Desestimar</button><button type="button" class="btn btn-link">Eliminar</button></td>
-      </tr>';
-    }
     ?>
+    <tr>
+        <td><?php echo $data['nombre'];?></td>
+        <td><?php echo $data['correo'];?></td>
+        <td><?php echo $data['descripcion'];?></td>
+        <td><a class="btn btn-danger" href="../../config/deleteUserDenuncia.php?idUsuario=<?php echo $data["idUsuario"]; ?>">Eliminar</a>
+        <a class="btn btn-danger" href="../../config/desestimarDenuncia.php?idDenuncia=<?php echo $data["idDenuncia"]; ?>">Desestimar</a></td>
+      </tr>
+    <?php } ?>
     
             </tbody>
         </table>

@@ -213,7 +213,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-buttons.html" aria-expanded="false"><i
+                                href="darDeBaja.php" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -404,7 +404,7 @@
                                                 <div class="bg-dark p-10 text-white text-center">
                                                     <i class="fa fa-user mb-1 font-16"></i>
                                                     <?php
-                                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                                                    $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
                                                     $totalQuery=$conexion->query("SELECT count(*) FROM usuario");
                                                     $totalUsuarios=mysqli_fetch_row($totalQuery);
                                                     $totalQuery1=$conexion->query("SELECT count(*) FROM producto");

@@ -38,7 +38,7 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="../html/ltr/dashboard.php">
                     
                         <b class="logo-icon ps-2">
                          
@@ -199,7 +199,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-buttons.html" aria-expanded="false"><i
+                                href="../../html/ltr/darDeBaja.php" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -217,17 +217,19 @@
                                 href="javascript:void(0)" aria-expanded="false"><i
                                     class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Configuraciones </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index2.html" class="sidebar-link"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu"> 
+                                <li class="sidebar-item"><a href="galeria.php" class="sidebar-link"><i
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">
+                                            Galeria
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
-                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu"> 
+                                <li class="sidebar-item"><a href="../../config/periodoServicios.php" class="sidebar-link"><i
+                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu">Servicios
                                         </span></a></li>
                                 <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
-                                            class="mdi mdi-calendar-check"></i><span class="hide-menu"> 
+                                            class="mdi mdi-calendar-check"></i><span class="hide-menu">
+                                            Calendario
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
-                                            class="mdi mdi-bulletin-board"></i><span class="hide-menu"> 
+                                <li class="sidebar-item"><a href="../../containers/periodoProductos.php" class="sidebar-link"><i
+                                            class="mdi mdi-bulletin-board"></i><span class="hide-menu">Productos 
                                         </span></a></li>
                                
                             </ul>
@@ -290,7 +292,7 @@
                                             <th><i class="icon_cogs"></i>Acción</th>
                                           </tr>
                                           <?php 
-                                            $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+                                            $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                                             $consultaCon="SELECT idUsuario,Nombre,Correo,Telefono,Direccion,Genero  FROM usuario";
                                             $resultadoCon=mysqli_query($conexion,$consultaCon);
                     

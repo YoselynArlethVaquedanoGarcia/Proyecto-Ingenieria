@@ -77,9 +77,15 @@
   <?php
 
             $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+            if(isset($_GET['categoria'])){
            $categoria= $_GET['categoria'];
            $limite=6;//productos por pagina
            $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
+            }else{
+              $limite=6;//productos por pagina
+              $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria  ");
+            }
+           
            $productosCategoria=mysqli_fetch_row($totalQuery);
            $totalBotones=round($productosCategoria[0]/$limite);
            if(isset($_GET['limite'])){
@@ -90,6 +96,7 @@
                     break;
                 case "pdesc":
                     $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio DESC limit ".$_GET['limite'].",".$limite;
+                       break;
                 case "nasc":
                     $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod ASC limit ".$_GET['limite'].",".$limite;
                     break;
@@ -120,7 +127,7 @@
             }
           }
            }else{
-          if($_GET['categoria']){
+          if(isset($_GET['categoria'])){
             switch ($_GET['texto']) {
               case "pasc":
                 $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio ASC limit ".$limite; 
@@ -259,52 +266,7 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-section site-blocks-2">
-                <div class="row justify-content-center text-center mb-5">
-                  <div class="col-md-7 site-section-heading pt-4">
-                    <h2>Categorias</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/women.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Women</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/children.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Children</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/men.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Men</h3>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
+      
         </div>
         
       </div>

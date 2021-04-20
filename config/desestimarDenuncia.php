@@ -4,7 +4,7 @@
 echo $_GET['idDenuncia'];
 	function EliminarDenuncia($idDenuncia)
 	{
-        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
 		$consultaCon="DELETE FROM denuncias WHERE idDenuncia='".$idDenuncia."' ";
 		$resultadoCon=mysqli_query($conexion,$consultaCon);
 	}

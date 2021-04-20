@@ -4,7 +4,7 @@
 echo $_GET['idUsuario'];
 	function EliminarCategoria($idUsuario)
 	{
-        $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+		$conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
 		$consultaCon="DELETE FROM usuario WHERE idUsuario='".$idUsuario."' ";
 		$resultadoCon=mysqli_query($conexion,$consultaCon);
 	}

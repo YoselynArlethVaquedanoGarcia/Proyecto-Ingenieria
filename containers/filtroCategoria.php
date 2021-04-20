@@ -68,7 +68,7 @@
                   
                     ?>
                   <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pasc">Precio ascendente</a>
-                  <a class="dropdown-item" href="../containers/filtros.php?categoria='<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
+                  <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=nasc">Nombre, A-Z</a>
                   <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=ndesc">Nombre, Z-A</a>

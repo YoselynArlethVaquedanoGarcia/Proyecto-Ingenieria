@@ -37,7 +37,7 @@
                 <div class="navbar-header" data-logobg="skin5">
                     
                    
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="../../html/ltr/dashboard.php">
                       
                         <b class="logo-icon ps-2">
                            
@@ -191,7 +191,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../html/ltr/dashboard.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Graficas</span></a></li>
 
@@ -213,7 +213,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="darDeBaja.php" aria-expanded="false"><i
+                                href="../../html/ltr/darDeBaja.php" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -233,17 +233,19 @@
                                     class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Configuraciones </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="galeria.php" class="sidebar-link"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu"> 
-                                        </span>Galeria</a></li>
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">
+                                            Galeria
+                                        </span></a></li>
                                 <li class="sidebar-item"><a href="../../config/periodoServicios.php" class="sidebar-link"><i
-                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu">
-                                        </span>Servicios</a></li>
+                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Servicios
+                                        </span></a></li>
                                 <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
-                                            class="mdi mdi-calendar-check"></i><span class="hide-menu"> 
-                                        </span>Calendario</a></li>
-                                <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
-                                            class="mdi mdi-bulletin-board"></i><span class="hide-menu"> 
-                                        </span>Productos</a></li>
+                                            class="mdi mdi-calendar-check"></i><span class="hide-menu">Calendario
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="../../config/periodoProductos.php" class="sidebar-link"><i
+                                            class="mdi mdi-bulletin-board"></i><span class="hide-menu">
+                                            Productos
+                                        </span></a></li>
                                
                             </ul>
                         </li>
@@ -268,7 +270,7 @@
         </aside>
     
         <div class="page-wrapper">
-            
+            \
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
@@ -404,7 +406,7 @@
                                                 <div class="bg-dark p-10 text-white text-center">
                                                     <i class="fa fa-user mb-1 font-16"></i>
                                                     <?php
-                                                    $conexion=mysqli_connect("localhost","Chris","zxcv","proyecto");
+                                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                                                     $totalQuery=$conexion->query("SELECT count(*) FROM usuario");
                                                     $totalUsuarios=mysqli_fetch_row($totalQuery);
                                                     $totalQuery1=$conexion->query("SELECT count(*) FROM producto");

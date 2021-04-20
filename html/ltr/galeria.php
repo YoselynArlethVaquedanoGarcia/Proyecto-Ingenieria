@@ -207,7 +207,7 @@ class="mdi mdi-note-plus"></i><span class="hide-menu"> Formulario Agregar Catego
     </ul>
 </li>
 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-        href="pages-buttons.html" aria-expanded="false"><i
+        href="../../html/ltr/darDeBaja.php" aria-expanded="false"><i
             class="mdi mdi-relative-scale"></i><span class="hide-menu">Denuncias</span></a></li>
 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
         href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
@@ -229,8 +229,8 @@ class="mdi mdi-note-plus"></i><span class="hide-menu"> Formulario Agregar Catego
         <li class="sidebar-item"><a href="galeria.php" class="sidebar-link"><i
                     class="mdi mdi-view-dashboard"></i><span class="hide-menu"> 
                 </span>Galeria</a></li>
-        <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
-                    class="mdi mdi-multiplication-box"></i><span class="hide-menu"> 
+        <li class="sidebar-item"><a href="../../containers/periosoServicios.php" class="sidebar-link"><i
+                    class="mdi mdi-multiplication-box"></i><span class="hide-menu">Servicios
                 </span></a></li>
         <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
                     class="mdi mdi-calendar-check"></i><span class="hide-menu"> 

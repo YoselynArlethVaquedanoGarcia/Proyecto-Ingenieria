@@ -78,10 +78,10 @@
                      $totalProductos=mysqli_fetch_row($totalQuery);
                      $totalBotones=round($totalProductos[0]/$limite);
                      if(isset($_GET['limite'])){
-                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
+                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Fecha_Registro FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
                      
                      }else{
-                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio FROM producto order by idProducto DESC limit ".$limite);
+                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio ,Fecha_Registro FROM producto order by idProducto DESC limit ".$limite);
                       
                      }
               
@@ -95,11 +95,11 @@
                     <a href="#" class="d-block mb-4 h-100">
                     <img class="img-fluid img-thumbnail" src="../imagenes/<?php echo $resultado["imagen_Prod"]; ?>" alt="" style="width:300px;height:250px;">
                     </a>
-                    <div class="card-body" style="height:200px"; >
+                    <div class="card-body" style="height:250px"; >
                     <h4  class="card-text" ><?php echo $resultado["Nombre_Prod"]; ?></h4>
                     <h5  class="card-text">
                     <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
-                    </h5>
+                    <p class="text-primary font-weight-bold">Fecha de Publicación:<?php echo $resultado["Fecha_Registro"]; ?></p>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
@@ -212,55 +212,6 @@
               <button class="btn btn-info">Filtrar</button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-  
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-section site-blocks-2">
-                <div class="row justify-content-center text-center mb-5">
-                  <div class="col-md-7 site-section-heading pt-4">
-                    <h2>Categorias</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/women.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Women</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/children.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Children</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/men.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Men</h3>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              
             </div>
           </div>
         </div>

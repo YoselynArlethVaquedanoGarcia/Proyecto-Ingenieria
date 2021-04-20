@@ -34,6 +34,22 @@ include('../layout/navbar.php')
                     <div class="invalid-feedback">!Dato incompleto !</div>
                   </div>
 
+                  <label for="dir">Moneda: </label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Moneda_Prod" id="Moneda_Prod1" value="1" checked>
+                    <label class="form-check-label" for="Estado_Prod1">
+                      Lempiras
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Moneda_Prod" id="Moneda_Prod2" value="2">
+                    <label class="form-check-label" for="Moneda_Prod2">
+                      Dolares
+                    </label>
+                    <div class="invalid-feedback">!Complete el Dato!</div>
+                    <div class="invalid-feedback">!Dato incompleto !</div>
+                  </div>
+                  <br>
 
                   <div class="form-label-group">
                     <input type="texto" id="Precio" name="Precio" class="form-control" placeholder="Precio"  required >

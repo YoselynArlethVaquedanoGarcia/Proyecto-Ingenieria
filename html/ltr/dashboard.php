@@ -17,11 +17,13 @@
     <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
     
     <link href="../../dist/css/style.min.css" rel="stylesheet">
- 
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+  
 </head>
 
 <body>
 
+</script>
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
@@ -270,7 +272,7 @@
         </aside>
     
         <div class="page-wrapper">
-            \
+            
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
@@ -386,19 +388,75 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" height="900">
                                 <div class="d-md-flex align-items-center">
                                     <div>
                                         <h4 class="card-title">Grafica</h4>
-                                        <h5 class="card-subtitle">Resumen del último mes </h5>
+                                        <h5 class="card-subtitle">Resumen del Ingreso de Productos por Mes </h5>
+                                        <button type="button" class="btn btn-success" onclick='graficoPrincipal()'>Ver Grafico</button>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <script>
+            function graficoPrincipal() {
+                $.ajax({
+                    url:'grafico1.php',
+                    type:'POST'
+                }).done(function(resp) {
+                    var titulo=[];
+                    var cantidad=[];
+                    var data= JSON.parse(resp);
+                
+                    for(var i=0;i<data.length;i++){
+                    titulo.push(data[i][0]);
+                    cantidad.push(data[i][1]);
+            
+                    }
+                var ctx = document.getElementById('myChart');
+                var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: titulo,
+            datasets: [{
+                label: 'Productos',
+                data: cantidad,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    })
+}
+
+    </script>
+ <div class="row">
                                 
-                                    <div class="col-lg-9">
-                                        <div class="flot-chart">
-                                            
-                                        </div>
+<div class="col-lg-9">
+ <div class="flot-chart" >
+ <canvas id="myChart" width="400" ></canvas>
+
+                     </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="row">
@@ -501,7 +559,16 @@
     <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/adapters.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/animation.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/basic.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/color.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/element.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/geometric.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/index.esm.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/layout.d.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/utils.d.ts"></script>
+   
 </body>
 
 </html>

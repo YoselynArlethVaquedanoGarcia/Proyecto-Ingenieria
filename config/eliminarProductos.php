@@ -4,7 +4,7 @@
 
 	function Eliminar($idProducto)
 	{
-        $conexion=mysqli_connect("localhost","root","","proyecto");
+        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
 		$consultaCon="DELETE FROM producto WHERE idProducto='".$idProducto."' ";
 		$resultadoCon=mysqli_query($conexion,$consultaCon);
 	}

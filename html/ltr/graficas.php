@@ -4,27 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>BestWay</title>
- 
+    <title>Graficas | BestWay</title>
+   
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-  
-    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
-    
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <link href="../../dist/css/style.min.css" rel="stylesheet">
- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
-  
+    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+   
 </head>
 
 <body>
-
-</script>
-    <div class="preloader">
+   
+<div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
@@ -270,13 +269,13 @@
             </div>
            
         </aside>
-    
+       
         <div class="page-wrapper">
-            
+         
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Graficas</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -290,116 +289,23 @@
             </div>
            
             <div class="container-fluid">
-                
-                <div class="row">
-                
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                                <h6 class="text-white">Graficas</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                                <h6 class="text-white">Anuncios</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Filtros</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                                <h6 class="text-white">Categorias</h6>
-                            </div>
-                        </div>
-                    </div>
-                 
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Formularios</h6>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                                <h6 class="text-white">Denuncias</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                <h6 class="text-white">Elementos</h6>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                                <h6 class="text-white">Calendario</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                                <h6 class="text-white">Configuraciones</h6>
-                            </div>
-                        </div>
-                    </div>
-                  
-                </div>
-                
+              
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body" height="900">
-                                <div class="d-md-flex align-items-center">
-                                    <div>
-                                        <h4 class="card-title">Grafica</h4>
-                                        <h5 class="card-subtitle">Resumen del Ingreso de Productos por Mes </h5>
-                                        <button type="button" class="btn btn-success" onclick='graficoPrincipal()'>Ver Grafico</button>
-                                    </div>
-                                </div>
-                                <script>
-            function graficoPrincipal() {
+                        <div class="card" >
+                            <div class="card-body" >
+                                <h5 class="card-title">Grafica de Barras &nbsp; <button type="button" class="btn btn-primary" onclick='graficoLineal()'>Ver</button></h5>
+                                <h5 class="card-subtitle">Productos por Categoria </h5>
+                                <canvas id="lineal" width="400" style="height:200px;" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function graficoLineal() {
                 $.ajax({
-                    url:'grafico1.php',
+                    url:'grafico2.php',
                     type:'POST'
                 }).done(function(resp) {
                     var titulo=[];
@@ -411,154 +317,200 @@
                     cantidad.push(data[i][1]);
             
                     }
-                var ctx = document.getElementById('myChart');
+                var ctx = document.getElementById('lineal');
                 var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: titulo,
+                    type: 'bar',
+                    data: {labels: titulo,
             datasets: [{
                 label: 'Productos',
                 data: cantidad,
+                fill: false,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgba(153, 102, 255)',
+                    'rgb(201, 203, 207)',
+                    'rgb(52, 73, 94)',
+                    'rgb(46, 204, 113 )',
+                    'rgb(231, 76, 60)',
+                    'rgb(220, 20, 60)'],
+                borderColor: 'rgb(75, 192, 192)',
+                 tension: 0.1
             }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
         }
     });
     })
 }
 
-    </script>
- <div class="row">
-                                
-<div class="col-lg-9">
- <div class="flot-chart" >
- <canvas id="myChart" width="400" ></canvas>
-
-                     </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-user mb-1 font-16"></i>
-                                                    <?php
-                                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                                    $totalQuery=$conexion->query("SELECT count(*) FROM usuario");
-                                                    $totalUsuarios=mysqli_fetch_row($totalQuery);
-                                                    $totalQuery1=$conexion->query("SELECT count(*) FROM producto");
-                                                    $totalProductos=mysqli_fetch_row($totalQuery1);
-                                                    $totalQuery2=$conexion->query("SELECT count(*) FROM categoria");
-                                                    $totalCategorias=mysqli_fetch_row($totalQuery2);
-                                                    $totalQuery3=$conexion->query("SELECT count(*) FROM calificaciones");
-                                                    $calificaciones=mysqli_fetch_row($totalQuery3);
-                                                    $totalQuery4=$conexion->query("SELECT count(*) FROM proyecto.producto where Fecha_Registro BETWEEN '2021-04-01' and '2021-04-30' ");
-                                                    $nuevosProductos=mysqli_fetch_row($totalQuery4);
-                                                    $totalQuery5=$conexion->query("SELECT count(*) FROM departamento ");
-                                                    $nuevosDepartamentos=mysqli_fetch_row($totalQuery5);
-                                                    ?>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalUsuarios[0] ; ?></h5>
-                                                    <small class="font-light">Total de Usuarios</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-plus mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $calificaciones[0] ; ?></h5>
-                                                    <small class="font-light">Calificaciones</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-cart-plus mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalProductos[0] ; ?></h5>
-                                                    <small class="font-light">Total Productos</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-tag mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $totalCategorias[0] ; ?></h5>
-                                                    <small class="font-light">Total Categorias</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-table mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $nuevosProductos[0] ; ?></h5>
-                                                    <small class="font-light">Nuevos Productos</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 mt-3">
-                                                <div class="bg-dark p-10 text-white text-center">
-                                                    <i class="fa fa-globe mb-1 font-16"></i>
-                                                    <h5 class="mb-0 mt-1"><?php echo $nuevosDepartamentos[0] ; ?></h5>
-                                                    <small class="font-light">Total de Departamentos</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                </script>
+               
+                <div class="row" >
+                    <div class="col-md-12">
+                        <div class="card" >
+                            <div class="card-body" >
+                                <h5 class="card-title">Grafico Circular &nbsp; <button type="button" class="btn btn-primary" onclick='graficoCircular()'>Ver</button></h5>
+                                <h5 class="card-subtitle">Productos por Departamento</h5>
+                              
+                                <canvas class="flot-chart-content" id="circular" width="400" style="height:200px"></canvas>
+                           
                             </div>
                         </div>
                     </div>
                 </div>
+                <script>
+                    function graficoCircular() {
+                $.ajax({
+                    url:'grafico3.php',
+                    type:'POST'
+                }).done(function(resp) {
+                    var titulo=[];
+                    var cantidad=[];
+                    var data= JSON.parse(resp);
+                
+                    for(var i=0;i<data.length;i++){
+                    titulo.push(data[i][0]);
+                    cantidad.push(data[i][1]);
+            
+                    }
+                var ctx = document.getElementById('circular');
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                    labels: titulo,
+                    datasets: [{
+                        label: 'Productos',
+                        data: cantidad,
+                        backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgba(153, 102, 255)',
+                    'rgb(201, 203, 207)',
+                    'rgb(52, 73, 94)',
+                    'rgb(46, 204, 113 )',
+                    'rgb(231, 76, 60)',
+                    'rgb(220, 20, 60)',
+                    'rgb(160, 82, 45)',
+                    'rgb(0, 128, 128)',
+                    'rgb(255,140,0)',
+                    'rgb(0,255,127)',
+                    'rgb(139,0,139)',
+                    'rgb(0,206,209)'
+                    ],
+                    hoverOffset: 4
+                    }]
+                }
+            });
+                })
+            }
+                </script>
+                <div class="row">
+                   
+                    <div class="col-md-3">
+                        <div class="card mt-0">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                   
                
-                        
-                        
-                            
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Grafico Polar &nbsp; <button type="button" class="btn btn-primary" onclick='graficoPolar()'>Ver</button></h5>
+                                <h5 class="card-subtitle">Productos por Estado </h5>
+                                <canvas class="flot-chart-content" id="polar" height='200px' ></canvas>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function graficoPolar() {
+                $.ajax({
+                    url:'grafico4.php',
+                    type:'POST'
+                }).done(function(resp) {
+                    var titulo=[];
+                    var cantidad=[];
+                   
+                    var data= JSON.parse(resp);
+                   
+                    for(var i=0;i<data.length;i++){
+                    titulo.push(data[i][0]);
+                    cantidad.push(data[i][1]);
+                
+                }
+                var ctx = document.getElementById('polar');
+                var myChart = new Chart(ctx, {
+                    type: 'polarArea',
+                    data: {
+                    labels: titulo,
+                    datasets: [{
+                        label: 'Productos',
+                        data: cantidad,
+                        backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    ],
+                    hoverOffset: 4
+                }]
+                }
+            });
+                })
+            }  
+            </script>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Pie Chart</h5>
+                                <div class="pie" style="height: 400px;"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Line Chart  </h5>
+                                <div class="bars" style="height: 400px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-           
+          
             <footer class="footer text-center">
-                BestWay. Diseñado y desarrollado por Grupo#3 de Ingenieria de Software
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://www.wrappixel.com">WrapPixel</a>.
             </footer>
            
         </div>
         
     </div>
-  
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
-  
+    
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  
     <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
-  
+   
     <script src="../../dist/js/waves.js"></script>
-  
+    
     <script src="../../dist/js/sidebarmenu.js"></script>
   
     <script src="../../dist/js/custom.min.js"></script>
+  
    
-    <script src="../../assets/libs/flot/excanvas.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
-    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
-    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/adapters.d.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/animation.d.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/basic.d.ts"></script>
@@ -568,7 +520,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/index.esm.d.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/layout.d.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/types/utils.d.ts"></script>
-   
 </body>
 
 </html>

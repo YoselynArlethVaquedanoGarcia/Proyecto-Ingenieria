@@ -241,7 +241,7 @@
                                 <li class="sidebar-item"><a href="../../config/periodoServicios.php" class="sidebar-link"><i
                                             class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Servicios
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
+                                <li class="sidebar-item"><a href="calendario.html" class="sidebar-link"><i
                                             class="mdi mdi-calendar-check"></i><span class="hide-menu">Calendario
                                         </span></a></li>
                                 <li class="sidebar-item"><a href="../../config/periodoProductos.php" class="sidebar-link"><i

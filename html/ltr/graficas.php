@@ -12,7 +12,7 @@
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>Graficas | BestWay</title>
-   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <link href="../../dist/css/style.min.css" rel="stylesheet">
@@ -275,7 +275,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Graficas</h4>
+                    <span class="material-icons">pie_chart</span><h4 class="page-title">&nbsp;Graficas</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -291,19 +291,19 @@
             <div class="container-fluid">
               
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm">
                         <div class="card" >
                             <div class="card-body" >
-                                <h5 class="card-title">Grafica de Barras &nbsp; <button type="button" class="btn btn-primary" onclick='graficoLineal()'>Ver</button></h5>
+                                <h5 class="card-title">Grafica de Barras &nbsp; <button type="button" class="btn btn-primary" onclick='graficoBarras()'>Ver</button></h5>
                                 <h5 class="card-subtitle">Productos por Categoria </h5>
-                                <canvas id="lineal" width="400" style="height:200px;" ></canvas>
+                                <canvas id="barras" width="400" style="height:200px;" ></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <script>
-                    function graficoLineal() {
+                    function graficoBarras() {
                 $.ajax({
                     url:'grafico2.php',
                     type:'POST'
@@ -317,12 +317,12 @@
                     cantidad.push(data[i][1]);
             
                     }
-                var ctx = document.getElementById('lineal');
+                var ctx = document.getElementById('barras');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {labels: titulo,
             datasets: [{
-                label: 'Productos',
+                label: 'Productos por Categoria',
                 data: cantidad,
                 fill: false,
                 backgroundColor: [
@@ -346,17 +346,25 @@
                 </script>
                
                 <div class="row" >
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="card" >
                             <div class="card-body" >
                                 <h5 class="card-title">Grafico Circular &nbsp; <button type="button" class="btn btn-primary" onclick='graficoCircular()'>Ver</button></h5>
                                 <h5 class="card-subtitle">Productos por Departamento</h5>
                               
-                                <canvas class="flot-chart-content" id="circular" width="400" style="height:200px"></canvas>
+                                <canvas class="flot-chart-content" id="circular" width="400px" style="height:200px"></canvas>
                            
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                              
+                                <div class="pie" style="height: 270px;"></div>
+                            </div>
+                        </div>
+                </div>
                 </div>
                 <script>
                     function graficoCircular() {
@@ -421,16 +429,24 @@
                
                 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Grafico Polar &nbsp; <button type="button" class="btn btn-primary" onclick='graficoPolar()'>Ver</button></h5>
                                 <h5 class="card-subtitle">Productos por Estado </h5>
-                                <canvas class="flot-chart-content" id="polar" height='200px' ></canvas>
+                                <canvas class="flot-chart-content" id="polar" width="400px" style="height:200px" ></canvas>
                                 
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                              
+                                <div  style="height: 270px;"></div>
+                            </div>
+                        </div>
+        </div>
                 </div>
                 <script>
                     function graficoPolar() {
@@ -469,30 +485,58 @@
             }  
             </script>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Pie Chart</h5>
-                                <div class="pie" style="height: 400px;"></div>
-                            </div>
-                        </div>
-                    </div>
+                  
         
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Line Chart  </h5>
-                                <div class="bars" style="height: 400px;"></div>
+                                <h5 class="card-title">Grafico Lineal&nbsp; <button type="button" class="btn btn-primary" onclick='graficoLineal()'>Ver</button>  </h5>
+                                <h5 class="card-subtitle">Productos por Categoria </h5>
+                                <canvas class="flot-chart-content" id="lineal" width="400px" style="height:200px" ></canvas>
+                                
                             </div>
                         </div>
                     </div>
+              
+
                 </div>
-                
+             
             </div>
-          
+            <script>
+                    function graficoLineal() {
+                $.ajax({
+                    url:'grafico5.php',
+                    type:'POST'
+                }).done(function(resp) {
+                    var titulo=[];
+                    var cantidad=[];
+                    var data= JSON.parse(resp);
+                
+                    for(var i=0;i<data.length;i++){
+                    titulo.push(data[i][0]);
+                    cantidad.push(data[i][1]);
+            
+                    }
+                    console.log(titulo)
+                var ctx = document.getElementById('lineal');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                    labels: titulo,
+                    datasets: [{
+                        label: 'Total Precios por Categoria',
+                        data: cantidad,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                }
+            });
+                })
+            }
+                </script>
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a
-                    href="https://www.wrappixel.com">WrapPixel</a>.
+            BestWay. Diseñado y desarrollado por Grupo#3 de Ingenieria de Software
             </footer>
            
         </div>

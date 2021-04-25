@@ -542,7 +542,7 @@
         </div>
         
     </div>
-    
+
     <script src="../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   
     <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>

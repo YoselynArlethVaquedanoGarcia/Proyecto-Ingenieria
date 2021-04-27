@@ -25,9 +25,9 @@ include('../layout/navbar.php')
                  <!-- Background image for card set in CSS! -->
               </div>
               <div class="card-body" >
-              <h1 class="card-title text-center"> !Suscribete! </h1>
+              <h1 class="card-title text-center"> Suscribete! </h1>
                 <form  method="post" action="../config/conexion.php" class="needs-validation" novalidate>
-                <h5>Seleccione la Categoria a la que desea Suscribirse</h5>
+                <h5>Seleccione una Categoria:</h5>
                   
             <div class="form-group">
 
@@ -44,9 +44,9 @@ include('../layout/navbar.php')
           }
 ?>
   </select>
-                
-                  
-                
+    <div  class="valid-feedback">!Dato completo !</div>
+                    <div class="invalid-feedback">¡Dato incompleto !</div>   
+                <br>
                  <br>
                   <button class="btn btn-lg btn-primary btn-block " type="submit" name="submit" onclick="iniciarSeccion()">Suscribirse</button>
                              
@@ -57,13 +57,46 @@ include('../layout/navbar.php')
         </div>
       </div>
  
+      <?php
+      use PHPMailer\PHPMailer\PHPMailer;
+      use PHPMailer\PHPMailer\Exception;
+      require '../PHPMailer/Exception.php';
+      require '../PHPMailer/PHPMailer.php';
+      require '../PHPMailer/SMTP.php';
+       //Instantiation and passing `true` enables exceptions
+       $mail = new PHPMailer(true); 
 
+			if (isset($_POST['submit'])){
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'correopruebasoporte46@gmail.com';                     //SMTP username
+            $mail->Password   = 'correo46';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            //Recipients
+            $mail->setFrom('correopruebasoporte46@gmail.com', 'Best Way Shop');
+            $mail->addAddress($_POST["email"], '');     //Add a recipient
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Best Way Shop';
+            $mail->Body    = '<b>Bienvenido a Best Way!</b><br><br>Best Way la mejor manera de comprar y vender.<br><br> Gracias por registrarte' ; 
+            $mail->send();
+            //echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+      }
+		?>
     
       <script src="../jquery/jquery-3.3.1.min.js"></script>	 	
     <script src="../popper/popper.min.js"></script>	 	 	
     <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
     <script src="../codigo.js"></script> 
     <script src="../js/validar.js"></script>
-  
+    
 </body>
 </html>

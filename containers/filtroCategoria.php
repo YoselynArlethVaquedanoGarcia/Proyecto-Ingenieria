@@ -38,7 +38,7 @@
     <?php include("../layout/header.php"); ?> 
 
     <div class="site-section">
-      <div class="container">
+      <div class="container ml-1">
       
         <div class="row mb-5">
           <div class="col-md-9 order-2">
@@ -53,8 +53,8 @@
                      Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -157,8 +157,8 @@
             </div>
           </div>
 
-          <div class="col-md-3 order-1 mb-5 mb-md-0">
-            <div class="border p-4 rounded mb-4">
+          <div class="col-md-3 order-1 mb-5 ml-0 mb-md-0">
+            <div class="border p-4 rounded mb-4 ">
               <h3 class="mb-3 h6 text-uppercase text-black d-block"><span>Categorias</span> </h3>
               <ul class="list-unstyled mb-0">
               <?php
@@ -203,59 +203,38 @@
                 </label><br>
                 <button class="btn btn-info">Filtrar</button>
                 </form>
-                
+  
+              </div>
+              <div class="mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
+                <label for="s_sm" class="d-flex">
+                <form action="../containers/filtroDepartamento.php" method="post">
+                <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
+                    <option value="0">Departamento</option>
+
+                        <?php
+                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
+                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                          while ($valores = mysqli_fetch_array($resultadoCon)) {
+                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
+                      }
+                ?>
+                </select>
+              
+              <div id="select2lista"></div>
+              <button class="btn btn-info">Filtrar</button>
+                </form>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-section site-blocks-2">
-                <div class="row justify-content-center text-center mb-5">
-                  <div class="col-md-7 site-section-heading pt-4">
-                    <h2>Categorias</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/women.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Women</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/children.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Children</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/men.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Men</h3>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              
             </div>
           </div>
         </div>
+
         
       </div>
     </div>
@@ -275,5 +254,27 @@
 
   <script src="../js/main1.js"></script>
     
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#departamento').val(1);
+		recargarLista();
+
+		$('#departamento').change(function(){
+			recargarLista();
+		});
+	})
+</script>
+<script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"../config/datos.php",
+			data:"departamento=" + $('#departamento').val(),
+			success:function(r){
+				$('#select2lista').html(r);
+			}
+		});
+	}
+</script>
   </body>
 </html>

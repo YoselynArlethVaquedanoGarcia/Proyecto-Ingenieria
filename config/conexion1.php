@@ -45,9 +45,9 @@ $id_pro = rand();
     $categoria=$_POST['categoria'];
     $departamento=$_POST['departamento'];
     $imagen= $_POST['imagen_Prod'];
-    $imagen1= $_POST['imagen_Prod1'];
-    $imagen2= $_POST['imagen_Prod2'];
-    $imagen3= $_POST['imagen_Prod3'];
+    $imagen1= $_POST['imagen_Prod'];
+    $imagen2= $_POST['imagen_Prod'];
+    $imagen3= $_POST['imagen_Prod'];
     $fecha=date("Y")."-".date("m")."-".date("d");
     $municipio= $_POST['municipio'];
         //Consulta para Insertar

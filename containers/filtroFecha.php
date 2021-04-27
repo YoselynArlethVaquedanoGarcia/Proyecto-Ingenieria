@@ -47,12 +47,11 @@
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Mas Recientes
+                    Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Inmuebles</a>
-                      <a class="dropdown-item" href="#">Hogar</a>
-                      <a class="dropdown-item" href="#">Electrónica</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -81,7 +80,7 @@
                    
                      
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Fecha_Registro like '%".$fecha."%' order by idProducto  ";
+                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion,Moneda FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda and Fecha_Registro like '2021-03-31' order by idProducto ";
                     
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
 
@@ -101,7 +100,7 @@
                     <div class="card-body" style="height:200px"; >
                     <h4  class="card-text" ><?php echo $resultado["Nombre_Prod"]; ?></h4>
                     <h5  class="card-text">
-                    <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
+                    <p class="text-primary font-weight-bold"><?php echo $resultado["Precio"]." ".$resultado["Moneda"]; ?></p>
                     </h5>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
@@ -189,53 +188,7 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-section site-blocks-2">
-                <div class="row justify-content-center text-center mb-5">
-                  <div class="col-md-7 site-section-heading pt-4">
-                    <h2>Categorias</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/women.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Women</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/children.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Children</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/men.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Men</h3>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
-        </div>
+        
         
       </div>
     </div>

@@ -1,1330 +1,611 @@
-
 <?php 
-include('../layout/navbar.php')
-?> 
+include('../layout/navbarIndex.php')
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-<html >        
-<head  >       
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BestWay</title>
-    <link rel="stylesheet" href="../css1/bootstrap.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+  <title>Groovin Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets1/img/favicon.png" rel="icon">
+  <link href="../assets1/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets1/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets1/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets1/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets1/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
     
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+          <div class="carousel-item active" style="background: url('../imagenes/casa.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Inmuebles</h2>
+                <p class="animate__animated animate__fadeInUp">Renta, compra y venta de inmuebles en BestWay.</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url(../imagenes/ropa.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Moda</h2>
+                <p class="animate__animated animate__fadeInUp">"La moda termina rápido. El estilo es para siempre." Ralph Lauren</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="../js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../jquery/jquery-3.3.1.min.js"></script>	 	
-<!------ Include the above in your HEAD tag ---------->
-    
-  </head>
- 
-<header>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('../imagenes/ropa.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Moda</h3>
-          <p class="lead">"La moda termina rápido. El estilo es para siempre." Ralph Lauren</p>
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url('../imagenes/carro.jpg';">
+            <div class="carousel-background"><img src="../imagenes/carro.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Vehículos</h2>
+                <p class="animate__animated animate__fadeInUp">Encuentra vehículos nuevos, seminuevos ​​y usados.</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- Slide 4 -->
+           <div class="carousel-item" style="background: url('../imagenes/mascotas.jpg';">
+            <div class="carousel-background"><img src="../imagenes/mascotas.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Mascotas</h2>
+                <p class="animate__animated animate__fadeInUp">"Hasta que uno no ha amado un animal, una parte del alma sigue sin despertar." Anatole France</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  <!-- Slide 5-->
+  <div class="carousel-item" style="background: url('../imagenes/electronica.png">
+            <div class="carousel-background"><img src=".../imagenes/electronica.png" alt="carro" ></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Electrónica</h2>
+                <p class="animate__animated animate__fadeInUp">Eres un amante de la tecnología? Encuentra aquí los mejores artículos de electrónica.</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- Slide 6 -->
+           <div class="carousel-item" style="background: url('../imagenes/servicios.jpg">
+            <div class="carousel-background"><img src="../imagenes/servicios.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Servicios</h2>
+                <p class="animate__animated animate__fadeInUp">Descubre la variedad de servicios que ofrecemos.</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <!-- Slide 7 -->
+ <div class="carousel-item" style="background: url('../imagenes/negocios.jpg">
+            <div class="carousel-background"><img src="../imagenes/negocios.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Negocios</h2>
+                <p class="animate__animated animate__fadeInUp">"Para tener éxito, tienes que tener tu corazón en tu negocio, y tu negocio en tu corazón."Thomas Watson</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!-- Slide 7 -->
+<div class="carousel-item" style="background: url('../imagenes/negocios.jpg">
+            <div class="carousel-background"><img src="../imagenes/negocios.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Negocios</h2>
+                <p class="animate__animated animate__fadeInUp">"Para tener éxito, tienes que tener tu corazón en tu negocio, y tu negocio en tu corazón."Thomas Watson</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- Slide 7 -->
+<div class="carousel-item" style="background: url('../imagenes/empleo.jpg">
+            <div class="carousel-background"><img src="../imagenes/empleo.jpg" alt="carro" width=100%></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Empleo</h2>
+                <p class="animate__animated animate__fadeInUp">Buscas trabajo? Consulta las mejores ofertas de empleo en BestWay</p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver Mas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class=" col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"><img src="../imagenes/logo1.png" alt="" height=400px width=300px></div>
+          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>BestWay</h3>
+              <p>
+                Es la mejor manera de buscar y realizar compras de productos.Tambien te damos la facilidad de subir tus productos a nuestra pagina y ofrecerla a nuestros usuarios.
+              </p>
+              
+              </div>
+            </div>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+   
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="28" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Clientes Contentos</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Productos</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Categorias</strong> </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Departamentos</strong> </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="../assets1/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+ <br>
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Equipo</h2>
+          <p>Grupo #3,Ingenieria de Software</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="member">
+              <img src="../imagenes/avatar1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Yoselyn Vaquedano</h4>
+                  <span>Scrum Master</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="member">
+              <img src="../imagenes/avatar.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Christian Alvarenga</h4>
+                  <span>Product Manager</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="../imagenes/avatar1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Wendys Ramirez</h4>
+                  <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="../imagenes/avatar.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Alfredo Rodriguez</h4>
+                  <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="../imagenes/avatar.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Daniel Alvarado</h4>
+                  <span>Accountant</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+  
+<br>
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Preguntas Frecuentes</h2>
           
-      <div class="carousel-item" style="background-image: url('../imagenes/carro.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Vehículos</h3>
-          <p class="lead">Encuentra vehículos nuevos, seminuevos ​​y usados.</p>
         </div>
-      </div>
-      
-      <div class="carousel-item" style="background-image: url('../imagenes/casa.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Inmuebles</h3>
-          <p class="lead">Renta, compra y venta de inmuebles en BestWay.</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('../imagenes/mascotas.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Mascotas</h3>
-          <p class="lead">"Hasta que uno no ha amado un animal, una parte del alma sigue sin despertar." Anatole France</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('../imagenes/electronica.png')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Electrónica</h3>
-          <p class="lead" >Eres un amante de la tecnología? Encuentra aquí los mejores artículos de electrónica.</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('../imagenes/servicios.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Servicios</h3>
-          <p class="lead">Descubre la variedad de servicios que ofrecemos.</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('../imagenes/negocios.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Negocios</h3>
-          <p class="lead">"Para tener éxito, tienes que tener tu corazón en tu negocio, y tu negocio en tu corazón."Thomas Watson</p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('../imagenes/empleo.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h3 class="display-4">Empleo</h3>
-          <p class="lead">Buscas trabajo? Consulta las mejores ofertas de empleo en BestWay</p>
-        </div>
-      </div>
-  </div>
-            
-            <!--Controles NEXT y PREV-->
-            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <!--Controles de indicadores-->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel1" data-slide-to="1"></li>
-                <li data-target="#carousel1" data-slide-to="2"></li>
-                <li data-target="#carousel1" data-slide-to="3"></li>
-                <li data-target="#carousel1" data-slide-to="4"></li>
-                <li data-target="#carousel1" data-slide-to="5"></li>
-                <li data-target="#carousel1" data-slide-to="6"></li>
-                <li data-target="#carousel1" data-slide-to="7"></li>
-            </ol>
-            
-        </div>
-        </div >
-        </header>
-        
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><script/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<section class="customer-logos slider">
-<div class="container">
-    <div class="row">
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">¿Que Nesecito para Crear una Cuenta? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                 Para poder crear una cuenta solo se necesita una cuenta de correo y llenar los campos del formulario.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">¿Necesito estar Registrado para Ingresar Productos? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Si,para poder ingresar productos se necesita que el usuario este registrado.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">¿Se puede modificar un anuncio despues de su publicacion? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                No, no se podrá modificar un anuncio, el usuario deberá dar de baja a ese anuncio y volver a agregar otro en caso de que desee hacer un cambio.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">¿Se pueden hacer denuncias? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 Si,el usuario podrá denunciar a un vendedor que cometa una falta justificando la misma en la denuncia.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">¿Como funcionan las suscripciones? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                El sistema enviar un correo electrónico con publicidad de las últimas publicaciones de la semana según la categoría a la que se haya inscrito el usuario, en caso de que no existan publicaciones nuevas no se enviara correo.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contacto</h2>
+          
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Direccion</h3>
+              <address>Tegucigalpa</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Numero de Telefono</h3>
+              <p><a href="#">+504 1234-9876</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Correo</h3>
+              <p><a href="#">bestway@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Su Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Su Correo" data-rule="email" data-msg="Please enter a valid email">
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Cargando</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Su mensaje ha sido enviado. Gracias!</div>
+            </div>
+            <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
         <div class="row">
-            <div class="col-md-9">
-                <h3>
-                   Electrónica</h3>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Groovin</h3>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
-            <div class="col-md-3">
-                <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
-                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
-                            data-slide="next"></a>
-                </div>
-            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
         </div>
-        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=928110483";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                                
-                                echo ' <img src="../imagenes/tv.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>   
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=928110483";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                            echo '</div>' ;
-                            echo '</div>';
-                            echo '<div class="separator clear-left">';
-                            echo '<p class="btn-details">';
-                            echo '<i class="fa fa-list"></i>';
-                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                            echo'</p>';
-                            echo '</div>';
-                    }
-                    ?>
-                               
-                  
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=608629547";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                
-                                echo ' <img src="../imagenes/samsungA31.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                <br>
-                                <br>
-                                
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                    
-                                        <?php
-                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                    $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=608629547";
-                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';}
-                                        echo '</div>' ;
-                                        echo '</div>';
-                                        echo '<div class="separator clear-left">';
-                                        echo '<p class="btn-details">';
-                                        echo '<i class="fa fa-list"></i>';
-                                        echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                        echo'</p>';
-                                        echo '</div>';
-                                        ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=877553375";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                                echo ' <img src="../imagenes/LaptopDell.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>
-                          
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                    $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1531951138";
-                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                        echo '</div>' ;
-                                        echo '</div>';
-                                        echo '<div class="separator clear-left">';
-                                        echo '<p class="btn-details">';
-                                        echo '<i class="fa fa-list"></i>';
-                                        echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                        echo'</p>';
-                                        echo '</div>';
-                                        
-                        }
-                        ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1842202489";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/impresoraHP.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1842202489";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1209257036";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/audifonos.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1209257036";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=2092270687";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/Tablet.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=2092270687";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>'; echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                            
-                                        }
-                                            ?>
-                                   
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1028673900";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/smartwatch.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1028673900";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>'; echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                  
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1745896938";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                                echo ' <img src="../imagenes/parlante.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1745896938";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="row">
-            <div class="col-md-9">
-                <h3>
-                    Vehículos</h3>
-            </div>
-            <div class="col-md-3">
-                <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example-generic"
-                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example-generic"
-                            data-slide="next"></a>
-                </div>
-            </div>
-        </div>
-        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=917699416";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/audiA4.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=917699416";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=2059976625";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/hondaCity.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=2059976625";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=399774425";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/suzukiCiaz.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=399774425";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1077648577";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/T-Cross.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                            
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1077648577";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=542183993";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/glc.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=542183993";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1127614873";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/edge.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1127614873";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Groovin</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="row">
-            <div class="col-md-9">
-                <h3>
-                   Moda</h3>
-            </div>
-            <div class="col-md-3">
-                <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example1"
-                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example1"
-                            data-slide="next"></a>
-                </div>
-            </div>
-        </div>
-        <div id="carousel-example1" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=29376364";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+  </footer><!-- End Footer -->
 
-                                
-                                echo ' <img src="../imagenes/pantalon1.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>
-                                   
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=29376364";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                            echo '</div>' ;
-                            echo '</div>';
-                            echo '<div class="separator clear-left">';
-                            echo '<p class="btn-details">';
-                            echo '<i class="fa fa-list"></i>';
-                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                            echo'</p>';
-                            echo '</div>';
-                    }
-                    ?>
-                               
-                  
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=905604893";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                
-                                echo ' <img src="../imagenes/camisa.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                
-                                
-                                
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                    
-                                        <?php
-                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                    $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=905604893";
-                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';}
-                                        echo '</div>' ;
-                                        echo '</div>';
-                                        echo '<div class="separator clear-left">';
-                                        echo '<p class="btn-details">';
-                                        echo '<i class="fa fa-list"></i>';
-                                        echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                        echo'</p>';
-                                        echo '</div>';
-                                        ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1607775862";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+  <!-- Vendor JS Files -->
+  <script src="../assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets1/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets1/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets1/vendor/php-email-form/validate.js"></script>
+  <script src="../assets1/vendor/purecounter/purecounter.js"></script>
+  <script src="../assets1/vendor/swiper/swiper-bundle.min.js"></script>
 
-                                echo ' <img src="../imagenes/vestido.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>
-                          
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                    $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1607775862";
-                                    $resultadoCon=mysqli_query($conexion,$consultaCon);
+  <!-- Template Main JS File -->
+  <script src="../assets1/js/main.js"></script>
 
-                                    while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                        echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                        echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                        echo '</div>' ;
-                                        echo '</div>';
-                                        echo '<div class="separator clear-left">';
-                                        echo '<p class="btn-details">';
-                                        echo '<i class="fa fa-list"></i>';
-                                        echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                        echo'</p>';
-                                        echo '</div>';
-                                        
-                        }
-                        ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1713603207";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/falda.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1713603207";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1680274885";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/jean.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=1680274885";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=47366213";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/camisahombre.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=47366213";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>'; echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                            
-                                        }
-                                            ?>
-                                   
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=830697971";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/sudadera.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=830697971";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>'; echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                  
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1698709347";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
+</body>
 
-                                echo ' <img src="../imagenes/bermuda.jpg" class="img-responsive" alt="a" />';
-                                
-                    ?>
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1698709347";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="row">
-            <div class="col-md-9">
-                <h3>
-                    Inmuebles</h3>
-            </div>
-            <div class="col-md-3">
-                <!-- Controls -->
-                <div class="controls pull-right hidden-xs">
-                    <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example-generic1"
-                        data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example-generic1"
-                            data-slide="next"></a>
-                </div>
-            </div>
-        </div>
-        <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1162658036";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa1.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                              
-                                <br><br>
-                                <br>
-                              
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1162658036";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1298391439";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa5.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br>
-                                <br>
-                                <br><br>
-                                <br><br>
-                                
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1298391439";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1095439284";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa9.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                                <br><br>       
-                               
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1095439284";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1961978699";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa13.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                            
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1961978699";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=1206762452";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa17.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                               
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where IdProducto=1206762452";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="col-item">
-                                <div class="photo">
-                                <?php
-                                $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                $consultaCon="SELECT idProducto,imagen_Producto FROM producto where idProducto=56278571";
-                                $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                echo ' <img src="../imagenes/casa21.jpg" class="img-responsive" alt="a" />';
-                                ?>
-                                </div>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                        <?php
-                                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                                        $consultaCon="SELECT idProducto,Nombre_Prod,Precio  FROM producto where idProducto=56278571";
-                                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-                                   
-                                        while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
-                                            echo '<h5>'.$valores["Nombre_Prod"].'</h5>';
-                                            echo '<h5 class="price-text-color" style="text-decoration:none ; color:SteelBlue">L'.$valores["Precio"].'.00</h5>';
-                                            echo '</div>' ;
-                                            echo '</div>';
-                                            echo '<div class="separator clear-left">';
-                                            echo '<p class="btn-details">';
-                                            echo '<i class="fa fa-list"></i>';
-                                            echo "<a href='../config/detalles.php?idProducto=".$valores['idProducto']."' class='hidden-sm'>Mas detalles</a>";
-                                            echo'</p>';
-                                            echo '</div>';
-                                        }
-                                            ?>
-                                    
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-<script src="../jquery/jquery-3.3.1.min.js"></script>	 	
-    <script src="../popper/popper.min.js"></script>	 	 	
-    <script src="../bootstrap4/js/bootstrap.min.js"></script>   	
-    <script src="../codigo.js"></script>
-    <script src="../js/validar.js"></script> 
-    <script src="../validar_usuario.php"></script>
 </html>

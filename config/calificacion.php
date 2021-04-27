@@ -3,6 +3,10 @@
     if(!isset($_GET['texto'])){
         header("Location: ../containers/categorias.php"); 
     }
+    if(isset($_GET['categoria'])){
+      $categoria= $_GET['categoria'];
+  }
+    
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +55,8 @@
                    Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php??categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php??categoria=<?php echo $categoria ?>&texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -79,31 +83,113 @@
 
   <?php
                      
+                    
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                     if(isset($_GET['categoria'])){
+                   
+                    $limite=6;//productos por pagina
+                    $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
+                     }else{
+                       $limite=6;//productos por pagina
+                       $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria  ");
+                     }
+                     $productosCategoria=mysqli_fetch_row($totalQuery);
+                     $totalBotones=round($productosCategoria[0]/$limite);
+                     if(isset($_GET['limite'])){
+                      if($_GET['categoria']){
                      switch ($_GET['texto']) {
                         case "asc":
                             $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
                             producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
                             producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
-                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario  inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria'
                             GROUP BY idUsuario
                             HAVING  avg(Calificacion)> 0
-                            ORDER BY avg(Calificacion) ASC; ";
+                            ORDER BY avg(Calificacion) ASC limit ".$_GET['limite'].",".$limite; 
                             break;
                         case "desc":
                             $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
                             producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
-                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
-                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion) 
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria'
                             GROUP BY idUsuario
                             HAVING  avg(Calificacion)> 0
-                            ORDER BY avg(Calificacion) DESC; ";
+                            ORDER BY avg(Calificacion) DESC limit ".$_GET['limite'].",".$limite; 
                            
                            break;
                     }
-                            
-                 
+                  }
+                else {
+                  switch ($_GET['texto']) {
+                    case "asc":
+                        $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                        producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                        producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                        FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                        GROUP BY idUsuario
+                        HAVING  avg(Calificacion)> 0
+                        ORDER BY avg(Calificacion) ASC limit ".$limite;
+                        break;
+                    case "desc":
+                        $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                        producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                        producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                        FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                        GROUP BY idUsuario
+                        HAVING  avg(Calificacion)> 0
+                        ORDER BY avg(Calificacion) DESC limit ".$limite;
+                       
+                       break;
+                }
+              }
+              }else{
+                if($_GET['categoria']){
+                  switch ($_GET['texto']) {
+                     case "asc":
+                         $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                         producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                         producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                         FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario  inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria'
+                         GROUP BY idUsuario
+                         HAVING  avg(Calificacion)> 0
+                         ORDER BY avg(Calificacion) ASC limit ".$limite; 
+                         break;
+                     case "desc":
+                         $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                         producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                         producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion) 
+                         FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria'
+                         GROUP BY idUsuario
+                         HAVING  avg(Calificacion)> 0
+                         ORDER BY avg(Calificacion) DESC limit ".$limite; 
+                        
+                        break;
+                 }
+               
+             }else {
+               switch ($_GET['texto']) {
+                 case "asc":
+                     $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                     producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                     producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                     FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                     GROUP BY idUsuario
+                     HAVING  avg(Calificacion)> 0
+                     ORDER BY avg(Calificacion) ASC limit ".$limite;
+                     break;
+                 case "desc":
+                     $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                     producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                     producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                     FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                     GROUP BY idUsuario
+                     HAVING  avg(Calificacion)> 0
+                     ORDER BY avg(Calificacion) DESC limit ".$limite;
                     
+                    break;
+             }
+           }
+          }   
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
 
                      if(mysqli_num_rows($resultadoCon)>0){

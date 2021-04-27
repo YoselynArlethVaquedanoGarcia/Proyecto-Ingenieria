@@ -3,6 +3,10 @@
     if(!isset($_GET['texto'])){
         header("Location: ../containers/categorias.php"); 
     }
+    if(isset($_GET['categoria'])){
+      $categoria= $_GET['categoria'];
+  }
+    
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +41,7 @@
     <?php include("../layout/header.php"); ?> 
 
     <div class="site-section">
-      <div class="container">
+      <div class="container  ml-1">
 
         <div class="row mb-5">
           <div class="col-md-9 order-2">
@@ -51,19 +55,19 @@
                      Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
                       <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Filtrar</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pasc">Precio ascendente</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pdesc">Precio descendente</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pasc">Precio ascendente</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
                      
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre Producto, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=ndesc">Nombre Producto, Z-A</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=nasc">Nombre Producto, A-Z</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=ndesc">Nombre Producto, Z-A</a>
                     </div>
                   </div>
                 </div>
@@ -78,7 +82,7 @@
 
             $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
             if(isset($_GET['categoria'])){
-           $categoria= $_GET['categoria'];
+          
            $limite=6;//productos por pagina
            $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
             }else{
@@ -259,11 +263,46 @@
             <div class="border p-4 rounded mb-4">
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Precio</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+               <form action="../containers/filtroPrecio.php" method="POST">
+                <input type="text"  class="form-control" placeholder="L. Mín" style="height: 30px; width:79px" name="minimo"  id="minimo">
+                <span class="input-group-text" style="height: 25px; padding: 3px;width:15px">-</span>
+                <input type="text" class="form-control" placeholder="L. Máx" style="height: 30px;width:79px" name="maximo" id="maximo"><br>
+                <button class="btn btn-info">Filtrar</button>
+                </form>
               </div>
-            </div>
-          </div>
+
+              <div class="mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Fecha</h3>
+                <label for="s_sm" class="d-flex">
+                <form action="../containers/filtroFecha.php" method="post">
+                  <input type="date" id="date" name="date" class="mr-2 mt-1"> 
+                </label><br>
+                <button class="btn btn-info">Filtrar</button>
+                </form>
+                
+              </div>
+              <div class="mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
+                <label for="s_sm" class="d-flex">
+                <form action="../containers/filtroDepartamento.php" method="post">
+                <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
+                    <option value="0">Departamento</option>
+
+                        <?php
+                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
+                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                          while ($valores = mysqli_fetch_array($resultadoCon)) {
+                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
+                      }
+                ?>
+                </select>
+              
+              <div id="select2lista"></div>
+              <button class="btn btn-info">Filtrar</button>
+                </form>
+              </div>
         </div>
 
       
@@ -287,5 +326,27 @@
 
   <script src="../js/main1.js"></script>
     
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#departamento').val(1);
+		recargarLista();
+
+		$('#departamento').change(function(){
+			recargarLista();
+		});
+	})
+</script>
+<script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"../config/datos.php",
+			data:"departamento=" + $('#departamento').val(),
+			success:function(r){
+				$('#select2lista').html(r);
+			}
+		});
+	}
+</script>
   </body>
 </html>

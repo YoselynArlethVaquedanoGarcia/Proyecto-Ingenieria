@@ -78,10 +78,10 @@
                      $totalProductos=mysqli_fetch_row($totalQuery);
                      $totalBotones=round($totalProductos[0]/$limite);
                      if(isset($_GET['limite'])){
-                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Fecha_Registro FROM producto order by idProducto DESC limit ".$_GET['limite'].",".$limite);
+                      $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Fecha_Registro,Moneda FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda order by idProducto DESC limit ".$_GET['limite'].",".$limite);
                      
                      }else{
-                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio ,Fecha_Registro FROM producto order by idProducto DESC limit ".$limite);
+                       $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Fecha_Registro,Moneda FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda order by idProducto DESC limit ".$limite);
                       
                      }
               
@@ -98,7 +98,7 @@
                     <div class="card-body" style="height:250px"; >
                     <h4  class="card-text" ><?php echo $resultado["Nombre_Prod"]; ?></h4>
                     <h5  class="card-text">
-                    <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
+                    <p class="text-primary font-weight-bold"><?php echo $resultado["Precio"]." ".$resultado["Moneda"];?></p>
                     <p class="text-primary font-weight-bold">Fecha de Publicación:<?php echo $resultado["Fecha_Registro"]; ?></p>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
@@ -133,7 +133,6 @@
                     echo '<li><a href="../containers/categorias.php?limite=10">&gt;</a></li>';
                   }
                   ?>
-                    
                   </ul>
                 </div>
               </div>

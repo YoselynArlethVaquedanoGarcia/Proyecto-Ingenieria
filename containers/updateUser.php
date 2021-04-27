@@ -6,6 +6,9 @@ include('../layout/navbar.php')
       <div class="col-lg-6"><br>
       <h2>MY BESTWAY</h2><br>
       <h4 style="border-bottom: solid 2px gray;"><?php echo $nombre ?></h4><br>
+      <img src="../imagenes/<?php echo $imagen; ?>" alt="usuario" width=200px>
+      <br>
+      <br>
       <h6 style="border-bottom: solid 2px gray; margin-left: 20px;">Información de Contacto</h6>
       <div>
         <p style="border-bottom: solid 2px gray; margin-left: 20px;"> Correo electronico: <?php echo $email ?> </p> 
@@ -16,7 +19,8 @@ include('../layout/navbar.php')
       
       </div>
       <div class="col-lg-6" ><br>
-          Editar  <?php $id ?>
+      <h2>Editar Información</h2><br>
+           <?php $id ?>
           <form method="post" action="updateUser.php" class="needs-validation" novalidate>
             <input type="hidden" name="idp" id="" value="<?php echo $id ?>">
             
@@ -47,7 +51,8 @@ include('../layout/navbar.php')
             $user=$_POST['txtnombre'];
             $tel=$_POST['txttelefono'];
             $dir=$_POST['txtdireccion'];
-            //UPDATE usuario SET nombre='Cristiano' WHERE idUsuario='742246112';
+
+            
             if($em!=null||$user!=null||$tel!=null||$dir!=null){
               $sql2="UPDATE usuario SET Correo='$em', Nombre='$user', Telefono='$tel', Direccion='$dir' where idUsuario='$idp' ";
               mysqli_query($conexion, $sql2);

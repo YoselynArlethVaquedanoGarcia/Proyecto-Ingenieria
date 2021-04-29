@@ -52,7 +52,7 @@ if(!isset($_SESSION['correo'])){
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="login.php">Iniciar Sesion</a></li>
-          <li><a class="nav-link scrollto" href="registroProducto.php">Registrarse</a></li>
+          <li><a class="nav-link scrollto" href="registro.php">Registrarse</a></li>
           <li><a class="nav-link scrollto " href="categorias.php">Productos</a></li>
           <?php   if(isset($_SESSION['correo'])){ 
             echo '<li class="dropdown"><a href="#"><span>'.$nombre.'</span> <i class="bi bi-chevron-down"></i></a>
@@ -60,10 +60,10 @@ if(!isset($_SESSION['correo'])){
               
               <li class="dropdown"><a href="#"><span>Mi Perfil</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="../containers/updateUser.php">Editar Usuario</a></li>
+                  <li><a href="../containers/updateUser.php">Editar Perfil</a></li>
                   <li><a href="../containers/mi_Productos.php">Mis Productos</a></li>
                   <li><a href="../containers/registroProducto.php">Registro de Productos</a></li>
-                  
+                  <li><a href="../containers/comentarios.php">Ver Comentarios</a></li>
                 </ul>
               </li>';
             };?>

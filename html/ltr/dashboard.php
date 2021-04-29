@@ -197,7 +197,7 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="graficas.php" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Graficas</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Suscripciones</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../containers/suscripciones.php" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Suscripciones</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../containers/RegistroCategorias.php" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu"> Gestionar Categorias</span></a>
                         

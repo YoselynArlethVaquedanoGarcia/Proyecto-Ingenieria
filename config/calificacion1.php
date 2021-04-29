@@ -1,13 +1,14 @@
-<?php
-
- if(isset($_GET['categoria'])){
-  $categoria= $_GET['categoria'];
-} if($_GET['departamento']){
-  $departamento= $_GET['departamento'];
-}if($_GET['municipio']){
-  $municipio= $_GET['municipio'];
-}
-
+<?php   
+    $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+    if(!isset($_GET['texto'])){
+        header("Location: ../containers/categorias.php"); 
+    }
+    if(isset($_GET['departamento'])){
+        $departamento= $_GET['departamento'];
+    }  if(isset($_GET['municipio'])){
+      $municipio= $_GET['municipio'];
+    }
+    
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,7 @@
     <?php include("../layout/header.php"); ?> 
 
     <div class="site-section">
-      <div class="container ml-1">
+      <div class="container">
 
         <div class="row mb-5">
           <div class="col-md-9 order-2">
@@ -53,11 +54,11 @@
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Calificacion del Vendedor
+                   Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=asc">Orden Ascendente</a>
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
+                      <a class="dropdown-item" href="../config/calificacion1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -84,12 +85,115 @@
 
   <?php
                      
+                    
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ";
-          
-                      
-                     
+                     if(isset($_GET['categoria'])){
+                   
+                    $limite=6;//productos por pagina
+                    $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
+                     }else{
+                       $limite=6;//productos por pagina
+                       $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria  ");
+                     }
+                     $productosCategoria=mysqli_fetch_row($totalQuery);
+                     $totalBotones=round($productosCategoria[0]/$limite);
+                     if(isset($_GET['limite'])){
+                      if(isset($_GET['departamento']) and isset($_GET['municipio'])){
+                     switch ($_GET['texto']) {
+                        case "asc":
+                            $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                            producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio
+                            GROUP BY idUsuario
+                            HAVING  avg(Calificacion)> 0
+                            ORDER BY avg(Calificacion) ASC limit ".$_GET['limite'].",".$limite; 
+                            break;
+                        case "desc":
+                            $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                            producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                            producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion) 
+                            FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio
+                            GROUP BY idUsuario
+                            HAVING  avg(Calificacion)> 0
+                            ORDER BY avg(Calificacion) DESC limit ".$_GET['limite'].",".$limite; 
+                           
+                           break;
+                    }
+                  }
+                else {
+                  switch ($_GET['texto']) {
+                    case "asc":
+                        $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                        producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                        producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                        FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                        GROUP BY idUsuario
+                        HAVING  avg(Calificacion)> 0
+                        ORDER BY avg(Calificacion) ASC limit ".$limite;
+                        break;
+                    case "desc":
+                        $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                        producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                        producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                        FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                        GROUP BY idUsuario
+                        HAVING  avg(Calificacion)> 0
+                        ORDER BY avg(Calificacion) DESC limit ".$limite;
+                       
+                       break;
+                }
+              }
+              }else{
+                if(isset($_GET['departamento']) and isset($_GET['municipio'])){
+                  switch ($_GET['texto']) {
+                     case "asc":
+                         $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                         producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                         producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                         FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario  where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio
+                         GROUP BY idUsuario
+                         HAVING  avg(Calificacion)> 0
+                         ORDER BY avg(Calificacion) ASC limit ".$limite; 
+                         break;
+                     case "desc":
+                         $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                         producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                         producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion) 
+                         FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio
+                         GROUP BY idUsuario
+                         HAVING  avg(Calificacion)> 0
+                         ORDER BY avg(Calificacion) DESC limit ".$limite; 
+                        
+                        break;
+                 }
+               
+             }else {
+               switch ($_GET['texto']) {
+                 case "asc":
+                     $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                     producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                     producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                     FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                     GROUP BY idUsuario
+                     HAVING  avg(Calificacion)> 0
+                     ORDER BY avg(Calificacion) ASC limit ".$limite;
+                     break;
+                 case "desc":
+                     $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
+                     producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,
+                     producto.Precio,producto.Descripcion,calificaciones.idUsuario,avg(Calificacion)
+                     FROM calificaciones inner join producto on calificaciones.idUsuario = producto.idUsuario
+                     GROUP BY idUsuario
+                     HAVING  avg(Calificacion)> 0
+                     ORDER BY avg(Calificacion) DESC limit ".$limite;
+                    
+                    break;
+             }
+           }
+          }  // echo $consultaCon;
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
+
                      if(mysqli_num_rows($resultadoCon)>0){
 
                    
@@ -108,6 +212,7 @@
                     <h5  class="card-text">
                     <p class="text-primary font-weight-bold">L<?php echo $resultado["Precio"]; ?>.00</p>
                     </h5>
+                    <p class="text-primary font-weight-bold">Calificacion:<?php echo round($resultado["avg(Calificacion)"],2); ?>%</p>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
@@ -190,29 +295,8 @@
                 </form>
                 
               </div>
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
-                <label for="s_sm" class="d-flex">
-                <form action="../containers/filtroDepartamento.php" method="post">
-                <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
-                    <option value="0">Departamento</option>
 
-                        <?php
-                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
-                        $resultadoCon=mysqli_query($conexion,$consultaCon);
-
-                          while ($valores = mysqli_fetch_array($resultadoCon)) {
-                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
-                      }
-                ?>
-                </select>
-              
-              <div id="select2lista"></div>
-              <button class="btn btn-info">Filtrar</button>
-                </form>
-              </div>
-   
+            </div>
           </div>
         </div>
 
@@ -236,27 +320,5 @@
 
   <script src="../js/main1.js"></script>
     
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#departamento').val(1);
-		recargarLista();
-
-		$('#departamento').change(function(){
-			recargarLista();
-		});
-	})
-</script>
-<script type="text/javascript">
-	function recargarLista(){
-		$.ajax({
-			type:"POST",
-			url:"../config/datos.php",
-			data:"departamento=" + $('#departamento').val(),
-			success:function(r){
-				$('#select2lista').html(r);
-			}
-		});
-	}
-</script>
   </body>
 </html>

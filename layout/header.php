@@ -43,17 +43,14 @@
         <div class="row align-items-center" >
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li>
-              <a href="index.php" style="color:white" >Home</a>
+              <a href="../containers/index.php" style="color:white" >Home</a>
             
             </li>
-            <li>
-              <a href="about.php" style="color:white" >About</a>
-            
-            </li>
+           
           
             <li><a href="../containers/categorias.php" style="color:white" >Catálogo</a></li>
-            <li><a href="#" style="color:white" >New Arrivals</a></li>
-            <li><a href="contact.php" style="color:white" >Contacto</a></li>
+            
+           
           </ul>
         </div>
        </div>

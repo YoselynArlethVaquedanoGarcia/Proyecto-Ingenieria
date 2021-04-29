@@ -13,7 +13,7 @@
 <body>
 
 
-  <form method="post"   id=" formulario" class="needs-validation "  novalidate> 
+  <form method="post" action="../config/conexion.php"  id=" formulario" class="needs-validation "  novalidate> 
     <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">

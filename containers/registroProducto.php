@@ -83,7 +83,7 @@ include('../layout/navbar.php')
                   <div class="form-check">
                   <input class="form-check-input" type="radio" name="Estado_Prod" id="Estado_Prod3" value="3">
                     <label class="form-check-label" for="Estado_Prod3">
-                     No Aplica  <p style="color:red;">* Para Servicios,Empleo y Negocios</p>
+                     No Aplica  <div style="color:red;">* Para Servicios,Empleo y Negocios</div>
                     </label> 
                     <div class="invalid-feedback">!Complete el Dato!</div>
                     <div class="invalid-feedback">!Dato incompleto !</div>

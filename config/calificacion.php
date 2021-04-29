@@ -55,19 +55,19 @@
                    Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php??categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
-                      <a class="dropdown-item" href="../config/calificacion.php??categoria=<?php echo $categoria ?>&texto=desc">Orden Descendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Filtrar</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pasc">Precio ascendente</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=pdesc">Precio descendente</a>
+                      <a class="dropdown-item" href="../containers/?categoria=<?php echo $categoria ?>&filtros.php?texto=pasc">Precio ascendente</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
                      
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=nasc">Nombre, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?texto=ndesc">Nombre, Z-A</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=nasc">Nombre, A-Z</a>
+                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=ndesc">Nombre, Z-A</a>
                     </div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
                 }
               }
               }else{
-                if($_GET['categoria']){
+                if(isset($_GET['categoria'])){
                   switch ($_GET['texto']) {
                      case "asc":
                          $consultaCon="SELECT avg(Calificacion), calificaciones.idUsuario,
@@ -298,53 +298,7 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-section site-blocks-2">
-                <div class="row justify-content-center text-center mb-5">
-                  <div class="col-md-7 site-section-heading pt-4">
-                    <h2>Categorias</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/women.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Women</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/children.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Children</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <a class="block-2-item" href="#">
-                      <figure class="image">
-                        <img src="images/men.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>Men</h3>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
-        </div>
+      
         
       </div>
     </div>

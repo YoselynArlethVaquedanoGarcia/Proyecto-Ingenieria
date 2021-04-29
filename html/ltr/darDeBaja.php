@@ -320,7 +320,7 @@
         <td><?php echo $data['nombre'];?></td>
         <td><?php echo $data['correo'];?></td>
         <td><?php echo $data['descripcion'];?></td>
-        <td><a class="btn btn-danger" href="../../config/deleteUserDenuncia.php?idUsuario=<?php echo $data["idUsuario"]; ?>">Eliminar</a>
+        <td><a class="btn btn-danger" href="../../config/deleteUserDenuncia.php?idUsuario=<?php echo $data["idUsuario"]; ?>">Eliminar Usuario</a>
         <a class="btn btn-danger" href="../../config/desestimarDenuncia.php?idDenuncia=<?php echo $data["idDenuncia"]; ?>">Desestimar</a></td>
       </tr>
     <?php } ?>

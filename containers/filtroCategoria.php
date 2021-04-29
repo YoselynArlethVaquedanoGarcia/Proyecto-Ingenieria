@@ -90,7 +90,7 @@
                      $totalQuery=$conexion->query("SELECT count(*) FROM producto inner join categoria on  producto.Categoria_idCategoria= categoria.idCategoria where categoria.Tipocategoria='$categoria' ");
                      $productosCategoria=mysqli_fetch_row($totalQuery);
                      $totalBotones=round($productosCategoria[0]/$limite);
-                      
+
                      if(isset($_GET['limite'])){
                       $sql=$conexion->query("SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='.$categoria.'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite);
                      $hola= "SELECT p.imagen_Prod,p.Nombre_Prod,p.Precio, p.idProducto FROM producto p inner join categoria c on c.idCategoria = p.Categoria_idCategoria where c.Tipocategoria='.$categoria.'  order by p.idProducto DESC limit ".$_GET['limite'].",".$limite;

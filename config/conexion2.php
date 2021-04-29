@@ -22,7 +22,7 @@ $email='correopruebasoporte46@gmail.com';
         require '../PHPMailer/SMTP.php';
          //Instantiation and passing `true` enables exceptions
          $mail = new PHPMailer(true); 
-         $sql1 = $conexion->query("SELECT Nombre_Prod,Precio,imagen_Prod,Moneda,Fecha_Registro from producto  inner join categoria inner join moneda where producto.idMoneda=moneda.idMoneda and producto.Categoria_idCategoria=categoria.idCategoria and  producto.Categoria_idCategoria=$categoria and Fecha_Registro > DATE_SUB(NOW(), INTERVAL 1 WEEK)");
+         $sql1 = $conexion->query("SELECT Nombre_Prod,Precio,imagen_Prod,Moneda,Fecha_Registro from producto  inner join categoria inner join moneda where producto.idMoneda=moneda.idMoneda and producto.Categoria_idCategoria=categoria.idCategoria and  producto.Categoria_idCategoria=$categoria and Fecha_Registro > DATE_SUB(NOW(), INTERVAL 1 WEEK) ");
          $resultadoCon=mysqli_fetch_array($sql1,MYSQLI_ASSOC);
          
          
@@ -59,18 +59,15 @@ $email='correopruebasoporte46@gmail.com';
                 <row>
                   <columns large='4'>
                     <center>
-                    <img src=\"cid:logo\" width=400px height=400px/></p>
+                    <img src=\"cid:logo\" width=400px height=350px/></p>
                     </center>
                   </columns>
-                  <columns large='8'>
-                    
-                    <button class='large'>Iniciar Sesion</button>
-                  </columns>
+                  
                 </row>
               
                 <spacer size='16'></spacer>
               
-                <row>";
+                <row><br/>";
                   $mail->Body    .= 
                     '<h1>Nuevas Publicaciones</h1>
                     <img src=\'cid:imagen\' width=400px height=300px/></p>

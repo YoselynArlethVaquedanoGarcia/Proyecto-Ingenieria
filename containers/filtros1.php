@@ -60,19 +60,19 @@
                      Calificacion del Vendedor
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="../config/calificacion.php?categoria=<?php echo $categoria ?>&texto=asc">Orden Ascendente</a>
-                      <a class="dropdown-item" href="../config/calificacion.php?texto=desc">Orden Descendente</a>
+                      <a class="dropdown-item" href="../config/calificacion1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=asc">Orden Ascendente</a>
+                      <a class="dropdown-item" href="../config/calificacion1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=desc">Orden Descendente</a>
                     </div>
                   </div>
                   <div class="btn-group">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Filtrar</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pasc">Precio ascendente</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=pdesc">Precio descendente</a>
+                      <a class="dropdown-item" href="../containers/filtros1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=pasc">Precio ascendente</a>
+                      <a class="dropdown-item" href="../containers/filtros1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=pdesc">Precio descendente</a>
                      
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=nasc">Nombre Producto, A-Z</a>
-                      <a class="dropdown-item" href="../containers/filtros.php?categoria=<?php echo $categoria ?>&texto=ndesc">Nombre Producto, Z-A</a>
+                      <a class="dropdown-item" href="../containers/filtros1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=nasc">Nombre Producto, A-Z</a>
+                      <a class="dropdown-item" href="../containers/filtros1.php?departamento=<?php echo $departamento ?>&municipio=<?php echo $municipio ?>&texto=ndesc">Nombre Producto, Z-A</a>
                     </div>
                   </div>
                 </div>
@@ -98,21 +98,20 @@
            $productosCategoria=mysqli_fetch_row($totalQuery);
            $totalBotones=round($productosCategoria[0]/$limite);
            if(isset($_GET['limite'])){
-            if($_GET['categoria']){
+            if(isset($_GET['departamento']) and isset($_GET['municipio'])){
               switch ($_GET['texto']) {
                 case "pasc":
-                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio ASC limit ".$_GET['limite'].",".$limite; 
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Precio ASC limit ".$_GET['limite'].",".$limite; 
                     break;
                 case "pdesc":
-                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio DESC limit ".$_GET['limite'].",".$limite;
+                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Precio DESC limit ".$_GET['limite'].",".$limite;
                        break;
                 case "nasc":
-                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod ASC limit ".$_GET['limite'].",".$limite;
+                    $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Nombre_Prod ASC limit ".$_GET['limite'].",".$limite;
                     break;
   
                 case "ndesc":
-                        $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria
-                        where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod DESC limit ".$_GET['limite'].",".$limite;
+                        $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Nombre_Prod DESC limit ".$_GET['limite'].",".$limite;
                         break;
              }}else {
               switch ($_GET['texto']) {
@@ -136,21 +135,20 @@
             }
           }
            }else{
-          if(isset($_GET['categoria'])){
+          if(isset($_GET['departamento']) and isset($_GET['municipio'])){
             switch ($_GET['texto']) {
               case "pasc":
-                $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio ASC limit ".$limite; 
+                $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Precio ASC limit ".$limite; 
                   break;
               case "pdesc":
-                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Precio DESC limit ".$limite;
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Precio DESC limit ".$limite;
                   break;
               case "nasc":
-                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod ASC limit ".$limite;
+                  $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Nombre_Prod ASC limit ".$limite;
                   break;
 
               case "ndesc":
-                      $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto inner join categoria on producto.Categoria_idCategoria=categoria.idCategoria
-                      where categoria.TipoCategoria='$categoria' ORDER BY Nombre_Prod DESC limit ".$limite;
+                      $consultaCon="SELECT producto.imagen_Prod,producto.idProducto,producto.Nombre_Prod,producto.Precio,producto.Descripcion FROM producto where Departamento_idDepartamento=$departamento and Municipio_idMunicipio=$municipio ORDER BY Nombre_Prod DESC limit ".$limite;
                       break;
            }}else {
             switch ($_GET['texto']) {

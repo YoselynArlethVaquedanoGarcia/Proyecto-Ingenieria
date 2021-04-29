@@ -80,7 +80,7 @@
                    
                      
                      $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
-                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion,Moneda FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda and Fecha_Registro like '2021-03-31' order by idProducto ";
+                     $consultaCon="SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Descripcion,Moneda,Fecha_Registro FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda and Fecha_Registro like '2021-03-31' order by idProducto ";
                     
                      $resultadoCon=mysqli_query($conexion,$consultaCon);
 
@@ -102,6 +102,7 @@
                     <h5  class="card-text">
                     <p class="text-primary font-weight-bold"><?php echo $resultado["Precio"]." ".$resultado["Moneda"]; ?></p>
                     </h5>
+                    <p class="text-primary font-weight-bold">Fecha de Publicación:<?php echo $resultado["Fecha_Registro"]; ?></p>
                     <a href="../config/detalles.php?idProducto=<?php echo $resultado["idProducto"]; ?>" class='hidden-sm'>Mas detalles</a>
                      </div>
                     </div>
@@ -145,7 +146,7 @@
                         $resultadoCon=mysqli_query($conexion,$consultaCon);
                           while ($valores = mysqli_fetch_array($resultadoCon,MYSQLI_ASSOC)) {
                             ?>
-                            <li class="mb-1"><a href="../busqueda.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex" style="color:white"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
+                            <li class="mb-1"><a href="../containers/filtroFecha.php?texto=<?php echo $valores['Tipocategoria']?>" class="d-flex" style="color:white"><span><?php echo $valores['Tipocategoria'];?></span> <span class="text-black ml-auto">
                             <?php 
                              $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
                              $consultaCon1="SELECT count(Categoria_idCategoria) FROM producto where Categoria_idCategoria=".$valores['idCategoria'];
@@ -183,7 +184,31 @@
                 </form>
                 
               </div>
+              <div class="mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
+                <label for="s_sm" class="d-flex">
+                <form action="../containers/filtroDepartamento.php" method="post">
+                <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
+                    <option value="0">Departamento</option>
 
+                        <?php
+                        $conexion=mysqli_connect("localhost","Yoselyn","Yoselyn123","proyecto");
+                        $consultaCon="SELECT idDepartamento,Departamento FROM departamento";
+                        $resultadoCon=mysqli_query($conexion,$consultaCon);
+
+                          while ($valores = mysqli_fetch_array($resultadoCon)) {
+                            echo '<option value="'.$valores[idDepartamento].'">'.$valores[Departamento].'</option>';
+                      }
+                ?>
+                </select>
+              
+              <div id="select2lista"></div>
+              <button class="btn btn-info">Filtrar</button>
+                </form>
+              </div>
+   
+          </div>
+        </div>
             </div>
           </div>
         </div>
@@ -207,6 +232,27 @@
   <script src="../js/aos.js"></script>
 
   <script src="../js/main1.js"></script>
-    
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$('#departamento').val(1);
+		recargarLista();
+
+		$('#departamento').change(function(){
+			recargarLista();
+		});
+	})
+</script>
+<script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"../config/datos.php",
+			data:"departamento=" + $('#departamento').val(),
+			success:function(r){
+				$('#select2lista').html(r);
+			}
+		});
+	}
+</script>
   </body>
 </html>

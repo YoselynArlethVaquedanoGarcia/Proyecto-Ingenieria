@@ -84,7 +84,7 @@
                        $resultados=$conexion->query("SELECT imagen_Prod,idProducto,Nombre_Prod,Precio,Fecha_Registro,Moneda FROM producto inner join moneda where producto.idMoneda=moneda.idMoneda order by idProducto DESC limit ".$limite);
                       
                      }
-              
+            
                      
                     while ($resultado=mysqli_fetch_array($resultados,MYSQLI_ASSOC)){
                     ?>
@@ -192,7 +192,7 @@
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Departamento </h3>
                 <label for="s_sm" class="d-flex">
-                <form action="../containers/filtroDepartamento.php" method="post">
+                <form action="../containers/filtroDepartamento.php" method="GET">
                 <select class="form-select" aria-label="Default select example" name="departamento" id="departamento" required>
                     <option value="0">Departamento</option>
 
